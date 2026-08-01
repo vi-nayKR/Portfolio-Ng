@@ -107,8 +107,6 @@ export class SkillsComponent implements OnInit {
       icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg>',
       skills: [
         { name: 'MySQL' },
-        { name: 'SQL Server' },
-        { name: 'Relational Data Modelling' },
       ],
     },
     {
@@ -125,7 +123,7 @@ export class SkillsComponent implements OnInit {
   ];
 
   // Secondary exposure — kept out of the primary Angular/Node/MySQL categories.
-  extraTags = ['Go', 'PostgreSQL', 'Redis', 'WebSockets', 'C# / .NET Core'];
+  extraTags = ['SQL Server', 'Go', 'PostgreSQL', 'Redis', 'WebSockets', 'C# / .NET Core'];
 
   @HostListener('window:scroll')
   onScroll() {

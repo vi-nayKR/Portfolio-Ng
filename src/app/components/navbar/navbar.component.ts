@@ -139,6 +139,7 @@ export class NavbarComponent implements OnInit {
   navItems = [
     { label: 'About', href: '#about', id: 'about' },
     { label: 'Skills', href: '#skills', id: 'skills' },
+    { label: 'Angular', href: '#angular', id: 'angular' },
     { label: 'Experience', href: '#experience', id: 'experience' },
     { label: 'Resume', href: '#resume', id: 'resume' },
     { label: 'Projects', href: '#projects', id: 'projects' },

@@ -3,6 +3,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { AboutComponent } from './components/about/about.component';
 import { SkillsComponent } from './components/skills/skills.component';
+import { AngularShowcaseComponent } from './components/angular-showcase/angular-showcase.component';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { ResumeComponent } from './components/resume/resume.component';
 import { ProjectsComponent } from './components/projects/projects.component';
@@ -24,6 +25,7 @@ import Lenis from 'lenis';
     HeroComponent,
     AboutComponent,
     SkillsComponent,
+    AngularShowcaseComponent,
     ExperienceComponent,
     ResumeComponent,
     ProjectsComponent,
@@ -45,6 +47,7 @@ import Lenis from 'lenis';
         <app-hero />
         <app-about />
         <app-skills />
+        <app-angular-showcase />
         <app-experience />
         <app-resume />
         <app-projects />

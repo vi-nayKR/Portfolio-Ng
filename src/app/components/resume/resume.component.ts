@@ -156,7 +156,7 @@ import { CommonModule } from '@angular/common';
                 <ul class="text-sm text-muted list-disc list-inside space-y-1.5 leading-relaxed">
                   <li>Full-stack developer with 3+ years of experience building Angular and TypeScript applications, including reactive forms, RxJS-driven state, and component-based UI for enterprise platforms.</li>
                   <li>Backend experience extends to REST API design with Node.js, Express, and TypeORM, and relational data modelling with MySQL and SQL Server.</li>
-                  <li>Comfortable owning a feature end to end — from the Angular UI and API contract through to the MySQL database — with additional exposure to an independent Go/PostgreSQL backend project.</li>
+                  <li>Comfortable owning a feature end to end — from the Angular UI and API contract through to the Postgres database — with additional exposure to an independent Go/PostgreSQL backend project.</li>
                 </ul>
               </div>
 
@@ -285,7 +285,7 @@ export class ResumeComponent implements OnInit {
   skillGroups = [
     { label: 'Frontend', items: 'Angular, TypeScript, RxJS, Reactive Forms, HTML5, CSS3' },
     { label: 'Backend', items: 'Node.js, Express.js, TypeORM, REST API Design' },
-    { label: 'Databases', items: 'MySQL, SQL Server' },
+    { label: 'Databases', items: 'MySQL' },
     { label: 'Testing & Tools', items: 'Git, Cypress, Docker, Postman/OpenAPI, AWS (S3, EC2)' },
   ];
 

@@ -169,8 +169,8 @@ export class ContactComponent implements OnInit {
     },
     {
       label: 'LinkedIn',
-      value: 'linkedin.com/in/vinay-k-r',
-      href: 'https://linkedin.com/in/vinay-k-r-a6bb51243',
+      value: 'linkedin.com/in/vi-naykr',
+      href: 'https://linkedin.com/in/vi-naykr',
       external: true,
       icon: '<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>',
     },

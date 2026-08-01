@@ -51,7 +51,7 @@ import { SafeHtmlPipe } from '../../pipes/safe-html.pipe';
             </p>
             <p class="text-muted leading-relaxed mb-6">
               Comfortable owning a feature end to end — from the Angular UI and API contract through to the
-              MySQL database — with additional exposure to an independent Go/PostgreSQL backend project.
+              Postgres database — with additional exposure to an independent Go/PostgreSQL backend project.
             </p>
 
           </div>
