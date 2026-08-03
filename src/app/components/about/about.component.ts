@@ -1,4 +1,4 @@
-import { Component, OnInit, signal, HostListener } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit, signal, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TiltDirective } from '../../directives/tilt.directive';
 import { SafeHtmlPipe } from '../../pipes/safe-html.pipe';
@@ -6,6 +6,7 @@ import { SafeHtmlPipe } from '../../pipes/safe-html.pipe';
 @Component({
   selector: 'app-about',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, TiltDirective, SafeHtmlPipe],
   template: `
     <section id="about" class="relative py-16 md:py-32 px-4 md:px-6 overflow-hidden">
@@ -36,22 +37,23 @@ import { SafeHtmlPipe } from '../../pipes/safe-html.pipe';
           <div [class.animate-slide-in-left]="visible()" [style.opacity]="visible() ? '1' : '0'" style="transition: opacity 0.7s">
             <p class="text-accent font-mono text-xs tracking-widest uppercase mb-4">About Me</p>
             <h2 class="text-4xl md:text-5xl font-display font-bold text-frost mb-6 leading-tight text-balance">
-              Passionate about
-              <span class="gradient-text">Angular &amp; Clean APIs</span>
+              Full-stack across
+              <span class="gradient-text">Angular, Node &amp; Go</span>
             </h2>
             <p class="text-muted leading-relaxed mb-4">
-              Full-stack developer with 3+ years of experience building <span class="text-frost">Angular</span> and
-              <span class="text-frost">TypeScript</span> applications — reactive forms, RxJS-driven state, and
-              component-based UI for enterprise platforms.
+              Three years building <span class="text-frost">Angular</span> and
+              <span class="text-frost">TypeScript</span> frontends for enterprise platforms — 50+ screens across
+              casino finance, player data, and real-time slot-machine displays.
             </p>
             <p class="text-muted leading-relaxed mb-4">
-              Backend experience extends to REST API design with <span class="text-frost">Node.js</span>,
-              <span class="text-frost">Express</span>, and <span class="text-frost">TypeORM</span>, and relational
-              data modelling with <span class="text-frost">MySQL</span> and SQL Server.
+              Most recently the sole engineer on a transaction firewall policy engine at a digital-asset custody
+              platform, owning both the <span class="text-frost">Angular</span> configuration screens and the
+              <span class="text-frost">Node.js</span> / <span class="text-frost">TypeORM</span> rule-evaluation backend.
             </p>
             <p class="text-muted leading-relaxed mb-6">
-              Comfortable owning a feature end to end — from the Angular UI and API contract through to the
-              Postgres database — with additional exposure to an independent Go/PostgreSQL backend project.
+              Outside work I build <span class="text-frost">Medha</span> — a <span class="text-frost">Go</span> REST API
+              on <span class="text-frost">PostgreSQL/PostGIS</span>, deployed to a self-hosted
+              <span class="text-frost">Kubernetes</span> cluster I run myself.
             </p>
 
           </div>
@@ -127,7 +129,7 @@ export class AboutComponent implements OnInit {
     {
       title: 'Interests',
       icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>',
-      desc: 'Angular architecture, reactive state with RxJS, API design, and open-source development',
+      desc: 'Angular architecture, Go backends, spatial data with PostGIS, and self-hosted Kubernetes',
     },
   ];
 

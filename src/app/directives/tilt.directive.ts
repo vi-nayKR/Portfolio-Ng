@@ -1,13 +1,15 @@
-import { Directive, ElementRef, HostListener, Input, Renderer2, signal } from '@angular/core';
+import { Directive, ElementRef, HostListener, Renderer2, input } from '@angular/core';
 
 @Directive({
   selector: '[appTilt]',
   standalone: true,
 })
 export class TiltDirective {
-  @Input() maxTilt = 12; // Maximum tilt rotation in degrees
-  @Input() scale = 1.03;  // Scale on hover
-  @Input() glowColor = ''; // Glow color override (pulls from theme by default)
+  // Signal inputs: read as maxTilt(), and usable inside computed()/effect()
+  // without the lifecycle-hook dance @Input() requires.
+  readonly maxTilt = input(12);   // Maximum tilt rotation in degrees
+  readonly scale = input(1.03);   // Scale on hover
+  readonly glowColor = input('');  // Glow color override (pulls from theme by default)
 
   private isHovered = false;
   private resolvedGlowColor = 'rgba(255, 107, 0, 0.15)';
@@ -24,8 +26,8 @@ export class TiltDirective {
     this.isHovered = true;
 
     // Dynamically retrieve theme accent color rgb string
-    if (this.glowColor) {
-      this.resolvedGlowColor = this.glowColor;
+    if (this.glowColor()) {
+      this.resolvedGlowColor = this.glowColor();
     } else {
       const accentRGB = getComputedStyle(document.documentElement).getPropertyValue('--color-accent-rgb').trim() || '255, 107, 0';
       this.resolvedGlowColor = `rgba(${accentRGB}, 0.15)`;
@@ -49,11 +51,13 @@ export class TiltDirective {
     const py = y / rect.height - 0.5;
 
     // Calculate tilt angles (rotation around X and Y axes)
-    const rX = -(py * this.maxTilt);
-    const rY = px * this.maxTilt;
+    const maxTilt = this.maxTilt();
+    const rX = -(py * maxTilt);
+    const rY = px * maxTilt;
 
     // Apply 3D transform
-    const transformStyle = `perspective(1000px) rotateX(${rX}deg) rotateY(${rY}deg) scale3d(${this.scale}, ${this.scale}, ${this.scale})`;
+    const s = this.scale();
+    const transformStyle = `perspective(1000px) rotateX(${rX}deg) rotateY(${rY}deg) scale3d(${s}, ${s}, ${s})`;
     this.renderer.setStyle(this.el.nativeElement, 'transform', transformStyle);
 
     // Update glow overlay position

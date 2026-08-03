@@ -1,10 +1,11 @@
-import { Component, OnInit, OnDestroy, HostListener, signal } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit, OnDestroy, HostListener, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TiltDirective } from '../../directives/tilt.directive';
 
 @Component({
   selector: 'app-conference',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, TiltDirective],
   template: `
     <section id="conference" class="relative py-16 md:py-28 px-4 md:px-6 overflow-hidden">

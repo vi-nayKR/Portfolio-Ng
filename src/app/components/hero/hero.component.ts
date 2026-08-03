@@ -1,10 +1,11 @@
-import { Component, HostListener, signal, OnDestroy } from '@angular/core';
+import { Component, HostListener, signal, computed, ChangeDetectionStrategy, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TiltDirective } from '../../directives/tilt.directive';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, TiltDirective],
   template: `
     <section
@@ -14,7 +15,7 @@ import { TiltDirective } from '../../directives/tilt.directive';
       <!-- Huge Parallax Background Text -->
       <div
         class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 outline-bg-text select-none pointer-events-none will-change-transform"
-        [style.transform]="'translate3d(calc(-50% + ' + (mouseX() * -0.04) + 'px), calc(-50% + ' + (parallaxY() * -0.22) + 'px), 0)'"
+        [style.transform]="bgTextTransform()"
         style="opacity: 0.25;"
       >
         VINAY KR
@@ -24,12 +25,12 @@ import { TiltDirective } from '../../directives/tilt.directive';
       <div
         class="absolute top-1/4 left-1/4 w-96 h-96 rounded-full pointer-events-none will-change-transform"
         [style.background]="'radial-gradient(circle, rgba(99,102,241,0.12) 0%, transparent 70%)'"
-        [style.transform]="'translate3d(' + (mouseX() * 0.05) + 'px, ' + (parallaxY() * 0.45) + 'px, 0)'"
+        [style.transform]="blobOneTransform()"
       ></div>
       <div
         class="absolute bottom-1/4 right-1/4 w-72 h-72 rounded-full pointer-events-none will-change-transform"
         [style.background]="'radial-gradient(circle, rgba(129,140,248,0.08) 0%, transparent 70%)'"
-        [style.transform]="'translate3d(' + (mouseX() * -0.05) + 'px, ' + (parallaxY() * 0.22) + 'px, 0)'"
+        [style.transform]="blobTwoTransform()"
       ></div>
 
       <!-- Floating Interactive Code Tags -->
@@ -62,14 +63,14 @@ import { TiltDirective } from '../../directives/tilt.directive';
                 [style.transform]="roleVisible() ? 'translateY(0)' : 'translateY(-100%)'"
                 style="transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);"
               >
-                {{ roles[roleIndex()] }}
+                {{ currentRole() }}
               </span>
             </p>
             <p class="text-muted text-lg md:text-xl max-w-2xl mx-auto md:mx-0 leading-relaxed mt-4">
-              Building enterprise <span class="text-frost font-medium">Angular</span> applications and
-              <span class="text-frost font-medium">Node.js / Express</span> REST APIs on
-              <span class="text-frost font-medium">MySQL</span> — owning features end to end, from the UI
-              and API contract through to the database.
+              Full-stack engineer building <span class="text-frost font-medium">Angular</span> frontends and
+              <span class="text-frost font-medium">Node.js</span> and <span class="text-frost font-medium">Go</span>
+              backends for fintech and enterprise platforms — owning features end to end, from UI and API
+              contract through to schema and deployment.
             </p>
           </div>
 
@@ -167,17 +168,32 @@ export class HeroComponent implements OnDestroy {
   hoveredTag = signal<string | null>(null);
 
   // Rotating role title — cycles every 2.6s for a living, animated headline.
-  roles = ['Angular Developer', 'Full Stack Developer', 'TypeScript & RxJS', 'Node.js / Express · MySQL'];
+  roles = ['Full-Stack Engineer', 'Angular + TypeScript', 'Node.js · Express · TypeORM', 'Go · PostgreSQL · Redis'];
   roleIndex = signal(0);
   roleVisible = signal(true);
   private roleTimer?: ReturnType<typeof setInterval>;
 
-  techs = ['Angular', 'TypeScript', 'RxJS', 'Reactive Forms', 'Node.js', 'Express.js', 'TypeORM', 'MySQL', 'Docker', 'Cypress'];
+  // Derived state — cached, and only recomputed when its dependencies change.
+  // Previously these transform strings were concatenated inline in the template,
+  // which rebuilt every string on every change-detection cycle.
+  readonly currentRole = computed(() => this.roles[this.roleIndex()]);
+
+  readonly bgTextTransform = computed(
+    () => `translate3d(calc(-50% + ${this.mouseX() * -0.04}px), calc(-50% + ${this.parallaxY() * -0.22}px), 0)`
+  );
+  readonly blobOneTransform = computed(
+    () => `translate3d(${this.mouseX() * 0.05}px, ${this.parallaxY() * 0.45}px, 0)`
+  );
+  readonly blobTwoTransform = computed(
+    () => `translate3d(${this.mouseX() * -0.05}px, ${this.parallaxY() * 0.22}px, 0)`
+  );
+
+  techs = ['Angular', 'TypeScript', 'RxJS', 'Node.js', 'Express.js', 'Go', 'PostgreSQL', 'Redis', 'Docker', 'Kubernetes'];
 
   floatingTags = [
     { text: 'RxJS', top: '16%', left: '78%', speedX: -0.06, speedY: 0.03, target: 'skills' },
-    { text: 'Express', top: '68%', left: '8%', speedX: 0.04, speedY: -0.05, target: 'skills' },
-    { text: 'MySQL', top: '78%', left: '80%', speedX: -0.05, speedY: 0.03, target: 'skills' },
+    { text: 'Go', top: '68%', left: '8%', speedX: 0.04, speedY: -0.05, target: 'skills' },
+    { text: 'PostgreSQL', top: '78%', left: '80%', speedX: -0.05, speedY: 0.03, target: 'skills' },
     { text: '{...}', top: '42%', left: '86%', speedX: 0.03, speedY: -0.04, target: 'skills' },
     { text: 'Angular', top: '82%', left: '22%', speedX: -0.03, speedY: 0.05, target: 'skills' },
   ];

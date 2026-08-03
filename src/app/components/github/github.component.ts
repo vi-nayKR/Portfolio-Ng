@@ -1,4 +1,4 @@
-import { Component, OnInit, signal, HostListener } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit, signal, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TiltDirective } from '../../directives/tilt.directive';
 
@@ -20,6 +20,7 @@ interface LangStat {
 @Component({
   selector: 'app-github',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, TiltDirective],
   template: `
     <section id="github" class="relative py-16 md:py-32 px-4 md:px-6 overflow-hidden">

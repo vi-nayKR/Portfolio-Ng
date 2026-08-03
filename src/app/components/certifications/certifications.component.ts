@@ -1,10 +1,11 @@
-import { Component, OnInit, signal, HostListener } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit, signal, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TiltDirective } from '../../directives/tilt.directive';
 
 @Component({
   selector: 'app-certifications',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, TiltDirective],
   template: `
     <section id="certifications" class="relative py-16 md:py-32 px-4 md:px-6 overflow-hidden bg-abyss/40">
@@ -200,7 +201,7 @@ export class CertificationsComponent implements OnInit {
       icon: 'linkedin'
     },
     {
-      title: 'Angular Performance Optmixation Techniques',
+      title: 'Angular Performance Optimization Techniques',
       issuer: 'LinkedIn Learning',
       date: '2025',
       image: '/certificates/go_rest_api.png',

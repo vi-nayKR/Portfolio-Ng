@@ -1,4 +1,4 @@
-import { Component, OnInit, signal, HostListener } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit, signal, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TiltDirective } from '../../directives/tilt.directive';
 import { SafeHtmlPipe } from '../../pipes/safe-html.pipe';
@@ -6,6 +6,7 @@ import { SafeHtmlPipe } from '../../pipes/safe-html.pipe';
 @Component({
   selector: 'app-projects',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, TiltDirective, SafeHtmlPipe],
   template: `
     <section id="projects" class="relative py-16 md:py-32 px-4 md:px-6 overflow-hidden">
@@ -97,13 +98,19 @@ import { SafeHtmlPipe } from '../../pipes/safe-html.pipe';
               <!-- Short, concise, clear cut description -->
               <div class="space-y-2 mb-4 text-muted text-sm leading-relaxed max-w-2xl">
                 <p>
-                  <strong class="text-frost">Setu:</strong> A sacred bridge connecting Yajmans and Pandits, designed purely for dharmic connection.
+                  <strong class="text-frost">Setu:</strong> A platform connecting Yajmans and Pandits — Android, iOS, web, and an operator admin panel served by one Go backend.
                 </p>
                 <p>
-                  <strong class="text-frost">Backend:</strong> Building and maintaining a REST API backend (Go/Chi) with a PostgreSQL data layer, Redis-backed caching, and object storage, deployed through a Dockerised CI/CD pipeline to a self-hosted environment.
+                  <strong class="text-frost">Backend:</strong> A Go/chi monolith organised into 21 bounded contexts — roughly 200 endpoints, 50 goose migrations, and 109 tests, with no ORM and parameterized SQL throughout.
                 </p>
                 <p>
-                  <strong class="text-frost">Auth &amp; Contracts:</strong> Designed authentication flows (OTP verification, token-based sessions) and validated API contracts using OpenAPI and Postman.
+                  <strong class="text-frost">Spatial:</strong> PostGIS proximity search using <code class="text-accent font-mono text-xs">ST_DWithin</code> over a GIST-indexed geography column, with distance-ordered keyset pagination for Pandit matching.
+                </p>
+                <p>
+                  <strong class="text-frost">Real-time &amp; Auth:</strong> OTP authentication with JWT RS256 sessions, and WebSocket messaging fanned out across pods over Redis pub/sub so any pod can serve any client.
+                </p>
+                <p>
+                  <strong class="text-frost">Infrastructure:</strong> Self-hosted k3s cluster reconciled by Argo CD — dev/prod namespace isolation, default-deny NetworkPolicies, SealedSecrets, and an outbound-only Cloudflare Tunnel with no inbound port open.
                 </p>
               </div>
 
@@ -201,49 +208,43 @@ export class ProjectsComponent implements OnInit {
   visible = signal(false);
   parallaxOffset = signal(0);
 
-  featuredTags = ['Go', 'Chi', 'PostgreSQL', 'Redis', 'Docker', 'CI/CD', 'OpenAPI', 'Postman', 'Object Storage'];
+  featuredTags = ['Go', 'chi', 'PostgreSQL', 'PostGIS', 'Redis', 'MinIO', 'Docker', 'Kubernetes', 'Argo CD', 'Cloudflare Tunnel', 'OpenAPI'];
 
   projects = [
     {
       title: 'Firewall Policy Frontend',
-      desc: 'Angular rule-configuration screens for transaction risk, transfer, and travel-rule policies, address allow/block lists, and wallet-group rules — built on a shared, rule-type-aware controls component with an approval workflow for policy changes.',
+      desc: 'Angular rule-configuration screens for transaction-risk, transfer, and travel-rule policies at 3–5 screens per family — built on one rule-type-aware controls component with an approval workflow for policy changes.',
       icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>',
-      github: 'https://github.com/vi-nayKR',
       tags: ['Angular', 'TypeScript', 'RxJS', 'Reactive Forms'],
     },
     {
       title: 'Rule-Evaluation Engine',
-      desc: 'Backend firewall rule-evaluation engine and database schema built on a rule → condition → action composition model, with Redis-cached, short-circuit evaluation and TRM Labs integration for real-time address risk scoring.',
+      desc: 'Backend rule-evaluation engine and rule → condition → action schema, with Redis-cached short-circuit evaluation and TRM Labs integration for real-time address risk scoring.',
       icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/></svg>',
-      github: 'https://github.com/vi-nayKR',
       tags: ['Node.js', 'Express.js', 'TypeORM', 'Redis', 'REST API'],
     },
     {
       title: 'Multi-Org RBAC',
-      desc: 'Angular route guards and an HTTP interceptor carrying JWT and organization context, paired with backend middleware for role- and organization-scoped endpoint access.',
+      desc: 'Multi-organization RBAC scoping application access by token and role — Angular route guards, a JWT and organization-context HTTP interceptor, and backend authorization middleware.',
       icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>',
-      github: 'https://github.com/vi-nayKR',
       tags: ['Angular', 'JWT', 'Node.js', 'Express.js'],
     },
     {
-      title: 'Cage Credit Screens',
-      desc: 'Angular screens for a casino financial transaction system — banking and settlement workflows converted into reusable, typed, component-based UI and integrated with C#/.NET Core Web APIs.',
+      title: 'Casino Product Screens',
+      desc: '20 modules and 50+ Angular screens across four product lines — Cage Credit and Servizio finance, Engage player data, and iView displays — integrated with C#/.NET Core Web APIs.',
       icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>',
-      github: 'https://github.com/vi-nayKR',
       tags: ['Angular', 'TypeScript', 'REST API', 'SQL Server'],
     },
     {
-      title: 'iView Real-Time Widgets',
-      desc: 'Slot-machine content and secondary-display widgets driven by RxJS and WebSocket integration — including diagnosing and fixing a subscription-related memory leak that caused device instability after extended use.',
+      title: 'iView Memory-Leak Fix',
+      desc: 'Slot machines hung and auto-restarted after about an hour. Root cause was slideshow DOM recreation per loop plus components never destroyed — fixed with a media cache and ngOnDestroy teardown.',
       icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>',
-      github: 'https://github.com/vi-nayKR',
       tags: ['Angular', 'RxJS', 'WebSockets', 'TypeScript'],
     },
     {
       title: 'Compliance Reporting & E2E',
-      desc: 'Automated audit-data capture via SQL Server database triggers with an Angular reporting UI for generating and reviewing compliance reports, backed by Cypress end-to-end regression coverage across releases.',
+      desc: 'Audit capture automated via SQL Server triggers across 100+ tables with an Angular reporting UI, backed by 750+ Cypress end-to-end tests holding regression coverage through certified releases.',
       icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>',
-      github: 'https://github.com/vi-nayKR',
       tags: ['Cypress', 'Angular', 'SQL Server', 'E2E Testing'],
     },
   ];

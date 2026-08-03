@@ -1,5 +1,19 @@
-import { Component, OnInit, signal, HostListener } from '@angular/core';
+import { Component, OnInit, signal, effect, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+const PDF_THEME_KEY = 'resume-pdf-theme';
+type PdfTheme = 'auto' | 'dark' | 'light';
+
+/** Restores the visitor's saved PDF theme, falling back to 'auto'. */
+function readStoredTheme(): PdfTheme {
+  try {
+    const stored = localStorage.getItem(PDF_THEME_KEY);
+    if (stored === 'auto' || stored === 'dark' || stored === 'light') return stored;
+  } catch {
+    // Storage unavailable — fall through to the default.
+  }
+  return 'auto';
+}
 
 @Component({
   selector: 'app-resume',
@@ -139,7 +153,7 @@ import { CommonModule } from '@angular/common';
               <div class="border-b border-border pb-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
                   <h3 class="text-3xl font-display font-bold text-frost mb-1">Vinay K R</h3>
-                  <p class="text-accent font-semibold text-sm">Angular Developer · TypeScript, RxJS · Node.js/Express · MySQL</p>
+                  <p class="text-accent font-semibold text-sm">Full-Stack Engineer · Angular + TypeScript · Node.js/Go · PostgreSQL</p>
                 </div>
                 <div class="text-xs text-muted space-y-1 font-mono">
                   <p>📍 Bengaluru, India</p>
@@ -154,9 +168,8 @@ import { CommonModule } from '@angular/common';
               <div>
                 <h4 class="text-xs font-mono uppercase tracking-widest text-accent mb-2">Summary</h4>
                 <ul class="text-sm text-muted list-disc list-inside space-y-1.5 leading-relaxed">
-                  <li>Full-stack developer with 3+ years of experience building Angular and TypeScript applications, including reactive forms, RxJS-driven state, and component-based UI for enterprise platforms.</li>
-                  <li>Backend experience extends to REST API design with Node.js, Express, and TypeORM, and relational data modelling with MySQL and SQL Server.</li>
-                  <li>Comfortable owning a feature end to end — from the Angular UI and API contract through to the Postgres database — with additional exposure to an independent Go/PostgreSQL backend project.</li>
+                  <li>Full-stack engineer with 3 years building Angular/TypeScript frontends and Node.js and Go backends for fintech and enterprise platforms.</li>
+                  <li>Owns features end to end — UI, API contract, schema, and deployment.</li>
                 </ul>
               </div>
 
@@ -184,10 +197,10 @@ import { CommonModule } from '@angular/common';
                     </div>
                     <p class="text-xs font-semibold text-accent">Liminal Custody (First Answer India Services Pvt Ltd) · Bengaluru</p>
                     <ul class="text-xs text-muted list-disc list-inside space-y-1 mt-2">
-                      <li>Designed and built the firewall policy engine's Angular frontend — rule configuration screens for transaction risk, transfer, and travel-rule policies, address allow/block lists, and wallet-group rules — using a shared, rule-type-aware controls component and an approval workflow for policy changes.</li>
-                      <li>Implemented the backend firewall rule-evaluation engine and its database schema (a rule → condition → action composition model), with Redis-cached, short-circuit rule evaluation and TRM Labs integration for real-time address risk scoring.</li>
-                      <li>Debugged and hardened the firewall/quorum transaction-approval flow end to end, including fixing a token-scoping security gap in the firewall setup endpoint and an intermittent quorum-configuration lookup failure, and implemented the quorum approve/reject API integration for firewall rule requests.</li>
-                      <li>Contributed to the platform's multi-organization RBAC system — Angular route guards and an HTTP interceptor for JWT and organization context, and backend middleware for role- and organization-scoped endpoint access — with minor work on the webhook retry/delivery pipeline.</li>
+                      <li>Sole engineer on the transaction firewall policy engine, owning Angular configuration screens for transaction-risk, transfer, and travel-rule policies at 3–5 screens per family.</li>
+                      <li>Implemented the backend rule-evaluation engine and rule-condition-action schema, with Redis-cached short-circuit evaluation and TRM Labs integration for real-time address risk scoring.</li>
+                      <li>Built multi-organization RBAC scoping application access by token and role — Angular route guards, a JWT and organization-context HTTP interceptor, and backend authorization middleware.</li>
+                      <li>Integrated quorum approve/reject into policy changes, enforcing customer thresholds such as $500K per 24 hours before high-risk transactions could execute.</li>
                     </ul>
                   </div>
 
@@ -197,12 +210,13 @@ import { CommonModule } from '@angular/common';
                       <span class="text-xs font-mono text-muted">Aug 2023 – Jul 2025</span>
                     </div>
                     <p class="text-xs font-semibold text-accent">Light &amp; Wonder (LNW India Solutions Pvt Ltd) · Bengaluru</p>
+                    <p class="text-xs text-muted italic">Promoted from Associate Software Engineer</p>
                     <ul class="text-xs text-muted list-disc list-inside space-y-1 mt-2">
-                      <li>Modernised and built Angular screens across multiple product lines — including a financial transaction system (Cage Credit), a player-data management platform (Engage), and slot-machine content and widgets (iView) — converting business workflows into reusable, typed, component-based UI.</li>
-                      <li>Used RxJS and WebSocket integration for real-time UI updates on slot-machine secondary displays, and diagnosed and fixed a subscription-related memory leak that was causing device instability after extended use.</li>
-                      <li>Integrated Angular front ends with backend REST APIs, including C#/.NET Core Web APIs for the Cage Credit banking and settlement workflows.</li>
-                      <li>Automated audit-data capture using SQL Server database triggers and built the Angular reporting UI for generating and reviewing compliance reports.</li>
-                      <li>Wrote and maintained Cypress end-to-end tests to support regression coverage across Angular application releases.</li>
+                      <li>Built and modernised 20 modules and 50+ Angular screens across four casino product lines — Cage Credit, Servizio, Engage player data, and iView slot-machine displays.</li>
+                      <li>Fixed a video-memory leak that hung slot machines after about an hour, caching slideshow media and adding ngOnDestroy teardown for out-of-view components.</li>
+                      <li>Wrote and maintained 750+ Cypress end-to-end tests across Servizio and Engage with one other engineer, holding regression coverage through compliance-certified releases.</li>
+                      <li>Automated audit capture using SQL Server triggers across 100+ tables in Servizio and Engage, and built the Angular reporting UI for compliance reports.</li>
+                      <li>Integrated Angular front ends with C#/.NET Core Web APIs, debugging cross-team service defects through to review and approval.</li>
                     </ul>
                   </div>
 
@@ -213,7 +227,7 @@ import { CommonModule } from '@angular/common';
                     </div>
                     <p class="text-xs font-semibold text-accent">Light &amp; Wonder (LNW India Solutions Pvt Ltd) · Bengaluru</p>
                     <ul class="text-xs text-muted list-disc list-inside space-y-1 mt-2">
-                      <li>Completed a 16-week internship in C#/.NET Core and Angular, building a Game Recommendation System with user feedback and rating functionality, with hands-on exposure to REST APIs, SQL Server, and debugging.</li>
+                      <li>Built a Game Recommendation System in C#/.NET Core and Angular over a 16-week internship, covering REST APIs, SQL Server, and debugging.</li>
                     </ul>
                   </div>
                 </div>
@@ -223,11 +237,16 @@ import { CommonModule } from '@angular/common';
               <div>
                 <h4 class="text-xs font-mono uppercase tracking-widest text-accent mb-3">Projects</h4>
                 <div class="border-l-2 border-accent/40 pl-4 space-y-1.5">
-                  <h5 class="text-base font-bold text-frost">Medha — Independent Full-Stack Project</h5>
-                  <p class="text-xs font-semibold text-accent">Go, PostgreSQL, Redis, Docker</p>
+                  <div class="flex justify-between items-baseline flex-wrap gap-2">
+                    <h5 class="text-base font-bold text-frost">Medha — Independent Full-Stack Project</h5>
+                    <span class="text-xs font-mono text-muted">Aug 2025 – Present</span>
+                  </div>
+                  <p class="text-xs font-semibold text-accent">Go · chi · PostgreSQL/PostGIS · Redis · MinIO · Docker · Kubernetes · Cloudflare Tunnel</p>
                   <ul class="text-xs text-muted list-disc list-inside space-y-1 mt-2">
-                    <li>Building and maintaining a REST API backend (Go/Chi) with a PostgreSQL data layer, Redis-backed caching, and object storage, deployed through a Dockerised CI/CD pipeline to a self-hosted environment.</li>
-                    <li>Designed authentication flows (OTP verification, token-based sessions) and validated API contracts using OpenAPI and Postman.</li>
+                    <li>Building a Go/chi REST API deployed end to end on a self-hosted Kubernetes cluster — 21 bounded contexts, ~200 endpoints, 50 migrations, and 109 tests.</li>
+                    <li>Implemented PostGIS proximity search using ST_DWithin over a GIST-indexed geography column, with distance-ordered keyset pagination for location-based matching.</li>
+                    <li>Designed OTP authentication with JWT RS256 sessions and WebSocket messaging fanned out across pods over Redis pub/sub, with MinIO backing media storage.</li>
+                    <li>Deployed through Argo CD GitOps with dev/prod namespace isolation, default-deny NetworkPolicies, SealedSecrets, and an outbound-only Cloudflare Tunnel.</li>
                   </ul>
                 </div>
               </div>
@@ -280,13 +299,28 @@ export class ResumeComponent implements OnInit {
   visible = signal(false);
   parallaxOffset = signal(0);
   activeView = signal<'interactive' | 'pdf'>('interactive');
-  pdfTheme = signal<'auto' | 'dark' | 'light'>('auto');
+  pdfTheme = signal<PdfTheme>(readStoredTheme());
+
+  constructor() {
+    // Persist the reader's PDF theme choice across visits. An effect is the right
+    // tool here because writing to localStorage is a side effect outside Angular —
+    // deriving state would be computed()'s job, not this.
+    effect(() => {
+      const theme = this.pdfTheme();
+      try {
+        localStorage.setItem(PDF_THEME_KEY, theme);
+      } catch {
+        // Storage unavailable (private mode / quota) — the toggle still works in-session.
+      }
+    });
+  }
 
   skillGroups = [
     { label: 'Frontend', items: 'Angular, TypeScript, RxJS, Reactive Forms, HTML5, CSS3' },
-    { label: 'Backend', items: 'Node.js, Express.js, TypeORM, REST API Design' },
-    { label: 'Databases', items: 'MySQL' },
-    { label: 'Testing & Tools', items: 'Git, Cypress, Docker, Postman/OpenAPI, AWS (S3, EC2)' },
+    { label: 'Backend', items: 'Node.js, Express.js, TypeORM, Go (chi), REST API Design, WebSockets' },
+    { label: 'Databases', items: 'PostgreSQL, PostGIS, MySQL, SQL Server, Redis' },
+    { label: 'Infrastructure', items: 'Docker, Kubernetes (k3s), Argo CD, Cloudflare Tunnel, MinIO, AWS S3' },
+    { label: 'Testing & Tools', items: 'Cypress, Git, Postman/OpenAPI' },
   ];
 
   @HostListener('window:scroll')

@@ -1,10 +1,11 @@
-import { Component, OnInit, signal, HostListener } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit, signal, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TiltDirective } from '../../directives/tilt.directive';
 
 @Component({
   selector: 'app-experience',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, TiltDirective],
   template: `
     <section id="experience" class="relative py-16 md:py-32 px-4 md:px-6 overflow-hidden">
@@ -99,6 +100,9 @@ import { TiltDirective } from '../../directives/tilt.directive';
                       <div>
                         <h3 class="font-display font-semibold text-frost text-lg">{{ exp.role }}</h3>
                         <p class="text-accent text-sm font-medium">{{ exp.company }}</p>
+                        @if (exp.note) {
+                          <p class="text-muted text-xs mt-0.5 italic">{{ exp.note }}</p>
+                        }
                       </div>
                       <span class="text-xs text-muted bg-void px-2 py-1 rounded-lg border border-border font-mono whitespace-nowrap">
                         {{ exp.type }}
@@ -153,12 +157,12 @@ export class ExperienceComponent implements OnInit {
       location: 'Bengaluru, India',
       type: 'Full-time',
       highlights: [
-        "Designed and built the firewall policy engine's Angular frontend — rule configuration screens for transaction risk, transfer, and travel-rule policies, address allow/block lists, and wallet-group rules — using a shared, rule-type-aware controls component and an approval workflow for policy changes.",
-        'Implemented the backend firewall rule-evaluation engine and its database schema (a rule → condition → action composition model), with Redis-cached, short-circuit rule evaluation and TRM Labs integration for real-time address risk scoring.',
-        'Debugged and hardened the firewall/quorum transaction-approval flow end to end, including fixing a token-scoping security gap in the firewall setup endpoint and an intermittent quorum-configuration lookup failure, and implemented the quorum approve/reject API integration for firewall rule requests.',
-        "Contributed to the platform's multi-organization RBAC system — Angular route guards and an HTTP interceptor for JWT and organization context, and backend middleware for role- and organization-scoped endpoint access — with minor work on the webhook retry/delivery pipeline.",
+        'Sole engineer on the transaction firewall policy engine, owning Angular configuration screens for transaction-risk, transfer, and travel-rule policies at 3–5 screens per family.',
+        'Implemented the backend rule-evaluation engine and rule-condition-action schema, with Redis-cached short-circuit evaluation and TRM Labs integration for real-time address risk scoring.',
+        'Built multi-organization RBAC scoping application access by token and role — Angular route guards, a JWT and organization-context HTTP interceptor, and backend authorization middleware.',
+        'Integrated quorum approve/reject into policy changes, enforcing customer thresholds such as $500K per 24 hours before high-risk transactions could execute.',
       ],
-      tags: ['Angular', 'TypeScript', 'RxJS', 'Node.js', 'Express.js', 'TypeORM', 'REST API'],
+      tags: ['Angular', 'TypeScript', 'RxJS', 'Node.js', 'Express.js', 'TypeORM', 'Redis'],
       image: 'crypto-custody.png',
       aspect: 'aspect-[1/2]',
       maxWidth: 'max-w-[320px]',
@@ -166,15 +170,16 @@ export class ExperienceComponent implements OnInit {
     {
       role: 'Senior Associate Software Engineer',
       company: 'Light & Wonder (LNW India Solutions Pvt Ltd)',
+      note: 'Promoted from Associate Software Engineer',
       period: 'Aug 2023 – Jul 2025',
       location: 'Bengaluru, India',
       type: 'Full-time',
       highlights: [
-        'Modernised and built Angular screens across multiple product lines — including a financial transaction system (Cage Credit), a player-data management platform (Engage), and slot-machine content and widgets (iView) — converting business workflows into reusable, typed, component-based UI.',
-        'Used RxJS and WebSocket integration for real-time UI updates on slot-machine secondary displays, and diagnosed and fixed a subscription-related memory leak that was causing device instability after extended use.',
-        'Integrated Angular front ends with backend REST APIs, including C#/.NET Core Web APIs for the Cage Credit banking and settlement workflows.',
-        'Automated audit-data capture using SQL Server database triggers and built the Angular reporting UI for generating and reviewing compliance reports.',
-        'Wrote and maintained Cypress end-to-end tests to support regression coverage across Angular application releases.',
+        'Built and modernised 20 modules and 50+ Angular screens across four casino product lines — Cage Credit, Servizio, Engage player data, and iView slot-machine displays.',
+        'Fixed a video-memory leak that hung slot machines after about an hour, caching slideshow media and adding ngOnDestroy teardown for out-of-view components.',
+        'Wrote and maintained 750+ Cypress end-to-end tests across Servizio and Engage with one other engineer, holding regression coverage through compliance-certified releases.',
+        'Automated audit capture using SQL Server triggers across 100+ tables in Servizio and Engage, and built the Angular reporting UI for compliance reports.',
+        'Integrated Angular front ends with C#/.NET Core Web APIs, debugging cross-team service defects through to review and approval.',
       ],
       tags: ['Angular', 'TypeScript', 'RxJS', 'WebSockets', 'REST API', 'SQL Server', 'Cypress'],
       image: 'slot-machine.png',
@@ -188,7 +193,7 @@ export class ExperienceComponent implements OnInit {
       location: 'Bengaluru, India',
       type: 'Internship',
       highlights: [
-        'Completed a 16-week internship in C#/.NET Core and Angular, building a Game Recommendation System with user feedback and rating functionality, with hands-on exposure to REST APIs, SQL Server, and debugging.',
+        'Built a Game Recommendation System in C#/.NET Core and Angular over a 16-week internship, covering REST APIs, SQL Server, and debugging.',
       ],
       tags: ['Angular', 'C# / .NET Core', 'REST API', 'SQL Server'],
       image: 'roulette.png',

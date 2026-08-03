@@ -1,4 +1,4 @@
-import { Component, OnInit, signal, HostListener } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit, signal, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TiltDirective } from '../../directives/tilt.directive';
 import { SafeHtmlPipe } from '../../pipes/safe-html.pipe';
@@ -6,6 +6,7 @@ import { SafeHtmlPipe } from '../../pipes/safe-html.pipe';
 @Component({
   selector: 'app-skills',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, TiltDirective, SafeHtmlPipe],
   template: `
     <section id="skills" class="relative py-16 md:py-32 px-4 md:px-6 overflow-hidden">
@@ -99,8 +100,31 @@ export class SkillsComponent implements OnInit {
         { name: 'Node.js' },
         { name: 'Express.js' },
         { name: 'TypeORM' },
-        { name: 'MySQL' },
+        { name: 'Go (chi)' },
         { name: 'REST API Design' },
+        { name: 'WebSockets' },
+      ],
+    },
+    {
+      name: 'Databases',
+      icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg>',
+      skills: [
+        { name: 'PostgreSQL' },
+        { name: 'PostGIS' },
+        { name: 'Redis' },
+        { name: 'MySQL' },
+        { name: 'SQL Server' },
+      ],
+    },
+    {
+      name: 'Infrastructure',
+      icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12V7a2 2 0 012-2h10a2 2 0 012 2v5M5 12h14M5 12v5a2 2 0 002 2h10a2 2 0 002-2v-5M8 8h.01M8 16h.01"/></svg>',
+      skills: [
+        { name: 'Docker' },
+        { name: 'Kubernetes (k3s)' },
+        { name: 'Argo CD' },
+        { name: 'Cloudflare Tunnel' },
+        { name: 'MinIO' },
       ],
     },
     {
@@ -109,15 +133,14 @@ export class SkillsComponent implements OnInit {
       skills: [
         { name: 'Git' },
         { name: 'Cypress' },
-        { name: 'Docker' },
         { name: 'Postman / OpenAPI' },
-        { name: 'AWS (S3, EC2)' },
+        { name: 'AWS S3' },
       ],
     },
   ];
 
-  // Secondary exposure — kept out of the primary Angular/Node/MySQL categories.
-  extraTags = ['SQL Server', 'Go', 'PostgreSQL', 'Redis', 'WebSockets', 'C# / .NET Core'];
+  // Secondary exposure — read, debugged and integrated against, but not built in day to day.
+  extraTags = ['C# / .NET Core', 'JWT / RS256', 'Goose migrations', 'SealedSecrets', 'Claude Code', 'OpenAI Codex'];
 
   @HostListener('window:scroll')
   onScroll() {
