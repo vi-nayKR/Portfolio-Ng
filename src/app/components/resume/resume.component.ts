@@ -61,6 +61,7 @@ function readStoredTheme(): PdfTheme {
           <div class="flex flex-col sm:flex-row items-center justify-between gap-4 bg-abyss/80 p-3 rounded-xl border border-border">
             <!-- View Mode Switcher -->
             <div class="flex items-center gap-1 bg-void/60 p-1 rounded-lg border border-border/40 w-full sm:w-auto justify-center">
+              @if (pdfAvailable) {
               <button
                 (click)="activeView.set('interactive')"
                 class="px-3.5 py-1.5 rounded-md text-xs font-semibold transition-all duration-200 flex items-center gap-1.5 cursor-pointer"
@@ -87,10 +88,18 @@ function readStoredTheme(): PdfTheme {
                 </svg>
                 PDF Document
               </button>
+              } @else {
+                <span class="px-3.5 py-1.5 text-xs font-semibold text-muted flex items-center gap-1.5">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                  </svg>
+                  Web Resume
+                </span>
+              }
             </div>
 
             <!-- PDF Theme Selector (When in PDF View) -->
-            @if (activeView() === 'pdf') {
+            @if (pdfAvailable && activeView() === 'pdf') {
               <div class="flex items-center gap-2 text-xs text-muted">
                 <span class="font-mono text-[11px] uppercase tracking-wider hidden md:inline">PDF Color Mode:</span>
                 <div class="flex items-center gap-1 bg-void/60 p-1 rounded-lg border border-border/40">
@@ -130,7 +139,7 @@ function readStoredTheme(): PdfTheme {
           </div>
 
           <!-- PDF Document View -->
-          @if (activeView() === 'pdf') {
+          @if (pdfAvailable && activeView() === 'pdf') {
             <div 
               class="relative w-full aspect-[1/1.414] md:h-[750px] md:aspect-auto rounded-xl overflow-hidden border border-border bg-abyss shadow-inner"
               [class.force-dark-pdf]="pdfTheme() === 'dark'"
@@ -266,6 +275,7 @@ function readStoredTheme(): PdfTheme {
           }
 
           <!-- Buttons/Actions -->
+          @if (pdfAvailable) {
           <div class="flex flex-col sm:flex-row items-center justify-center gap-4 border-t border-border/60 pt-6">
             <a
               href="/resume.pdf"
@@ -290,12 +300,18 @@ function readStoredTheme(): PdfTheme {
               Download PDF
             </a>
           </div>
+          }
         </div>
       </div>
     </section>
   `,
 })
 export class ResumeComponent implements OnInit {
+  // Flip to true once public/resume.pdf is regenerated from the current
+  // Vinay_KR_Resume.docx. The previous file was a stale, unrelated draft, so the
+  // PDF view and download actions stay hidden rather than serve wrong content.
+  readonly pdfAvailable = false;
+
   visible = signal(false);
   parallaxOffset = signal(0);
   activeView = signal<'interactive' | 'pdf'>('interactive');
