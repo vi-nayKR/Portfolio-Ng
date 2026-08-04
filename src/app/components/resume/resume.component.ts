@@ -209,7 +209,7 @@ function readStoredTheme(): PdfTheme {
                       <li>Sole engineer on the transaction firewall policy engine, owning Angular configuration screens for transaction-risk, transfer, and travel-rule policies at 3–5 screens per family.</li>
                       <li>Implemented the backend rule-evaluation engine and rule-condition-action schema, with Redis-cached short-circuit evaluation and TRM Labs integration for real-time address risk scoring.</li>
                       <li>Built multi-organization RBAC scoping application access by token and role — Angular route guards, a JWT and organization-context HTTP interceptor, and backend authorization middleware.</li>
-                      <li>Integrated quorum approve/reject into policy changes, enforcing customer thresholds such as $500K per 24 hours before high-risk transactions could execute.</li>
+                      <li>Integrated quorum approve/reject into policy changes, enforcing customer thresholds such as $100K per 24 hours before high-risk transactions could execute.</li>
                     </ul>
                   </div>
 
@@ -307,10 +307,9 @@ function readStoredTheme(): PdfTheme {
   `,
 })
 export class ResumeComponent implements OnInit {
-  // Flip to true once public/resume.pdf is regenerated from the current
-  // Vinay_KR_Resume.docx. The previous file was a stale, unrelated draft, so the
-  // PDF view and download actions stay hidden rather than serve wrong content.
-  readonly pdfAvailable = false;
+  // public/resume.pdf is exported from the current Vinay_Resume.docx.
+  // Flip back to false if the PDF ever falls out of sync with the web resume below.
+  readonly pdfAvailable = true;
 
   visible = signal(false);
   parallaxOffset = signal(0);
@@ -337,6 +336,7 @@ export class ResumeComponent implements OnInit {
     { label: 'Databases', items: 'PostgreSQL, PostGIS, MySQL, SQL Server, Redis' },
     { label: 'Infrastructure', items: 'Docker, Kubernetes (k3s), Argo CD, Cloudflare Tunnel, MinIO, AWS S3' },
     { label: 'Testing & Tools', items: 'Cypress, Git, Postman/OpenAPI' },
+    { label: 'AI-Assisted Development', items: 'Claude Code, OpenAI Codex, Gemini CLI' },
   ];
 
   @HostListener('window:scroll')

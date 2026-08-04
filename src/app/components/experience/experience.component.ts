@@ -160,7 +160,7 @@ export class ExperienceComponent implements OnInit {
         'Sole engineer on the transaction firewall policy engine, owning Angular configuration screens for transaction-risk, transfer, and travel-rule policies at 3–5 screens per family.',
         'Implemented the backend rule-evaluation engine and rule-condition-action schema, with Redis-cached short-circuit evaluation and TRM Labs integration for real-time address risk scoring.',
         'Built multi-organization RBAC scoping application access by token and role — Angular route guards, a JWT and organization-context HTTP interceptor, and backend authorization middleware.',
-        'Integrated quorum approve/reject into policy changes, enforcing customer thresholds such as $500K per 24 hours before high-risk transactions could execute.',
+        'Integrated quorum approve/reject into policy changes, enforcing customer thresholds such as $100K per 24 hours before high-risk transactions could execute.',
       ],
       tags: ['Angular', 'TypeScript', 'RxJS', 'Node.js', 'Express.js', 'TypeORM', 'Redis'],
       image: 'crypto-custody.png',
