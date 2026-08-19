@@ -9,7 +9,7 @@ import { SafeHtmlPipe } from '../../pipes/safe-html.pipe';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, TiltDirective, SafeHtmlPipe],
   template: `
-    <section id="about" class="relative py-16 md:py-32 px-4 md:px-6 overflow-hidden">
+    <section id="about" class="relative py-10 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <!-- Parallax decorative line -->
       <div
         class="absolute left-0 top-0 w-px h-full bg-gradient-to-b from-transparent via-accent/30 to-transparent pointer-events-none"

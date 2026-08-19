@@ -8,7 +8,7 @@ import { TiltDirective } from '../../directives/tilt.directive';
   standalone: true,
   imports: [CommonModule, TiltDirective],
   template: `
-    <section id="major-project" class="relative py-16 md:py-32 px-4 md:px-6 overflow-hidden bg-abyss/40">
+    <section id="major-project" class="relative py-10 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-abyss/40">
       <!-- Background radial glows -->
       <div
         class="absolute inset-0 pointer-events-none"

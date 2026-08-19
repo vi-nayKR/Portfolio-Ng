@@ -10,7 +10,7 @@ import { TiltDirective } from '../../directives/tilt.directive';
   template: `
     <section
       id="home"
-      class="hero-section relative min-h-screen flex flex-col items-center justify-start md:justify-center overflow-hidden px-4 md:px-6 pt-24 pb-12 md:pb-24"
+      class="hero-section relative min-h-[80vh] md:min-h-[85vh] flex flex-col items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8 pt-20 pb-10 md:py-16"
     >
       <!-- Huge Parallax Background Text -->
       <div
@@ -48,7 +48,7 @@ import { TiltDirective } from '../../directives/tilt.directive';
         </div>
       }
 
-      <div class="relative z-10 max-w-6xl w-full mx-auto flex flex-col md:flex-row items-center justify-start md:justify-between gap-8 md:gap-12 flex-none md:flex-1">
+      <div class="relative z-10 max-w-6xl w-full mx-auto flex flex-col md:flex-row items-center justify-start md:justify-between gap-6 md:gap-10 flex-none md:flex-1">
         <!-- Left Column: Name & Title Greeting (55%) -->
         <div class="w-full md:w-[55%] flex flex-col items-center md:items-start text-center md:text-left">
           

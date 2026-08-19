@@ -9,7 +9,7 @@ import { SafeHtmlPipe } from '../../pipes/safe-html.pipe';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, TiltDirective, SafeHtmlPipe],
   template: `
-    <section id="projects" class="relative py-16 md:py-32 px-4 md:px-6 overflow-hidden">
+    <section id="projects" class="relative py-10 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <!-- Parallax background -->
       <div
         class="absolute inset-0 pointer-events-none"
@@ -29,7 +29,7 @@ import { SafeHtmlPipe } from '../../pipes/safe-html.pipe';
 
       <div class="relative z-10 max-w-6xl mx-auto">
         <!-- Header Section -->
-        <div class="text-center mb-16">
+        <div class="text-center mb-8 md:mb-12">
           <p class="text-accent font-mono text-xs tracking-widest uppercase mb-4">Portfolio & Projects</p>
           <h2 class="text-4xl md:text-5xl font-display font-bold text-frost text-balance">
             Featured Work &amp; Creations

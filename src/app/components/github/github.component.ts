@@ -23,7 +23,7 @@ interface LangStat {
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, TiltDirective],
   template: `
-    <section id="github" class="relative py-16 md:py-32 px-4 md:px-6 overflow-hidden">
+    <section id="github" class="relative py-10 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <!-- Outline background Typography -->
       <div
         class="absolute left-[-8%] top-1/3 outline-bg-text select-none pointer-events-none font-black opacity-10 will-change-transform hidden md:block"
@@ -34,7 +34,7 @@ interface LangStat {
 
       <div class="relative z-10 max-w-6xl mx-auto">
         <!-- Header -->
-        <div class="text-center mb-16">
+        <div class="text-center mb-8 md:mb-12">
           <p class="text-accent font-mono text-xs tracking-widest uppercase mb-4">GitHub &amp; Open Source</p>
           <h2 class="text-4xl md:text-5xl font-display font-bold text-frost text-balance">
             A Habit of Building

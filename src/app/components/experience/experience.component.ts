@@ -8,7 +8,7 @@ import { TiltDirective } from '../../directives/tilt.directive';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, TiltDirective],
   template: `
-    <section id="experience" class="relative py-16 md:py-32 px-4 md:px-6 overflow-hidden">
+    <section id="experience" class="relative py-10 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <!-- Parallax background accent -->
       <div
         class="absolute right-0 top-0 w-px h-full bg-gradient-to-b from-transparent via-accent/20 to-transparent pointer-events-none"
@@ -24,7 +24,7 @@ import { TiltDirective } from '../../directives/tilt.directive';
       </div>
 
       <div class="relative z-10 max-w-4xl mx-auto">
-        <div class="text-center mb-16">
+        <div class="text-center mb-8 md:mb-12">
           <p class="text-accent font-mono text-xs tracking-widest uppercase mb-4">Career Journey</p>
           <h2 class="text-4xl md:text-5xl font-display font-bold text-frost text-balance">
             Work Experience
@@ -42,7 +42,7 @@ import { TiltDirective } from '../../directives/tilt.directive';
             [style.height.%]="timelineProgress()"
           ></div>
 
-          <div class="space-y-12">
+          <div class="space-y-8 md:space-y-10">
             @for (exp of experiences; track exp.company + '-' + exp.role; let i = $index) {
               <div
                 class="relative flex flex-col md:flex-row gap-8"

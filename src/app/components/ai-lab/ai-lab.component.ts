@@ -20,7 +20,7 @@ interface AiNodeData {
   standalone: true,
   imports: [CommonModule],
   template: `
-    <section id="ai-lab" class="relative py-16 md:py-32 px-4 md:px-6 overflow-hidden bg-void">
+    <section id="ai-lab" class="relative py-10 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-void">
       <!-- Background glow -->
       <div class="absolute inset-0 pointer-events-none">
         <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full"
@@ -36,7 +36,7 @@ interface AiNodeData {
 
       <div class="relative z-10 max-w-6xl mx-auto">
         <!-- Section Header -->
-        <div class="text-center mb-8 md:mb-12">
+        <div class="text-center mb-6 md:mb-10">
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/30 text-accent font-mono text-xs uppercase tracking-widest mb-3">
             <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
             Interactive 3D Simulation

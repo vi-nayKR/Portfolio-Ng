@@ -20,7 +20,7 @@ function readStoredTheme(): PdfTheme {
   standalone: true,
   imports: [CommonModule],
   template: `
-    <section id="resume" class="relative py-16 md:py-32 px-4 md:px-6 overflow-hidden bg-void">
+    <section id="resume" class="relative py-10 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-void">
       <!-- Parallax background decorative elements -->
       <div
         class="absolute inset-0 pointer-events-none"
@@ -40,7 +40,7 @@ function readStoredTheme(): PdfTheme {
 
       <div class="relative z-10 max-w-5xl mx-auto">
         <!-- Header -->
-        <div class="text-center mb-8 md:mb-12">
+        <div class="text-center mb-6 md:mb-10">
           <p class="text-accent font-mono text-xs tracking-widest uppercase mb-3">Curriculum Vitae</p>
           <h2 class="text-4xl md:text-5xl font-display font-bold text-frost mb-4 text-balance">
             Interactive Resume

@@ -25,7 +25,7 @@ import { TiltDirective } from '../../directives/tilt.directive';
 
       <div class="relative z-10 max-w-6xl mx-auto">
         <!-- Section header -->
-        <div class="text-center mb-12 md:mb-16">
+        <div class="text-center mb-12 md:mb-8 md:mb-12">
           <p class="text-accent font-mono text-xs tracking-widest uppercase mb-4">Peer-Reviewed Research</p>
           <h2 class="text-4xl md:text-5xl font-display font-bold text-frost text-balance mb-6">
             Conference &amp; Paper
