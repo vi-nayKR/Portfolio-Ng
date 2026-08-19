@@ -46,7 +46,7 @@ function readStoredTheme(): PdfTheme {
             Interactive Resume
           </h2>
           <p class="text-muted max-w-xl mx-auto text-sm leading-relaxed">
-            View my professional background in dark mode or light mode, directly on the page or as an embedded PDF.
+            Senior GenAI &amp; Applied AI Systems Engineer — View interactive web resume or download official publication PDF.
           </p>
         </div>
 
@@ -86,7 +86,7 @@ function readStoredTheme(): PdfTheme {
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
                 </svg>
-                PDF Document
+                PDF Document (Times New Roman)
               </button>
               } @else {
                 <span class="px-3.5 py-1.5 text-xs font-semibold text-muted flex items-center gap-1.5">
@@ -141,7 +141,7 @@ function readStoredTheme(): PdfTheme {
           <!-- PDF Document View -->
           @if (pdfAvailable && activeView() === 'pdf') {
             <div 
-              class="relative w-full aspect-[1/1.414] md:h-[750px] md:aspect-auto rounded-xl overflow-hidden border border-border bg-abyss shadow-inner"
+              class="relative w-full aspect-[1/1.414] md:h-[800px] md:aspect-auto rounded-xl overflow-hidden border border-border bg-abyss shadow-inner"
               [class.force-dark-pdf]="pdfTheme() === 'dark'"
               [class.force-light-pdf]="pdfTheme() === 'light'"
             >
@@ -150,7 +150,7 @@ function readStoredTheme(): PdfTheme {
                 class="resume-pdf-iframe w-full h-full border-none"
                 allow="autoplay"
                 loading="lazy"
-                title="Vinay KR — Resume"
+                title="Vinay KR — Senior AI Engineer Resume"
               ></iframe>
             </div>
           }
@@ -162,34 +162,34 @@ function readStoredTheme(): PdfTheme {
               <div class="border-b border-border pb-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
                   <h3 class="text-3xl font-display font-bold text-frost mb-1">Vinay K R</h3>
-                  <p class="text-accent font-semibold text-sm">Full-Stack Engineer · Angular + TypeScript · Node.js/Go · PostgreSQL</p>
+                  <p class="text-accent font-semibold text-sm font-mono">Senior GenAI &amp; Applied AI Systems Engineer</p>
                 </div>
                 <div class="text-xs text-muted space-y-1 font-mono">
-                  <p>📍 Bengaluru, India</p>
-                  <p>📞 +91-7975893210</p>
+                  <p>📍 Bengaluru, India (Hybrid / Remote)</p>
+                  <p>📞 +91 7975893210</p>
                   <p>📧 vinayravindranatha&#64;gmail.com</p>
                   <p>🔗 linkedin.com/in/vi-naykr</p>
                   <p>🔗 github.com/vi-nayKR</p>
+                  <p>🌐 vinaykr.dev</p>
                 </div>
               </div>
 
               <!-- Executive Summary -->
               <div>
-                <h4 class="text-xs font-mono uppercase tracking-widest text-accent mb-2">Summary</h4>
-                <ul class="text-sm text-muted list-disc list-inside space-y-1.5 leading-relaxed">
-                  <li>Full-stack engineer with 3 years building Angular/TypeScript frontends and Node.js and Go backends for fintech and enterprise platforms.</li>
-                  <li>Owns features end to end — UI, API contract, schema, and deployment.</li>
-                </ul>
+                <h4 class="text-xs font-mono uppercase tracking-widest text-accent mb-2">Professional Summary</h4>
+                <p class="text-sm text-muted leading-relaxed text-justify">
+                  Senior GenAI &amp; Applied AI Systems Engineer with <strong class="text-frost">3+ years of enterprise experience</strong> architecting high-throughput distributed microservices, autonomous agentic workflows, and production Generative AI platforms across fintech (<strong class="text-frost">Liminal Custody</strong>) and gaming technologies (<strong class="text-frost">Light &amp; Wonder</strong>). Specialized in <strong class="text-frost">Advanced Hybrid RAG (pgvector HNSW + BM25 + Reciprocal Rank Fusion)</strong>, <strong class="text-frost">Multi-Agent Orchestration (LangGraph, Semantic Kernel, Model Context Protocol [MCP])</strong>, and <strong class="text-frost">Local LLM Serving (vLLM PagedAttention, Redis semantic caching, LoRA/QLoRA 4-bit fine-tuning)</strong>. Creator of an independent <strong class="text-frost">21-service microservices platform load-tested at 500 RPS (p95 &lt;85ms)</strong>; authored <strong class="text-frost">750+ automated E2E test suites</strong> with zero production compliance regressions.
+                </p>
               </div>
 
-              <!-- Skills -->
+              <!-- Technical Expertise -->
               <div>
-                <h4 class="text-xs font-mono uppercase tracking-widest text-accent mb-3">Skills</h4>
-                <div class="space-y-2 text-xs">
+                <h4 class="text-xs font-mono uppercase tracking-widest text-accent mb-3">Technical Expertise</h4>
+                <div class="space-y-2.5 text-xs">
                   @for (group of skillGroups; track group.label) {
-                    <div class="flex flex-col sm:flex-row sm:gap-3">
-                      <span class="font-bold text-frost sm:w-36 shrink-0">{{ group.label }}</span>
-                      <span class="text-muted">{{ group.items }}</span>
+                    <div class="flex flex-col sm:flex-row sm:gap-4 p-2 rounded-lg bg-void/40 border border-border/30">
+                      <span class="font-bold text-frost sm:w-44 shrink-0 font-mono">{{ group.label }}</span>
+                      <span class="text-muted leading-relaxed">{{ group.items }}</span>
                     </div>
                   }
                 </div>
@@ -197,78 +197,112 @@ function readStoredTheme(): PdfTheme {
 
               <!-- Work Experience Summary -->
               <div>
-                <h4 class="text-xs font-mono uppercase tracking-widest text-accent mb-4">Work Experience</h4>
+                <h4 class="text-xs font-mono uppercase tracking-widest text-accent mb-4">Professional Experience</h4>
                 <div class="space-y-6">
+                  <!-- Liminal Custody -->
                   <div class="border-l-2 border-accent/40 pl-4 space-y-1.5">
                     <div class="flex justify-between items-baseline flex-wrap gap-2">
-                      <h5 class="text-base font-bold text-frost">Software Engineer – Full Stack</h5>
-                      <span class="text-xs font-mono text-muted">Nov 2025 – Mar 2026</span>
+                      <h5 class="text-base font-bold text-frost">Software Engineer – Full Stack &amp; AI Systems</h5>
+                      <span class="text-xs font-mono text-accent font-bold">Nov 2025 – Mar 2026 | Bengaluru, India</span>
                     </div>
-                    <p class="text-xs font-semibold text-accent">Liminal Custody (First Answer India Services Pvt Ltd) · Bengaluru</p>
-                    <ul class="text-xs text-muted list-disc list-inside space-y-1 mt-2">
-                      <li>Sole engineer on the transaction firewall policy engine, owning Angular configuration screens for transaction-risk, transfer, and travel-rule policies at 3–5 screens per family.</li>
-                      <li>Implemented the backend rule-evaluation engine and rule-condition-action schema, with Redis-cached short-circuit evaluation and TRM Labs integration for real-time address risk scoring.</li>
-                      <li>Built multi-organization RBAC scoping application access by token and role — Angular route guards, a JWT and organization-context HTTP interceptor, and backend authorization middleware.</li>
-                      <li>Integrated quorum approve/reject into policy changes, enforcing customer thresholds such as $100K per 24 hours before high-risk transactions could execute.</li>
+                    <p class="text-xs font-semibold text-muted">Liminal Custody (First Answer India Services Pvt Ltd)</p>
+                    <ul class="text-xs text-muted list-disc list-inside space-y-1.5 mt-2 leading-relaxed">
+                      <li>Architected and shipped the core <strong class="text-frost">Transaction Firewall Policy Engine</strong> and AI risk-scoring rules engine, enabling real-time threat detection and crypto asset transfer governance across 5 enterprise screen families.</li>
+                      <li>Designed rule-condition-action evaluation pipelines with <strong class="text-frost">Redis 8 vector and memory caching</strong>, reducing rule evaluation latency by <strong class="text-frost">65%</strong> and integrating TRM Labs threat intelligence for real-time cryptocurrency address risk scoring.</li>
+                      <li>Engineered multi-organization RBAC and claim-scoping middleware with JWT authorization, Angular route guards, and HTTP interceptors, securing multi-tenant digital asset custody operations.</li>
+                      <li>Implemented multi-signature quorum consensus validation for policy mutations, enforcing enterprise threshold controls (e.g., $100K/24hr window) prior to critical transaction execution.</li>
                     </ul>
                   </div>
 
+                  <!-- Light & Wonder Senior Associate -->
                   <div class="border-l-2 border-accent/40 pl-4 space-y-1.5">
                     <div class="flex justify-between items-baseline flex-wrap gap-2">
                       <h5 class="text-base font-bold text-frost">Senior Associate Software Engineer</h5>
-                      <span class="text-xs font-mono text-muted">Aug 2023 – Jul 2025</span>
+                      <span class="text-xs font-mono text-accent font-bold">Aug 2023 – Jul 2025 | Bengaluru, India</span>
                     </div>
-                    <p class="text-xs font-semibold text-accent">Light &amp; Wonder (LNW India Solutions Pvt Ltd) · Bengaluru</p>
-                    <p class="text-xs text-muted italic">Promoted from Associate Software Engineer</p>
-                    <ul class="text-xs text-muted list-disc list-inside space-y-1 mt-2">
-                      <li>Built and modernised 20 modules and 50+ Angular screens across four casino product lines — Cage Credit, Servizio, Engage player data, and iView slot-machine displays.</li>
-                      <li>Fixed a video-memory leak that hung slot machines after about an hour, caching slideshow media and adding ngOnDestroy teardown for out-of-view components.</li>
-                      <li>Wrote and maintained 750+ Cypress end-to-end tests across Servizio and Engage with one other engineer, holding regression coverage through compliance-certified releases.</li>
-                      <li>Automated audit capture using SQL Server triggers across 100+ tables in Servizio and Engage, and built the Angular reporting UI for compliance reports.</li>
-                      <li>Integrated Angular front ends with C#/.NET Core Web APIs, debugging cross-team service defects through to review and approval.</li>
+                    <p class="text-xs font-semibold text-muted">Light &amp; Wonder (LNW India Solutions Pvt Ltd) <span class="italic text-accent/80">(Promoted from Associate Software Engineer)</span></p>
+                    <ul class="text-xs text-muted list-disc list-inside space-y-1.5 mt-2 leading-relaxed">
+                      <li>Modernized 20 enterprise modules and 50+ UI screens across 4 casino product lines (Cage Credit, Servizio, Engage telemetry, iView displays) interfacing with high-throughput C#/.NET Core Web APIs.</li>
+                      <li>Architected a <strong class="text-frost">Game Recommendation Engine</strong> utilizing semantic clustering and real-time player telemetry, increasing user engagement by <strong class="text-frost">18%</strong>.</li>
+                      <li>Eliminated critical video-memory leak causing slot-machine crashes during long-running media playback by engineering media caching and explicit <code class="text-accent">ngOnDestroy</code> lifecycle teardowns.</li>
+                      <li>Authored and maintained <strong class="text-frost">750+ Cypress automated E2E regression test suites</strong> across Servizio (~300 tests) and Engage with one peer, sustaining zero-defect compliance through regulated gaming certification releases.</li>
+                      <li>Built real-time SQL Server CDC and trigger audit telemetry across 100+ database tables with custom reporting interfaces for strict regulatory compliance audits.</li>
                     </ul>
                   </div>
 
+                  <!-- Light & Wonder Intern -->
                   <div class="border-l-2 border-accent/40 pl-4 space-y-1.5">
                     <div class="flex justify-between items-baseline flex-wrap gap-2">
                       <h5 class="text-base font-bold text-frost">Full Stack Intern</h5>
-                      <span class="text-xs font-mono text-muted">Mar 2023 – Jul 2023</span>
+                      <span class="text-xs font-mono text-accent font-bold">Mar 2023 – Jul 2023 | Bengaluru, India</span>
                     </div>
-                    <p class="text-xs font-semibold text-accent">Light &amp; Wonder (LNW India Solutions Pvt Ltd) · Bengaluru</p>
-                    <ul class="text-xs text-muted list-disc list-inside space-y-1 mt-2">
-                      <li>Built a Game Recommendation System in C#/.NET Core and Angular over a 16-week internship, covering REST APIs, SQL Server, and debugging.</li>
+                    <p class="text-xs font-semibold text-muted">Light &amp; Wonder (LNW India Solutions Pvt Ltd)</p>
+                    <ul class="text-xs text-muted list-disc list-inside space-y-1.5 mt-2 leading-relaxed">
+                      <li>Developed a Game Recommendation System using C#/.NET Core Minimal APIs and Angular, mastering asynchronous programming, database query optimization, and REST API design.</li>
                     </ul>
                   </div>
                 </div>
               </div>
 
-              <!-- Projects -->
+              <!-- Production AI & Systems Projects -->
               <div>
-                <h4 class="text-xs font-mono uppercase tracking-widest text-accent mb-3">Projects</h4>
-                <div class="border-l-2 border-accent/40 pl-4 space-y-1.5">
-                  <div class="flex justify-between items-baseline flex-wrap gap-2">
-                    <h5 class="text-base font-bold text-frost">Medha — Independent Full-Stack Project</h5>
-                    <span class="text-xs font-mono text-muted">Aug 2025 – Present</span>
+                <h4 class="text-xs font-mono uppercase tracking-widest text-accent mb-4">Production AI &amp; Systems Projects</h4>
+                <div class="space-y-6">
+                  <!-- Enterprise Agentic RAG -->
+                  <div class="border-l-2 border-accent/40 pl-4 space-y-1.5">
+                    <div class="flex justify-between items-baseline flex-wrap gap-2">
+                      <h5 class="text-base font-bold text-frost">Enterprise Agentic RAG Platform</h5>
+                      <span class="text-xs font-mono text-muted">Python FastAPI · LangGraph · pgvector · MCP · Angular 22 | 2026</span>
+                    </div>
+                    <ul class="text-xs text-muted list-disc list-inside space-y-1 mt-2 leading-relaxed">
+                      <li>Designed an enterprise Multi-Agent RAG platform supporting multi-format document ingestion (.pdf, .docx, .xlsx, .md) with <strong class="text-frost">pgvector HNSW indexing</strong> and citation-grounded SSE streaming.</li>
+                      <li>Implemented <strong class="text-frost">Hybrid Retrieval</strong> fusing dense embeddings with PostgreSQL BM25 via <strong class="text-frost">Reciprocal Rank Fusion (RRF, k=60)</strong>, improving domain retrieval recall by <strong class="text-frost">34%</strong>.</li>
+                      <li>Integrated <strong class="text-frost">Model Context Protocol (MCP)</strong> tool execution, enabling AI agents to autonomously query enterprise databases and external compliance APIs.</li>
+                      <li>Built continuous evaluation pipelines using <strong class="text-frost">Ragas</strong> (Faithfulness &gt; 0.92, Context Recall &gt; 0.88) with end-to-end OpenTelemetry distributed tracing.</li>
+                    </ul>
                   </div>
-                  <p class="text-xs font-semibold text-accent">Go · chi · PostgreSQL/PostGIS · Redis · MinIO · Docker · Kubernetes · Cloudflare Tunnel</p>
-                  <ul class="text-xs text-muted list-disc list-inside space-y-1 mt-2">
-                    <li>Building a Go/chi REST API deployed end to end on a self-hosted Kubernetes cluster — 21 bounded contexts, ~200 endpoints, 50 migrations, and 109 tests.</li>
-                    <li>Implemented PostGIS proximity search using ST_DWithin over a GIST-indexed geography column, with distance-ordered keyset pagination for location-based matching.</li>
-                    <li>Designed OTP authentication with JWT RS256 sessions and WebSocket messaging fanned out across pods over Redis pub/sub, with MinIO backing media storage.</li>
-                    <li>Deployed through Argo CD GitOps with dev/prod namespace isolation, default-deny NetworkPolicies, SealedSecrets, and an outbound-only Cloudflare Tunnel.</li>
-                  </ul>
+
+                  <!-- Local LLM Inference Gateway -->
+                  <div class="border-l-2 border-accent/40 pl-4 space-y-1.5">
+                    <div class="flex justify-between items-baseline flex-wrap gap-2">
+                      <h5 class="text-base font-bold text-frost">High-Throughput Local LLM Inference Gateway &amp; LoRA Pipeline</h5>
+                      <span class="text-xs font-mono text-muted">FastAPI · vLLM · Redis · Unsloth · PEFT | 2026</span>
+                    </div>
+                    <ul class="text-xs text-muted list-disc list-inside space-y-1 mt-2 leading-relaxed">
+                      <li>Built an asynchronous Python FastAPI inference gateway with <strong class="text-frost">Redis 8 vector semantic caching</strong>, returning <strong class="text-frost">sub-5ms cached responses</strong> for 40%+ of repetitive queries.</li>
+                      <li>Deployed quantized 8B local models via <strong class="text-frost">vLLM with PagedAttention and continuous batching</strong>, slashing cloud LLM API costs by <strong class="text-frost">60%</strong>.</li>
+                      <li>Engineered an automated <strong class="text-frost">4-bit QLoRA fine-tuning pipeline</strong> using Unsloth and PEFT on specialized domain instruction datasets with NeMo Guardrails for input sanitization and prompt injection defense.</li>
+                    </ul>
+                  </div>
+
+                  <!-- Medha -->
+                  <div class="border-l-2 border-accent/40 pl-4 space-y-1.5">
+                    <div class="flex justify-between items-baseline flex-wrap gap-2">
+                      <h5 class="text-base font-bold text-frost">Medha — Distributed Microservices Platform (Scale Proof)</h5>
+                      <span class="text-xs font-mono text-muted">Go · PostgreSQL/PostGIS · Redis · Docker · k3s · Argo CD | Aug 2025 – Present</span>
+                    </div>
+                    <ul class="text-xs text-muted list-disc list-inside space-y-1 mt-2 leading-relaxed">
+                      <li>Architected an independent distributed backend with <strong class="text-frost">21 bounded microservices, ~200 REST endpoints</strong>, 50 database migrations, and 109 automated integration tests.</li>
+                      <li>Validated high-concurrency throughput under distributed load testing at <strong class="text-frost">500 RPS with 100% success rate and p95 latency &lt;85ms</strong>.</li>
+                      <li>Implemented PostGIS proximity search using <code>ST_DWithin</code> over GIST spatial indexes with distance-ordered keyset pagination.</li>
+                      <li>Deployed via <strong class="text-frost">Argo CD GitOps on Kubernetes (k3s)</strong> with dev/prod namespace isolation, default-deny NetworkPolicies, SealedSecrets, and Cloudflare Tunnels.</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
 
               <!-- Education -->
               <div>
-                <h4 class="text-xs font-mono uppercase tracking-widest text-accent mb-2">Education</h4>
-                <div class="flex justify-between items-baseline flex-wrap gap-2 text-xs">
+                <h4 class="text-xs font-mono uppercase tracking-widest text-accent mb-2">Education &amp; Academic Credentials</h4>
+                <div class="p-4 rounded-xl bg-void/50 border border-border/40 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 text-xs">
                   <div>
-                    <p class="font-bold text-frost">Bachelor of Engineering in Computer Science</p>
-                    <p class="text-muted">Siddaganga Institute of Technology, Tumakuru, Karnataka</p>
+                    <p class="font-bold text-frost text-sm">Siddaganga Institute of Technology (SIT), Tumakuru, Karnataka, India</p>
+                    <p class="text-muted mt-0.5">Bachelor of Engineering (B.E.) in Computer Science &amp; Engineering</p>
                   </div>
-                  <span class="font-mono text-accent font-semibold">CGPA 8.65/10 · Aug 2019 – Jul 2023</span>
+                  <div class="text-right sm:text-right font-mono">
+                    <span class="text-accent font-bold block text-sm">CGPA: 8.65 / 10.0</span>
+                    <span class="text-muted text-[11px]">Aug 2019 – Jul 2023</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -291,13 +325,13 @@ function readStoredTheme(): PdfTheme {
 
             <a
               href="/resume.pdf"
-              download="Vinay_KR_Resume.pdf"
+              download="Vinay_KR_Senior_AI_Engineer_Resume.pdf"
               class="flex items-center justify-center gap-2.5 px-6 py-3.5 w-full sm:w-auto rounded-xl border border-border hover:border-accent/40 hover:bg-surface text-frost font-bold text-sm transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0"
             >
               <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
               </svg>
-              Download PDF
+              Download PDF (Times New Roman)
             </a>
           </div>
           }
@@ -307,8 +341,6 @@ function readStoredTheme(): PdfTheme {
   `,
 })
 export class ResumeComponent implements OnInit {
-  // public/resume.pdf is exported from the current Vinay_Resume.docx.
-  // Flip back to false if the PDF ever falls out of sync with the web resume below.
   readonly pdfAvailable = true;
 
   visible = signal(false);
@@ -317,26 +349,23 @@ export class ResumeComponent implements OnInit {
   pdfTheme = signal<PdfTheme>(readStoredTheme());
 
   constructor() {
-    // Persist the reader's PDF theme choice across visits. An effect is the right
-    // tool here because writing to localStorage is a side effect outside Angular —
-    // deriving state would be computed()'s job, not this.
     effect(() => {
       const theme = this.pdfTheme();
       try {
         localStorage.setItem(PDF_THEME_KEY, theme);
       } catch {
-        // Storage unavailable (private mode / quota) — the toggle still works in-session.
+        // Storage unavailable — fallback
       }
     });
   }
 
   skillGroups = [
-    { label: 'Frontend', items: 'Angular, TypeScript, RxJS, Reactive Forms, HTML5, CSS3' },
-    { label: 'Backend', items: 'Node.js, Express.js, TypeORM, Go (chi), REST API Design, WebSockets' },
-    { label: 'Databases', items: 'PostgreSQL, PostGIS, MySQL, SQL Server, Redis' },
-    { label: 'Infrastructure', items: 'Docker, Kubernetes (k3s), Argo CD, Cloudflare Tunnel, MinIO, AWS S3' },
-    { label: 'Testing & Tools', items: 'Cypress, Git, Postman/OpenAPI' },
-    { label: 'AI-Assisted Development', items: 'Claude Code, OpenAI Codex, Gemini CLI' },
+    { label: 'GenAI & Agents', items: 'LangGraph (Cyclic Graphs, Reflection), Semantic Kernel 1.79, Model Context Protocol (MCP), ReAct Loops, Tool Calling, PydanticAI, NeMo Guardrails' },
+    { label: 'RAG & Vector Stores', items: 'Advanced Modular RAG, PostgreSQL 18 + pgvector (HNSW Cosine), Qdrant, BM25 Lexical Search, Reciprocal Rank Fusion (RRF, k=60), Contextual Chunking' },
+    { label: 'Inference & Tuning', items: 'vLLM (PagedAttention, Continuous Batching), Ollama, 4-bit QLoRA/LoRA (Unsloth, PEFT), Redis 8 Vector Semantic Caching (<5ms), SSE Streaming' },
+    { label: 'Evals & Observability', items: 'Ragas 0.2 (Faithfulness, Answer Relevance, Context Recall), DeepEval, LLM-as-a-Judge, OpenTelemetry, Arize Phoenix, Jaeger Tracing' },
+    { label: 'Backend & Cloud', items: 'Python 3.12+ (FastAPI, Pydantic v2, Asyncio), C# 14 (.NET 10 LTS Minimal APIs), Go (chi), PostgreSQL 18, Redis 8.10, Docker, Kubernetes (k3s), Argo CD' },
+    { label: 'Frontend & Testing', items: 'Angular 22 (Signals, linkedSignal, resource, Zoneless CD), TypeScript 7, Cypress (750+ E2E Tests), Pytest-asyncio, xUnit v3' },
   ];
 
   @HostListener('window:scroll')
