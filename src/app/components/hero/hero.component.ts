@@ -10,7 +10,7 @@ import { TiltDirective } from '../../directives/tilt.directive';
   template: `
     <section
       id="home"
-      class="hero-section relative min-h-[80vh] md:min-h-[85vh] flex flex-col items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8 pt-20 pb-10 md:py-16"
+      class="hero-section relative min-h-[85vh] md:min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8 pt-28 md:pt-36 pb-12 md:pb-20"
     >
       <!-- Huge Parallax Background Text -->
       <div

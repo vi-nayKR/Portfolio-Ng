@@ -82,15 +82,20 @@ body {
   will-change: transform;
 }
 
-/* ── Hero section: guaranteed navbar clearance ─────────────────────────────
-   Using raw CSS (not Tailwind) so the padding is ALWAYS applied on mobile.
-   The fixed navbar is ~64px tall on mobile; we add extra breathing room.     */
+/* ── Hero section: guaranteed navbar clearance across ALL screens & orientations ── */
 #home {
-  padding-top: 6.5rem !important;
+  padding-top: 7rem !important; /* ~112px clearance for fixed top navbar */
+  padding-bottom: 3.5rem !important;
 }
 @media (min-width: 768px) {
   #home {
-    padding-top: 0 !important;
+    padding-top: 8.5rem !important; /* ~136px clearance on tablet & desktop */
+    padding-bottom: 4.5rem !important;
+  }
+}
+@media (min-width: 1280px) {
+  #home {
+    padding-top: 9rem !important; /* ~144px clearance on large screens */
   }
 }
 
