@@ -37,23 +37,17 @@ import { SafeHtmlPipe } from '../../pipes/safe-html.pipe';
           <div [class.animate-slide-in-left]="visible()" [style.opacity]="visible() ? '1' : '0'" style="transition: opacity 0.7s">
             <p class="text-accent font-mono text-xs tracking-widest uppercase mb-4">About Me</p>
             <h2 class="text-4xl md:text-5xl font-display font-bold text-frost mb-6 leading-tight text-balance">
-              Full-stack across
-              <span class="gradient-text">Angular, Node &amp; Go</span>
+              Applied GenAI &amp;
+              <span class="gradient-text">Distributed AI Systems</span>
             </h2>
             <p class="text-muted leading-relaxed mb-4">
-              Three years building <span class="text-frost">Angular</span> and
-              <span class="text-frost">TypeScript</span> frontends for enterprise platforms — 50+ screens across
-              casino finance, player data, and real-time slot-machine displays.
+              3+ years architecting high-throughput distributed microservices, autonomous agentic workflows, and production Generative AI platforms across fintech (<span class="text-frost">Liminal Custody</span>) and gaming technologies (<span class="text-frost">Light &amp; Wonder</span>).
             </p>
             <p class="text-muted leading-relaxed mb-4">
-              Most recently the sole engineer on a transaction firewall policy engine at a digital-asset custody
-              platform, owning both the <span class="text-frost">Angular</span> configuration screens and the
-              <span class="text-frost">Node.js</span> / <span class="text-frost">TypeORM</span> rule-evaluation backend.
+              Specialized in <span class="text-frost">Advanced Hybrid RAG</span> (pgvector HNSW + BM25 Reciprocal Rank Fusion), <span class="text-frost">LangGraph &amp; Semantic Kernel</span> multi-agent state machines, <span class="text-frost">Model Context Protocol (MCP)</span> tool execution, and local <span class="text-frost">vLLM</span> serving with Redis vector semantic caching (&lt;5ms).
             </p>
             <p class="text-muted leading-relaxed mb-6">
-              Outside work I build <span class="text-frost">Medha</span> — a <span class="text-frost">Go</span> REST API
-              on <span class="text-frost">PostgreSQL/PostGIS</span>, deployed to a self-hosted
-              <span class="text-frost">Kubernetes</span> cluster I run myself.
+              Creator of <span class="text-frost">Medha</span> — a 21-service microservices platform load-tested at <span class="text-frost">500 RPS (p95 &lt;85ms)</span> on self-hosted Kubernetes (k3s) via Argo CD GitOps, and author of <span class="text-frost">750+ automated Cypress E2E test suites</span>.
             </p>
 
           </div>

@@ -67,10 +67,7 @@ import { TiltDirective } from '../../directives/tilt.directive';
               </span>
             </p>
             <p class="text-muted text-lg md:text-xl max-w-2xl mx-auto md:mx-0 leading-relaxed mt-4">
-              Full-stack engineer building <span class="text-frost font-medium">Angular</span> frontends and
-              <span class="text-frost font-medium">Node.js</span> and <span class="text-frost font-medium">Go</span>
-              backends for fintech and enterprise platforms — owning features end to end, from UI and API
-              contract through to schema and deployment.
+              Senior GenAI & Applied AI Systems Engineer architecting production <span class="text-frost font-medium">Agentic RAG</span> platforms (pgvector + BM25 RRF), <span class="text-frost font-medium">LangGraph</span> multi-agent state machines, <span class="text-frost font-medium">vLLM</span> local serving with Redis semantic caching, and distributed microservices (Medha — 500 RPS).
             </p>
           </div>
 
@@ -168,7 +165,7 @@ export class HeroComponent implements OnDestroy {
   hoveredTag = signal<string | null>(null);
 
   // Rotating role title — cycles every 2.6s for a living, animated headline.
-  roles = ['Full-Stack Engineer', 'Angular + TypeScript', 'Node.js · Express · TypeORM', 'Go · PostgreSQL · Redis'];
+  roles = ['Senior GenAI Engineer', 'Applied AI Systems Architect', 'LangGraph & Agentic RAG', 'FastAPI · vLLM · pgvector', 'Angular 22 Signals UI'];
   roleIndex = signal(0);
   roleVisible = signal(true);
   private roleTimer?: ReturnType<typeof setInterval>;
@@ -188,14 +185,14 @@ export class HeroComponent implements OnDestroy {
     () => `translate3d(${this.mouseX() * -0.05}px, ${this.parallaxY() * 0.22}px, 0)`
   );
 
-  techs = ['Angular', 'TypeScript', 'RxJS', 'Node.js', 'Express.js', 'Go', 'PostgreSQL', 'Redis', 'Docker', 'Kubernetes'];
+  techs = ['LangGraph', 'Python FastAPI', 'pgvector HNSW', 'vLLM', 'Semantic Kernel', 'Model Context Protocol (MCP)', 'Redis 8', 'Angular 22', 'Docker', 'k3s'];
 
   floatingTags = [
-    { text: 'RxJS', top: '16%', left: '78%', speedX: -0.06, speedY: 0.03, target: 'skills' },
-    { text: 'Go', top: '68%', left: '8%', speedX: 0.04, speedY: -0.05, target: 'skills' },
-    { text: 'PostgreSQL', top: '78%', left: '80%', speedX: -0.05, speedY: 0.03, target: 'skills' },
-    { text: '{...}', top: '42%', left: '86%', speedX: 0.03, speedY: -0.04, target: 'skills' },
-    { text: 'Angular', top: '82%', left: '22%', speedX: -0.03, speedY: 0.05, target: 'skills' },
+    { text: 'LangGraph', top: '16%', left: '78%', speedX: -0.06, speedY: 0.03, target: 'skills' },
+    { text: 'pgvector', top: '68%', left: '8%', speedX: 0.04, speedY: -0.05, target: 'skills' },
+    { text: 'vLLM', top: '78%', left: '80%', speedX: -0.05, speedY: 0.03, target: 'skills' },
+    { text: 'MCP', top: '42%', left: '86%', speedX: 0.03, speedY: -0.04, target: 'skills' },
+    { text: 'Angular 22', top: '82%', left: '22%', speedX: -0.03, speedY: 0.05, target: 'skills' },
   ];
 
   private ticking = false;

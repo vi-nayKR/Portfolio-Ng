@@ -212,40 +212,43 @@ export class ProjectsComponent implements OnInit {
 
   projects = [
     {
-      title: 'Firewall Policy Frontend',
-      desc: 'Angular rule-configuration screens for transaction-risk, transfer, and travel-rule policies at 3–5 screens per family — built on one rule-type-aware controls component with an approval workflow for policy changes.',
+      title: 'Enterprise Agentic RAG Platform',
+      desc: 'Multi-Agent RAG engine indexing complex enterprise documents with pgvector HNSW + BM25 Reciprocal Rank Fusion (RRF, k=60), boosting recall by 34%. Includes Model Context Protocol (MCP) tool execution, automated Ragas evals (0.94 Faithfulness), and SSE streaming with citations.',
+      icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>',
+      tags: ['LangGraph', 'Python FastAPI', 'pgvector', 'BM25 RRF', 'MCP', 'Angular 22'],
+      github: 'https://github.com/vi-nayKR/enterprise-agentic-rag-platform',
+    },
+    {
+      title: 'Local LLM Inference Gateway',
+      desc: 'High-throughput async inference gateway with Redis 8 vector semantic caching (<5ms response for cos-sim >=0.96). Serves quantized 8B models via vLLM with PagedAttention and continuous batching, cutting cloud API spend by 60%, with 4-bit QLoRA fine-tuning on Unsloth.',
+      icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>',
+      tags: ['vLLM', 'FastAPI', 'Redis 8', 'Unsloth LoRA', 'Docker', 'PagedAttention'],
+      github: 'https://github.com/vi-nayKR/local-llm-inference-gateway',
+    },
+    {
+      title: 'Transaction Firewall & AI Risk Engine',
+      desc: 'Liminal Custody transaction firewall policy engine and AI risk-scoring rules schema with Redis-cached short-circuit evaluation, TRM Labs address scoring, and multi-sig quorum approval thresholds ($100K/24hr).',
       icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>',
-      tags: ['Angular', 'TypeScript', 'RxJS', 'Reactive Forms'],
+      tags: ['Angular', 'TypeScript', 'Redis', 'Risk Scoring', 'RBAC'],
     },
     {
-      title: 'Rule-Evaluation Engine',
-      desc: 'Backend rule-evaluation engine and rule → condition → action schema, with Redis-cached short-circuit evaluation and TRM Labs integration for real-time address risk scoring.',
-      icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/></svg>',
-      tags: ['Node.js', 'Express.js', 'TypeORM', 'Redis', 'REST API'],
-    },
-    {
-      title: 'Multi-Org RBAC',
-      desc: 'Multi-organization RBAC scoping application access by token and role — Angular route guards, a JWT and organization-context HTTP interceptor, and backend authorization middleware.',
-      icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>',
-      tags: ['Angular', 'JWT', 'Node.js', 'Express.js'],
-    },
-    {
-      title: 'Casino Product Screens',
-      desc: '20 modules and 50+ Angular screens across four product lines — Cage Credit and Servizio finance, Engage player data, and iView displays — integrated with C#/.NET Core Web APIs.',
+      title: 'Gaming Telemetry & Memory Leak Fix',
+      desc: 'Light & Wonder regulated casino management modules across 4 product lines. Diagnosed and fixed critical video memory leak causing slot machines to freeze after 60 mins by implementing LRU media caching and explicit ngOnDestroy teardowns.',
       icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>',
-      tags: ['Angular', 'TypeScript', 'REST API', 'SQL Server'],
+      tags: ['Angular', 'C# / .NET', 'Telemetry', 'RxJS', 'Memory Profiling'],
     },
     {
-      title: 'iView Memory-Leak Fix',
-      desc: 'Slot machines hung and auto-restarted after about an hour. Root cause was slideshow DOM recreation per loop plus components never destroyed — fixed with a media cache and ngOnDestroy teardown.',
-      icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>',
-      tags: ['Angular', 'RxJS', 'WebSockets', 'TypeScript'],
-    },
-    {
-      title: 'Compliance Reporting & E2E',
-      desc: 'Audit capture automated via SQL Server triggers across 100+ tables with an Angular reporting UI, backed by 750+ Cypress end-to-end tests holding regression coverage through certified releases.',
+      title: '750+ Automated Cypress E2E Suites',
+      desc: 'Automated regression test suites across Servizio and Engage with one peer, sustaining zero compliance regressions through state gaming certification releases with automated SQL Server CDC trigger audit verification.',
       icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>',
-      tags: ['Cypress', 'Angular', 'SQL Server', 'E2E Testing'],
+      tags: ['Cypress', 'E2E Testing', 'SQL Server', 'CI/CD Automation'],
+    },
+    {
+      title: 'FastAPI GenAI Agent Patterns',
+      desc: 'Production boilerplate for asynchronous FastAPI + Pydantic v2 + LangGraph agentic workflows with OpenTelemetry distributed tracing and Redis semantic caching.',
+      icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>',
+      tags: ['Python 3.12', 'FastAPI', 'Pydantic v2', 'OpenTelemetry'],
+      github: 'https://github.com/vi-nayKR/fastapi-genai-agent-patterns',
     },
   ];
 

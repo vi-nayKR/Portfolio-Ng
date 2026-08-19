@@ -82,74 +82,79 @@ export class SkillsComponent implements OnInit {
 
   categories = [
     {
-      name: 'Frontend',
-      icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>',
-      skills: [
-        { name: 'Angular' },
-        { name: 'TypeScript' },
-        { name: 'RxJS' },
-        { name: 'Reactive Forms' },
-        { name: 'HTML5' },
-        { name: 'CSS3' },
-      ],
-    },
-    {
-      name: 'Backend',
-      icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/></svg>',
-      skills: [
-        { name: 'Node.js' },
-        { name: 'Express.js' },
-        { name: 'TypeORM' },
-        { name: 'Go (chi)' },
-        { name: 'REST API Design' },
-        { name: 'WebSockets' },
-      ],
-    },
-    {
-      name: 'Databases',
-      icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg>',
-      skills: [
-        { name: 'PostgreSQL' },
-        { name: 'PostGIS' },
-        { name: 'Redis' },
-        { name: 'MySQL' },
-        { name: 'SQL Server' },
-      ],
-    },
-    {
-      name: 'Infrastructure',
-      icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12V7a2 2 0 012-2h10a2 2 0 012 2v5M5 12h14M5 12v5a2 2 0 002 2h10a2 2 0 002-2v-5M8 8h.01M8 16h.01"/></svg>',
-      skills: [
-        { name: 'Docker' },
-        { name: 'Kubernetes (k3s)' },
-        { name: 'Argo CD' },
-        { name: 'Cloudflare Tunnel' },
-        { name: 'MinIO' },
-        { name: 'AWS S3' },
-      ],
-    },
-    {
-      name: 'Testing & Tools',
-      icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>',
-      skills: [
-        { name: 'Git' },
-        { name: 'Cypress' },
-        { name: 'Postman / OpenAPI' },
-      ],
-    },
-    {
-      name: 'AI-Assisted Development',
+      name: 'GenAI & Agents',
       icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z"/></svg>',
       skills: [
-        { name: 'Claude Code' },
-        { name: 'OpenAI Codex' },
-        { name: 'Gemini CLI' },
+        { name: 'LangGraph' },
+        { name: 'Semantic Kernel' },
+        { name: 'Model Context Protocol (MCP)' },
+        { name: 'ReAct Agent Loops' },
+        { name: 'PydanticAI' },
+        { name: 'Prompt-as-Code' },
+      ],
+    },
+    {
+      name: 'RAG & Vector Search',
+      icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>',
+      skills: [
+        { name: 'pgvector (HNSW)' },
+        { name: 'Reciprocal Rank Fusion (RRF)' },
+        { name: 'BM25 Lexical Search' },
+        { name: 'Qdrant' },
+        { name: 'Contextual Chunking' },
+        { name: 'Cross-Encoders' },
+      ],
+    },
+    {
+      name: 'Inference & Caching',
+      icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>',
+      skills: [
+        { name: 'vLLM (PagedAttention)' },
+        { name: 'Redis 8 Vector Cache' },
+        { name: '4-bit QLoRA' },
+        { name: 'Unsloth & PEFT' },
+        { name: 'Continuous Batching' },
+        { name: 'SSE Token Streaming' },
+      ],
+    },
+    {
+      name: 'Backend & Cloud',
+      icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/></svg>',
+      skills: [
+        { name: 'Python 3.12 (FastAPI)' },
+        { name: 'C# 14 (.NET 10)' },
+        { name: 'Go (chi)' },
+        { name: 'PostgreSQL 18' },
+        { name: 'Docker & k3s' },
+        { name: 'Argo CD GitOps' },
+      ],
+    },
+    {
+      name: 'Frontend & UI',
+      icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>',
+      skills: [
+        { name: 'Angular 22 Signals' },
+        { name: 'TypeScript 7' },
+        { name: 'RxJS & WebSockets' },
+        { name: 'Reactive Forms' },
+        { name: 'Tailwind CSS' },
+      ],
+    },
+    {
+      name: 'Evals & Quality',
+      icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>',
+      skills: [
+        { name: 'Ragas (RAG Triad)' },
+        { name: 'DeepEval' },
+        { name: 'OpenTelemetry' },
+        { name: 'NeMo Guardrails' },
+        { name: 'Cypress (750+ Tests)' },
+        { name: 'Pytest-asyncio' },
       ],
     },
   ];
 
-  // Secondary exposure — read, debugged and integrated against, but not built in day to day.
-  extraTags = ['C# / .NET Core', 'JWT / RS256', 'Goose migrations', 'SealedSecrets'];
+  extraTags = ['NeMo Guardrails', 'PostGIS ST_DWithin', 'SealedSecrets', 'Cloudflare Tunnels', 'LLM-as-a-Judge'];
 
   @HostListener('window:scroll')
   onScroll() {
