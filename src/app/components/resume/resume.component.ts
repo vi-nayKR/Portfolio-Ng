@@ -170,7 +170,7 @@ function readStoredTheme(): PdfTheme {
                   <p>📧 vinayravindranatha&#64;gmail.com</p>
                   <p>🔗 linkedin.com/in/vi-naykr</p>
                   <p>🔗 github.com/vi-nayKR</p>
-                  <p>🌐 vinaykr.dev</p>
+                  <p>🌐 portfolio.vinaykr.workers.dev</p>
                 </div>
               </div>
 
