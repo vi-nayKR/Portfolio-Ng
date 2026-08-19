@@ -139,16 +139,13 @@ export class NavbarComponent implements OnInit {
   navItems = [
     { label: 'About', href: '#about', id: 'about' },
     { label: 'Skills', href: '#skills', id: 'skills' },
-    { label: 'Angular', href: '#angular', id: 'angular' },
+    { label: '3D AI Space', href: '#ai-lab', id: 'ai-lab' },
     { label: 'Experience', href: '#experience', id: 'experience' },
     { label: 'Resume', href: '#resume', id: 'resume' },
     { label: 'Projects', href: '#projects', id: 'projects' },
     { label: 'GitHub', href: '#github', id: 'github' },
     { label: 'Conference', href: '#conference', id: 'conference' },
     { label: 'B.E.', href: '#major-project', id: 'major-project' },
-    { label: 'Certifications', href: '#certifications', id: 'certifications' },
-    // { label: 'Gaming', href: '#gaming', id: 'gaming' },
-    // { label: 'Setup', href: '#setup', id: 'setup' },
     { label: 'Contact', href: '#contact', id: 'contact' },
   ];
 
@@ -198,7 +195,7 @@ export class NavbarComponent implements OnInit {
     if (typeof window === 'undefined' || typeof document === 'undefined') return;
     
     // Add home as a default section at top of page
-    const sections = ['home', 'about', 'skills', 'experience', 'resume', 'projects', 'github', 'conference', 'major-project', 'certifications', 'contact'];
+    const sections = ['home', 'about', 'skills', 'ai-lab', 'experience', 'resume', 'projects', 'github', 'conference', 'major-project', 'contact'];
     let currentActive = 'home';
     
     // Check scroll height to set threshold

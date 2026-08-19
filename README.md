@@ -23,13 +23,12 @@ graph TD
         Navbar -.-> Hero[app-hero / Animated Rotating Titles & Bio]
         Navbar -.-> About[app-about / Systems & AI Background]
         Navbar -.-> Skills[app-skills / 6 Interactive AI Pillars]
-        Navbar -.-> Showcase[app-angular-showcase / Live Reactive Forms & RxJS]
+        Navbar -.-> AiSpace[app-ai-lab / 3D GenAI & Multi-Agent Thought Space Three.js]
         Navbar -.-> Experience[app-experience / Interactive Career Journey Timeline]
         Navbar -.-> Resume[app-resume / Web & PDF Resume with Theme Switcher]
         Navbar -.-> Projects[app-projects / Flagship GenAI & Systems Showcase]
         Navbar -.-> GitHubSec[app-github / Real-Time GitHub Activity & Pinned Repos]
         Navbar -.-> MajorProject[app-major-project / ML Data Visualization Capstone]
-        Navbar -.-> Certs[app-certifications / Verified Credentials & Modal Previews]
         Navbar -.-> Contact[app-contact / Web3Forms Messaging & Socials]
     end
 
@@ -48,8 +47,8 @@ graph TD
 - Built entirely with **Angular Signals (`signal()`, `computed()`, `effect()`)** and standalone components for zero-overhead, fine-grained reactivity.
 - **Zoneless-ready** architecture ensuring optimal frame rates and immediate DOM updates.
 
-### 3. 🧪 Live Reactive Forms Demo (`app-angular-showcase`)
-- Live, interactive form replicating enterprise transaction firewall policy engines (FormBuilder, custom validators, real-time error states, and RxJS stream debouncing).
+### 3. 🤖 3D GenAI & Multi-Agent Thought Space (`app-ai-lab`)
+- Real-time **Three.js WebGL simulation** featuring a 1500+ particle 1536-D latent vector embedding cloud, pgvector HNSW hybrid retrieval, LangGraph multi-agent reflection loops, vLLM continuous batching, and interactive raycasting telemetry.
 
 ### 4. 🎨 Apple-Inspired Glassmorphism & Smooth Inertia
 - Custom frosted glass styling (`backdrop-blur-md`, subtle specular borders, and gradient backdrops).
