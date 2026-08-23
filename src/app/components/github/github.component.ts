@@ -40,8 +40,7 @@ interface LangStat {
             A Habit of Building
           </h2>
           <p class="text-muted text-sm md:text-base mt-4 max-w-2xl mx-auto leading-relaxed">
-            From Solana smart contracts to Vulkan graphics pipelines — my GitHub is where I
-            explore new stacks, break things, and ship them working.
+            From autonomous LangGraph multi-agent supervisors and hybrid RAG to high-throughput Go backends and Kubernetes GitOps — explore my core production repositories.
           </p>
         </div>
 
@@ -188,63 +187,63 @@ export class GithubComponent implements OnInit {
 
   highlights: RepoHighlight[] = [
     {
-      title: 'Rust-Solana-Voting',
-      domain: 'Blockchain / Web3',
-      desc: 'Decentralized voting program on Solana built with the Anchor framework, backed by Rust-native integration tests on the LiteSVM simulator.',
-      url: 'https://github.com/vi-nayKR/Rust-Solana-Voting',
-      lang: 'Rust',
-      langColor: '#dea584',
-    },
-    {
-      title: 'Vulkan-Project',
-      domain: 'Graphics',
-      desc: 'Low-level GPU rendering with the Vulkan API in Rust — graphics pipeline setup, memory management, and performance tuning.',
-      url: 'https://github.com/vi-nayKR/Vulkan-Project',
-      lang: 'Rust',
-      langColor: '#dea584',
-    },
-    {
-      title: 'LLM',
-      domain: 'AI / NLP',
-      desc: 'Large-language-model experiments in Python: fine-tuning techniques, model inference, and text generation with pre-trained models.',
-      url: 'https://github.com/vi-nayKR/LLM',
+      title: 'enterprise-agentic-rag-platform',
+      domain: 'Agentic RAG / MCP',
+      desc: 'Multi-Agent RAG with pgvector HNSW + BM25 RRF (k=60, +34% recall), Anthropic Model Context Protocol (MCP) tools, automated Ragas evals (0.94 Faithfulness), and citation-grounded SSE streaming.',
+      url: 'https://github.com/vi-nayKR/enterprise-agentic-rag-platform',
       lang: 'Python',
       langColor: '#3572A5',
     },
     {
-      title: 'Asset Visualization with ML',
-      domain: 'Machine Learning',
-      desc: 'Time-series analysis of tradable assets with predictive models and rich data visualizations for market trend insights.',
-      url: 'https://github.com/vi-nayKR/Data-Visualization-Of-Time-Tradable-Assets-Using-ML',
+      title: 'llm-observability-eval-platform',
+      domain: 'MLOps / Tracing',
+      desc: 'OpenTelemetry distributed tracing (<0.08ms overhead), automated Ragas Triad evaluation engine, pre-merge CI/CD regression quality gating (ΔScore < -0.05 => Exit 1), and real-time cost drift detection.',
+      url: 'https://github.com/vi-nayKR/llm-observability-eval-platform',
       lang: 'Python',
       langColor: '#3572A5',
     },
     {
-      title: 'Spring Boot Store App',
-      domain: 'Backend',
-      desc: 'E-commerce backend with Java Spring Boot: product catalog, shopping cart, and order management APIs with database integration.',
-      url: 'https://github.com/vi-nayKR/Java-Spring-Boot-Store-App',
-      lang: 'Java',
-      langColor: '#b07219',
+      title: 'multimodal-document-intelligence',
+      domain: 'Vision AI / OCR',
+      desc: 'Spatial layout segmentation, multimodal Vision LLM extraction with 100% strict Pydantic v2 schemas, 2D table matrix reconstruction, and deterministic spatial OCR grounding verification.',
+      url: 'https://github.com/vi-nayKR/multimodal-document-intelligence',
+      lang: 'Python',
+      langColor: '#3572A5',
     },
     {
-      title: 'Expense Tracker',
-      domain: 'Full-Stack',
-      desc: 'Full-stack expense tracker pairing an Angular 18 frontend with an ASP.NET 8 Web API and persistent database storage.',
-      url: 'https://github.com/vi-nayKR/Angular-18-and-Asp.Net-8-Web-Api-Expense-Tracker-Application',
-      lang: 'C#',
-      langColor: '#178600',
+      title: 'local-llm-inference-gateway',
+      domain: 'SLM Serving / Cache',
+      desc: 'High-throughput async inference gateway with sub-5ms Redis 8 vector semantic caching, local SLM serving via vLLM PagedAttention (140+ tok/s), 60% API cost cut, and 4-bit QLoRA on Unsloth.',
+      url: 'https://github.com/vi-nayKR/local-llm-inference-gateway',
+      lang: 'Python',
+      langColor: '#3572A5',
+    },
+    {
+      title: 'medha-platform-api',
+      domain: 'Backend / PostGIS',
+      desc: 'High-throughput Go backend with 21 strictly isolated bounded contexts, PostGIS geospatial proximity engine (ST_DWithin <15ms), Redis pub/sub WebSocket messaging, and 500 RPS scale proof (p95 <85ms).',
+      url: 'https://github.com/vi-nayKR/medha-platform-api',
+      lang: 'Go',
+      langColor: '#00ADD8',
+    },
+    {
+      title: 'medha-platform-infra',
+      domain: 'Kubernetes / GitOps',
+      desc: 'Production self-hosted Kubernetes (k3s) with Argo CD GitOps, zero-inbound-ports perimeter using outbound Cloudflare Zero Trust Tunnels (cloudflared), SealedSecrets, and SeaweedFS S3.',
+      url: 'https://github.com/vi-nayKR/medha-platform-infra',
+      lang: 'HCL / YAML',
+      langColor: '#844FBA',
     },
   ];
 
   domains = [
-    'Web & Frontend',
-    'Backend & APIs',
-    'ML & AI',
-    'Blockchain / Web3',
-    'Graphics (Vulkan)',
-    'Messaging & DevOps',
-    'Data Science',
+    'GenAI & Multi-Agents',
+    'Advanced Hybrid RAG',
+    'Local LLM Serving & vLLM',
+    'MLOps & Observability',
+    'Multimodal Vision AI',
+    'Distributed Go Backends',
+    'Kubernetes & GitOps',
   ];
 
   @HostListener('window:scroll')

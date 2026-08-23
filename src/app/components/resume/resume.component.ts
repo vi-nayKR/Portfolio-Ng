@@ -262,6 +262,32 @@ function readStoredTheme(): PdfTheme {
                     </ul>
                   </div>
 
+                  <!-- LLM Observability & Evaluation Platform -->
+                  <div class="border-l-2 border-accent/40 pl-4 space-y-1.5">
+                    <div class="flex justify-between items-baseline flex-wrap gap-2">
+                      <h5 class="text-base font-bold text-frost">Enterprise LLM Observability &amp; CI/CD Evaluation Platform</h5>
+                      <span class="text-xs font-mono text-muted">FastAPI · OpenTelemetry · OpenInference · Ragas Triad · DeepEval | 2026</span>
+                    </div>
+                    <ul class="text-xs text-muted list-disc list-inside space-y-1 mt-2 leading-relaxed">
+                      <li>Engineered an enterprise MLOps platform capturing hierarchical OpenTelemetry trace spans across multi-agent pipelines with <strong class="text-frost">&lt;0.08ms ingestion overhead</strong> and 20,000+ traces/s throughput.</li>
+                      <li>Automated quality scoring with the <strong class="text-frost">Ragas Evaluation Triad</strong> (Faithfulness, Answer Relevance, Context Precision) benchmarked across production dataset suites.</li>
+                      <li>Implemented an automated <strong class="text-frost">CI/CD regression quality gate</strong> blocking PRs on quality degradation, alongside real-time token cost and tail latency drift tracking.</li>
+                    </ul>
+                  </div>
+
+                  <!-- Multimodal Document Intelligence -->
+                  <div class="border-l-2 border-accent/40 pl-4 space-y-1.5">
+                    <div class="flex justify-between items-baseline flex-wrap gap-2">
+                      <h5 class="text-base font-bold text-frost">Multimodal Document Intelligence &amp; Vision AI Engine</h5>
+                      <span class="text-xs font-mono text-muted">Vision LLM · Pydantic v2 · Docling · Spatial Layout OCR · Grounding Shield | 2026</span>
+                    </div>
+                    <ul class="text-xs text-muted list-disc list-inside space-y-1 mt-2 leading-relaxed">
+                      <li>Architected spatial layout segmentation normalizing multi-page PDF bounding coordinates into unit geometries for multimodal Vision LLMs (GPT-4o Vision, Qwen2-VL).</li>
+                      <li>Enforced <strong class="text-frost">100% strict Pydantic v2 domain schemas</strong> and engineered 2D table matrix reconstruction with automated arithmetic line-item validation.</li>
+                      <li>Eliminated generative hallucinations via a <strong class="text-frost">deterministic spatial OCR grounding shield</strong> cross-verifying extracted tokens against source text with 1.000 precision.</li>
+                    </ul>
+                  </div>
+
                   <!-- Local LLM Inference Gateway -->
                   <div class="border-l-2 border-accent/40 pl-4 space-y-1.5">
                     <div class="flex justify-between items-baseline flex-wrap gap-2">

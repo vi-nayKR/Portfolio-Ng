@@ -219,6 +219,20 @@ export class ProjectsComponent implements OnInit {
       github: 'https://github.com/vi-nayKR/enterprise-agentic-rag-platform',
     },
     {
+      title: 'LLM Observability & Evaluation Platform',
+      desc: 'Enterprise MLOps platform capturing OpenTelemetry distributed trace spans across multi-agent pipelines (<0.08ms overhead), evaluating production quality via the Ragas Triad, pre-merge CI/CD regression gating (ΔScore < -0.05 => Exit 1), and real-time token cost drift detection.',
+      icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 002 2h2a2 2 0 002-2z"/></svg>',
+      tags: ['OpenTelemetry', 'Ragas Triad', 'FastAPI', 'CI/CD Gating', 'DeepEval', 'Jaeger'],
+      github: 'https://github.com/vi-nayKR/llm-observability-eval-platform',
+    },
+    {
+      title: 'Multimodal Document Intelligence',
+      desc: 'Enterprise multimodal document processing engine with spatial layout analysis (Docling & LayoutLMv3 unit coordinates), Vision LLM extraction with 100% strict Pydantic v2 schemas, 2D table matrix reconstruction, and deterministic spatial OCR grounding verification.',
+      icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>',
+      tags: ['Vision LLM', 'Pydantic v2', 'Docling', 'Spatial OCR', 'Table Matrix', 'FastAPI'],
+      github: 'https://github.com/vi-nayKR/multimodal-document-intelligence',
+    },
+    {
       title: 'Local LLM Inference Gateway',
       desc: 'High-throughput async inference gateway with Redis 8 vector semantic caching (<5ms response for cos-sim >=0.96). Serves quantized 8B models via vLLM with PagedAttention and continuous batching, cutting cloud API spend by 60%, with 4-bit QLoRA fine-tuning on Unsloth.',
       icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>',
@@ -226,29 +240,17 @@ export class ProjectsComponent implements OnInit {
       github: 'https://github.com/vi-nayKR/local-llm-inference-gateway',
     },
     {
+      title: 'FastAPI Production Agent Patterns',
+      desc: 'Production reference architecture for stateful LangGraph cyclic supervisors delegating to specialist workers (Research, Coding, Compliance), human-in-the-loop approval interrupts and Command resumes, Redis 8 vector-set caching, and OpenTelemetry distributed tracing.',
+      icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>',
+      tags: ['Python 3.12', 'LangGraph', 'Redis 8', 'OpenTelemetry', 'FastAPI', 'Docker'],
+      github: 'https://github.com/vi-nayKR/fastapi-genai-agent-patterns',
+    },
+    {
       title: 'Transaction Firewall & AI Risk Engine',
       desc: 'Liminal Custody transaction firewall policy engine and AI risk-scoring rules schema with Redis-cached short-circuit evaluation, TRM Labs address scoring, and multi-sig quorum approval thresholds ($100K/24hr).',
       icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>',
       tags: ['Angular', 'TypeScript', 'Redis', 'Risk Scoring', 'RBAC'],
-    },
-    {
-      title: 'Gaming Telemetry & Memory Leak Fix',
-      desc: 'Light & Wonder regulated casino management modules across 4 product lines. Diagnosed and fixed critical video memory leak causing slot machines to freeze after 60 mins by implementing LRU media caching and explicit ngOnDestroy teardowns.',
-      icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>',
-      tags: ['Angular', 'C# / .NET', 'Telemetry', 'RxJS', 'Memory Profiling'],
-    },
-    {
-      title: '750+ Automated Cypress E2E Suites',
-      desc: 'Automated regression test suites across Servizio and Engage with one peer, sustaining zero compliance regressions through state gaming certification releases with automated SQL Server CDC trigger audit verification.',
-      icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>',
-      tags: ['Cypress', 'E2E Testing', 'SQL Server', 'CI/CD Automation'],
-    },
-    {
-      title: 'FastAPI GenAI Agent Patterns',
-      desc: 'Production boilerplate for asynchronous FastAPI + Pydantic v2 + LangGraph agentic workflows with OpenTelemetry distributed tracing and Redis semantic caching.',
-      icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>',
-      tags: ['Python 3.12', 'FastAPI', 'Pydantic v2', 'OpenTelemetry'],
-      github: 'https://github.com/vi-nayKR/fastapi-genai-agent-patterns',
     },
   ];
 
