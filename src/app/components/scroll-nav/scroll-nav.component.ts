@@ -92,7 +92,6 @@ export class ScrollNavComponent implements OnInit, OnDestroy {
     { id: 'ai-lab', label: '3D GenAI Space' },
     { id: 'experience', label: 'Work Experience' },
     { id: 'resume', label: 'Interactive Resume' },
-    { id: 'projects', label: 'Featured Projects' },
     { id: 'github', label: 'GitHub & Open Source' },
     { id: 'conference', label: 'Conference & Paper' },
     { id: 'major-project', label: 'B.E. Major Project' },

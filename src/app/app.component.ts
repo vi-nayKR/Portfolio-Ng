@@ -6,7 +6,6 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { AiLabComponent } from './components/ai-lab/ai-lab.component';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { ResumeComponent } from './components/resume/resume.component';
-import { ProjectsComponent } from './components/projects/projects.component';
 import { GithubComponent } from './components/github/github.component';
 import { MajorProjectComponent } from './components/major-project/major-project.component';
 import { ConferenceComponent } from './components/conference/conference.component';
@@ -27,7 +26,6 @@ import Lenis from 'lenis';
     AiLabComponent,
     ExperienceComponent,
     ResumeComponent,
-    ProjectsComponent,
     GithubComponent,
     MajorProjectComponent,
     ConferenceComponent,
@@ -48,7 +46,6 @@ import Lenis from 'lenis';
         <app-ai-lab />
         <app-experience />
         <app-resume />
-        <app-projects />
         <app-github />
         <app-conference />
         <app-major-project />

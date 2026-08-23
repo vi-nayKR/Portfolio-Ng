@@ -83,7 +83,7 @@ import { TiltDirective } from '../../directives/tilt.directive';
           <!-- CTA Buttons -->
           <div class="flex flex-col sm:flex-row gap-4 mt-10 animate-fade-in-up" style="animation-delay:0.5s; opacity:0;">
             <a
-              href="#projects"
+              href="#github"
               (mousemove)="onMagneticMove($event)"
               (mouseleave)="onMagneticLeave($event)"
               class="magnetic px-8 py-3.5 rounded-xl bg-accent hover:bg-accent-glow text-frost font-semibold text-sm transition-colors duration-200 hover:shadow-xl hover:shadow-accent/25 text-center will-change-transform"
