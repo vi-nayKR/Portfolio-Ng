@@ -140,9 +140,9 @@ import { TiltDirective } from '../../directives/tilt.directive';
               <!-- Photo -->
               <img
                 [src]="photoUrl()"
-                alt="Vinay KR"
-                class="w-full h-full rounded-full object-cover border-2 border-accent/50 shadow-2xl shadow-accent/20"
-                style="object-position: center top;"
+                alt="Vinay KR — V Monogram Emblem"
+                class="w-full h-full rounded-full object-cover border-2 border-accent/50 shadow-2xl shadow-accent/20 transition-transform duration-500 hover:scale-105"
+                style="object-position: center;"
               />
             </div>
           </div>
