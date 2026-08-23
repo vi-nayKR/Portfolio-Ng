@@ -3,7 +3,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { AboutComponent } from './components/about/about.component';
 import { SkillsComponent } from './components/skills/skills.component';
-import { AiLabComponent } from './components/ai-lab/ai-lab.component';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { ResumeComponent } from './components/resume/resume.component';
 import { GithubComponent } from './components/github/github.component';
@@ -23,7 +22,6 @@ import Lenis from 'lenis';
     HeroComponent,
     AboutComponent,
     SkillsComponent,
-    AiLabComponent,
     ExperienceComponent,
     ResumeComponent,
     GithubComponent,
@@ -43,7 +41,6 @@ import Lenis from 'lenis';
         <app-hero />
         <app-about />
         <app-skills />
-        <app-ai-lab />
         <app-experience />
         <app-resume />
         <app-github />
