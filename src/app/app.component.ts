@@ -3,7 +3,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { AboutComponent } from './components/about/about.component';
 import { SkillsComponent } from './components/skills/skills.component';
-import { BlueprintsComponent } from './components/blueprints/blueprints.component';
 import { TerminalComponent } from './components/terminal/terminal.component';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { ResumeComponent } from './components/resume/resume.component';
@@ -24,7 +23,6 @@ import Lenis from 'lenis';
     HeroComponent,
     AboutComponent,
     SkillsComponent,
-    BlueprintsComponent,
     TerminalComponent,
     ExperienceComponent,
     ResumeComponent,
@@ -45,7 +43,6 @@ import Lenis from 'lenis';
         <app-hero />
         <app-about />
         <app-skills />
-        <app-blueprints />
         <app-terminal />
         <app-experience />
         <app-resume />

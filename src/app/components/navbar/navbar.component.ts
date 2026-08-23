@@ -139,7 +139,6 @@ export class NavbarComponent implements OnInit {
   navItems = [
     { label: 'About', href: '#about', id: 'about' },
     { label: 'Skills', href: '#skills', id: 'skills' },
-    { label: 'Blueprints', href: '#blueprints', id: 'blueprints' },
     { label: 'Terminal', href: '#terminal', id: 'terminal' },
     { label: 'Experience', href: '#experience', id: 'experience' },
     { label: 'Resume', href: '#resume', id: 'resume' },
@@ -195,7 +194,7 @@ export class NavbarComponent implements OnInit {
     if (typeof window === 'undefined' || typeof document === 'undefined') return;
     
     // Add home as a default section at top of page
-    const sections = ['home', 'about', 'skills', 'blueprints', 'terminal', 'experience', 'resume', 'github', 'conference', 'major-project', 'contact'];
+    const sections = ['home', 'about', 'skills', 'terminal', 'experience', 'resume', 'github', 'conference', 'major-project', 'contact'];
     let currentActive = 'home';
     
     // Check scroll height to set threshold
