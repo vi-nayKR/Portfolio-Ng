@@ -151,18 +151,18 @@ export class ExperienceComponent implements OnInit {
 
   experiences = [
     {
-      role: 'Software Engineer – Full Stack & AI Systems',
+      role: 'Software Engineer – Full Stack',
       company: 'Liminal Custody (First Answer India Services Pvt Ltd)',
       period: 'Nov 2025 – Mar 2026',
       location: 'Bengaluru, India',
       type: 'Full-time',
       highlights: [
-        'Architected and shipped the core Transaction Firewall Policy Engine and AI risk-scoring rules engine across 5 screen families for crypto transfer governance.',
-        'Engineered rule-condition-action evaluation pipelines with Redis 8 vector and memory caching, reducing latency by 65% with TRM Labs address threat intelligence.',
-        'Built multi-organization RBAC and claim-scoping middleware with JWT authorization, Angular route guards, and HTTP interceptors.',
-        'Implemented multi-signature quorum consensus validation enforcing threshold controls ($100K/24hr window) prior to critical transaction execution.',
+        'Built Angular policy-configuration flows for transaction-risk, transfer, travel-rule, address-list, and wallet-group rules using reusable controls and approval workflows.',
+        'Implemented backend rule-condition-action evaluation and data modeling, with cached short-circuit evaluation and external address-risk integration.',
+        'Debugged authorization and quorum approval flows, including organization-scoped access and approve/reject API integration.',
+        'Contributed to multi-organization RBAC through Angular guards/interceptors and backend role/organization middleware.',
       ],
-      tags: ['Angular 22', 'TypeScript', 'RxJS', 'Node.js', 'Express.js', 'TypeORM', 'Redis 8', 'Risk Engine'],
+      tags: ['Angular', 'TypeScript', 'RxJS', 'Node.js', 'Express.js', 'TypeORM', 'Redis', 'RBAC'],
       image: 'crypto-custody.png',
       aspect: 'aspect-[1/2]',
       maxWidth: 'max-w-[320px]',
@@ -175,11 +175,10 @@ export class ExperienceComponent implements OnInit {
       location: 'Bengaluru, India',
       type: 'Full-time',
       highlights: [
-        'Modernized 20 enterprise modules and 50+ Angular screens across 4 casino product lines interfacing with high-throughput C#/.NET Core Web APIs.',
-        'Architected a Game Recommendation Engine utilizing semantic clustering and real-time player telemetry, increasing user engagement by 18%.',
-        'Eliminated critical video-memory leak causing slot machines to freeze after 60 mins by engineering media caching and ngOnDestroy teardowns.',
-        'Authored and maintained 750+ Cypress automated E2E regression test suites with one peer, sustaining zero compliance defects through state gaming certification.',
-        'Built real-time SQL Server CDC and trigger audit telemetry across 100+ database tables with custom reporting interfaces for strict regulatory audits.',
+        'Built and modernized typed Angular screens across financial, player-management, and device-facing product workflows.',
+        'Used RxJS and WebSocket integrations for real-time UI updates and fixed a subscription/lifecycle leak affecting long-running devices.',
+        'Integrated Angular applications with C#/.NET APIs and SQL Server-backed financial workflows.',
+        'Implemented audit-data capture/reporting workflows and maintained Cypress end-to-end regression coverage.',
       ],
       tags: ['Angular', 'C# / .NET Core', 'RxJS', 'WebSockets', 'SQL Server', 'Cypress', 'Telemetry'],
       image: 'slot-machine.png',
@@ -216,8 +215,6 @@ export class ExperienceComponent implements OnInit {
       const viewportHeight = window.innerHeight;
       
       // Calculate active scrolling within the section
-      const start = rect.top - viewportHeight * 0.4;
-      const end = rect.bottom - viewportHeight * 0.6;
       const total = rect.height;
       const current = viewportHeight * 0.4 - rect.top;
 

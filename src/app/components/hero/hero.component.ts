@@ -67,7 +67,7 @@ import { TiltDirective } from '../../directives/tilt.directive';
               </span>
             </p>
             <p class="text-muted text-lg md:text-xl max-w-2xl mx-auto md:mx-0 leading-relaxed mt-4">
-              Senior GenAI & Applied AI Systems Engineer architecting production <span class="text-frost font-medium">Agentic RAG</span> platforms (pgvector + BM25 RRF), <span class="text-frost font-medium">LangGraph</span> multi-agent state machines, <span class="text-frost font-medium">vLLM</span> local serving with Redis semantic caching, and distributed microservices (Medha — 500 RPS).
+              Software engineer with 3+ years building <span class="text-frost font-medium">Angular and TypeScript</span> products, REST APIs, authorization workflows, real-time interfaces, and data-backed enterprise features. I also build <span class="text-frost font-medium">Go and Python/FastAPI</span> reference projects for reliable APIs and applied-AI workflows.
             </p>
           </div>
 
@@ -165,7 +165,7 @@ export class HeroComponent implements OnDestroy {
   hoveredTag = signal<string | null>(null);
 
   // Rotating role title — cycles every 2.6s for a living, animated headline.
-  roles = ['Senior GenAI Engineer', 'Applied AI Systems Architect', 'LangGraph & Agentic RAG', 'FastAPI · vLLM · pgvector', 'Angular 22 Signals UI'];
+  roles = ['Software Engineer', 'Angular & TypeScript', 'Full-Stack Product Engineering', 'Go & Python Project Builder', 'Applied AI Project Work'];
   roleIndex = signal(0);
   roleVisible = signal(true);
   private roleTimer?: ReturnType<typeof setInterval>;
@@ -185,14 +185,14 @@ export class HeroComponent implements OnDestroy {
     () => `translate3d(${this.mouseX() * -0.05}px, ${this.parallaxY() * 0.22}px, 0)`
   );
 
-  techs = ['LangGraph', 'Python FastAPI', 'pgvector HNSW', 'vLLM', 'Semantic Kernel', 'Model Context Protocol (MCP)', 'Redis 8', 'Angular 22', 'Docker', 'k3s'];
+  techs = ['Angular', 'TypeScript', 'RxJS', 'Node.js', 'C# / .NET', 'SQL', 'Go', 'Python FastAPI', 'Redis', 'Docker'];
 
   floatingTags = [
-    { text: 'LangGraph', top: '16%', left: '78%', speedX: -0.06, speedY: 0.03, target: 'skills' },
-    { text: 'pgvector', top: '68%', left: '8%', speedX: 0.04, speedY: -0.05, target: 'skills' },
-    { text: 'vLLM', top: '78%', left: '80%', speedX: -0.05, speedY: 0.03, target: 'skills' },
-    { text: 'MCP', top: '42%', left: '86%', speedX: 0.03, speedY: -0.04, target: 'skills' },
-    { text: 'Angular 22', top: '82%', left: '22%', speedX: -0.03, speedY: 0.05, target: 'skills' },
+    { text: 'Angular', top: '16%', left: '78%', speedX: -0.06, speedY: 0.03, target: 'skills' },
+    { text: 'TypeScript', top: '68%', left: '8%', speedX: 0.04, speedY: -0.05, target: 'skills' },
+    { text: 'REST APIs', top: '78%', left: '80%', speedX: -0.05, speedY: 0.03, target: 'skills' },
+    { text: 'PostgreSQL', top: '42%', left: '86%', speedX: 0.03, speedY: -0.04, target: 'skills' },
+    { text: 'FastAPI', top: '82%', left: '22%', speedX: -0.03, speedY: 0.05, target: 'skills' },
   ];
 
   private ticking = false;
@@ -256,4 +256,3 @@ export class HeroComponent implements OnDestroy {
     }
   }
 }
-

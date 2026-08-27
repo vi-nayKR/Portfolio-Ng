@@ -89,12 +89,10 @@ export class ScrollNavComponent implements OnInit, OnDestroy {
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About Me' },
     { id: 'skills', label: 'Skills & Technologies' },
-    { id: 'terminal', label: 'Systems CLI Sandbox' },
     { id: 'experience', label: 'Work Experience' },
-    { id: 'resume', label: 'Interactive Resume' },
-    { id: 'github', label: 'GitHub & Open Source' },
-    { id: 'conference', label: 'Conference & Paper' },
-    { id: 'major-project', label: 'B.E. Major Project' },
+    { id: 'resume', label: 'Resume' },
+    { id: 'github', label: 'Selected Projects' },
+    { id: 'conference', label: 'Research Paper' },
     { id: 'contact', label: 'Get in Touch' }
   ];
 
@@ -163,7 +161,9 @@ export class ScrollNavComponent implements OnInit, OnDestroy {
     if (typeof document === 'undefined') return;
     const el = document.getElementById(targetId);
     if (el) {
-      const lenis = (window as any).lenisInstance;
+      const lenis = (window as Window & {
+        lenisInstance?: { scrollTo: (target: Element, options: { offset: number }) => void };
+      }).lenisInstance;
       if (lenis) {
         lenis.scrollTo(el, { offset: -80 });
       } else {

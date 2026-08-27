@@ -1,5 +1,5 @@
-import { Component, ChangeDetectionStrategy, OnInit, signal, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy, Component, HostListener, OnInit, signal } from '@angular/core';
 import { TiltDirective } from '../../directives/tilt.directive';
 
 interface RepoHighlight {
@@ -11,12 +11,6 @@ interface RepoHighlight {
   langColor: string;
 }
 
-interface LangStat {
-  name: string;
-  count: number;
-  color: string;
-}
-
 @Component({
   selector: 'app-github',
   standalone: true,
@@ -24,80 +18,37 @@ interface LangStat {
   imports: [CommonModule, TiltDirective],
   template: `
     <section id="github" class="relative py-10 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      <!-- Outline background Typography -->
       <div
-        class="absolute left-[-8%] top-1/3 outline-bg-text select-none pointer-events-none font-black opacity-10 will-change-transform hidden md:block"
+        class="absolute left-[-8%] top-1/3 outline-bg-text select-none pointer-events-none font-black opacity-10 hidden md:block"
         [style.transform]="'translate3d(' + (parallaxOffset() * -1.0) + 'px, 0, 0)'"
       >
-        OPEN SOURCE
+        PROJECTS
       </div>
 
       <div class="relative z-10 max-w-6xl mx-auto">
-        <!-- Header -->
         <div class="text-center mb-8 md:mb-12">
-          <p class="text-accent font-mono text-xs tracking-widest uppercase mb-4">GitHub &amp; Open Source</p>
+          <p class="text-accent font-mono text-xs tracking-widest uppercase mb-4">Selected source repositories</p>
           <h2 class="text-4xl md:text-5xl font-display font-bold text-frost text-balance">
-            A Habit of Building
+            Built to Be Inspected
           </h2>
-          <p class="text-muted text-sm md:text-base mt-4 max-w-2xl mx-auto leading-relaxed">
-            From autonomous LangGraph multi-agent supervisors and hybrid RAG to high-throughput Go backends and Kubernetes GitOps — explore my core production repositories.
+          <p class="text-muted text-sm md:text-base mt-4 max-w-3xl mx-auto leading-relaxed">
+            The strongest repositories are listed first. Each description separates implemented behavior from planned integrations and avoids synthetic performance claims.
           </p>
         </div>
 
-        <!-- Stat tiles -->
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-          @for (stat of stats; track stat.label; let i = $index) {
-            <div
-              class="p-6 rounded-2xl apple-glass card-hover text-center"
-              [style.opacity]="visible() ? '1' : '0'"
-              [style.transform]="visible() ? 'translateY(0)' : 'translateY(30px)'"
-              [style.transition]="'opacity 0.6s ease ' + (i * 0.1) + 's, transform 0.6s ease ' + (i * 0.1) + 's'"
-            >
-              <p class="text-3xl md:text-4xl font-display font-bold text-accent tabular-nums">
-                {{ animatedValues()[i] }}{{ stat.suffix }}
-              </p>
-              <p class="text-xs font-mono uppercase tracking-widest text-muted mt-2">{{ stat.label }}</p>
-            </div>
-          }
-        </div>
-
-        <!-- Language breakdown -->
         <div
-          class="p-6 md:p-8 rounded-2xl apple-glass mb-8"
+          class="mb-8 p-5 md:p-6 rounded-2xl apple-glass border-l-2 border-accent/50"
           [style.opacity]="visible() ? '1' : '0'"
-          [style.transform]="visible() ? 'translateY(0)' : 'translateY(30px)'"
-          style="transition: opacity 0.6s ease 0.3s, transform 0.6s ease 0.3s"
+          [style.transform]="visible() ? 'translateY(0)' : 'translateY(24px)'"
+          style="transition: opacity 0.6s ease, transform 0.6s ease"
         >
-          <div class="flex items-center justify-between mb-5">
-            <h3 class="font-display font-semibold text-frost">Languages Across Repositories</h3>
-            <span class="text-xs font-mono text-muted hidden sm:inline">by repo count</span>
-          </div>
-
-          <!-- Stacked bar -->
-          <div class="flex h-2.5 rounded-full overflow-hidden bg-void/60 mb-5" role="img" aria-label="Language distribution across repositories">
-            @for (lang of langStats; track lang.name) {
-              <div
-                class="h-full skill-bar"
-                [style.background]="lang.color"
-                [style.width]="visible() ? (lang.count / totalRepos * 100) + '%' : '0%'"
-              ></div>
-            }
-          </div>
-
-          <!-- Legend -->
-          <div class="flex flex-wrap gap-x-6 gap-y-2">
-            @for (lang of langStats; track lang.name) {
-              <div class="flex items-center gap-2 text-xs font-mono">
-                <span class="w-2.5 h-2.5 rounded-full shrink-0" [style.background]="lang.color"></span>
-                <span class="text-frost">{{ lang.name }}</span>
-                <span class="text-muted">{{ lang.count }}</span>
-              </div>
-            }
-          </div>
+          <p class="text-xs font-mono uppercase tracking-widest text-accent mb-2">Evidence policy</p>
+          <p class="text-sm text-muted leading-relaxed">
+            Professional work is described from shipped responsibilities. Repository counts are static evidence. AI repositories that use deterministic stand-ins are labeled as reference implementations or prototypes, not production deployments.
+          </p>
         </div>
 
-        <!-- Repo highlights grid -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+        <div class="grid md:grid-cols-2 gap-6 mb-10">
           @for (repo of highlights; track repo.title; let i = $index) {
             <a
               appTilt
@@ -109,7 +60,7 @@ interface LangStat {
               class="group p-6 rounded-2xl apple-glass card-hover flex flex-col"
               [style.opacity]="visible() ? '1' : '0'"
               [style.transform]="visible() ? 'translateY(0)' : 'translateY(30px)'"
-              [style.transition]="'opacity 0.6s ease ' + (0.35 + i * 0.08) + 's, transform 0.6s ease ' + (0.35 + i * 0.08) + 's'"
+              [style.transition]="'opacity 0.6s ease ' + (0.12 + i * 0.08) + 's, transform 0.6s ease ' + (0.12 + i * 0.08) + 's'"
             >
               <div class="flex items-start justify-between mb-4">
                 <span class="text-xs font-mono text-accent bg-accent/10 px-2 py-1 rounded">{{ repo.domain }}</span>
@@ -129,18 +80,12 @@ interface LangStat {
           }
         </div>
 
-        <!-- Domain breadth chips -->
-        <div
-          class="flex flex-wrap justify-center gap-2 mb-12"
-          [style.opacity]="visible() ? '1' : '0'"
-          style="transition: opacity 0.8s ease 0.7s"
-        >
+        <div class="flex flex-wrap justify-center gap-2 mb-10">
           @for (domain of domains; track domain) {
             <span class="px-3 py-1.5 rounded-full text-xs font-mono bg-void border border-accent/30 text-accent">{{ domain }}</span>
           }
         </div>
 
-        <!-- CTA -->
         <div class="text-center">
           <a
             href="https://github.com/vi-nayKR?tab=repositories"
@@ -151,10 +96,7 @@ interface LangStat {
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
             </svg>
-            Explore all 39 repositories
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-            </svg>
+            Explore the Source
           </a>
         </div>
       </div>
@@ -164,86 +106,49 @@ interface LangStat {
 export class GithubComponent implements OnInit {
   visible = signal(false);
   parallaxOffset = signal(0);
-  animatedValues = signal<number[]>([0, 0, 0, 0]);
-
-  totalRepos = 39;
-
-  stats = [
-    { label: 'Public Repositories', value: 39, suffix: '' },
-    { label: 'Languages Used', value: 8, suffix: '+' },
-    { label: 'Organizations', value: 3, suffix: '' },
-    { label: 'Tech Domains', value: 7, suffix: '' },
-  ];
-
-  langStats: LangStat[] = [
-    { name: 'TypeScript', count: 9, color: '#3178c6' },
-    { name: 'Python', count: 5, color: '#3572A5' },
-    { name: 'C#', count: 5, color: '#178600' },
-    { name: 'Rust', count: 4, color: '#dea584' },
-    { name: 'Java', count: 4, color: '#b07219' },
-    { name: 'JavaScript', count: 4, color: '#f1e05a' },
-    { name: 'Other', count: 8, color: '#8e93a0' },
-  ];
 
   highlights: RepoHighlight[] = [
     {
-      title: 'enterprise-agentic-rag-platform',
-      domain: 'Agentic RAG / MCP',
-      desc: 'Multi-Agent RAG with pgvector HNSW + BM25 RRF (k=60, +34% recall), Anthropic Model Context Protocol (MCP) tools, automated Ragas evals (0.94 Faithfulness), and citation-grounded SSE streaming.',
-      url: 'https://github.com/vi-nayKR/enterprise-agentic-rag-platform',
-      lang: 'Python',
-      langColor: '#3572A5',
-    },
-    {
-      title: 'llm-observability-eval-platform',
-      domain: 'MLOps / Tracing',
-      desc: 'OpenTelemetry distributed tracing (<0.08ms overhead), automated Ragas Triad evaluation engine, pre-merge CI/CD regression quality gating (ΔScore < -0.05 => Exit 1), and real-time cost drift detection.',
-      url: 'https://github.com/vi-nayKR/llm-observability-eval-platform',
-      lang: 'Python',
-      langColor: '#3572A5',
-    },
-    {
-      title: 'multimodal-document-intelligence',
-      domain: 'Vision AI / OCR',
-      desc: 'Spatial layout segmentation, multimodal Vision LLM extraction with 100% strict Pydantic v2 schemas, 2D table matrix reconstruction, and deterministic spatial OCR grounding verification.',
-      url: 'https://github.com/vi-nayKR/multimodal-document-intelligence',
-      lang: 'Python',
-      langColor: '#3572A5',
-    },
-    {
-      title: 'local-llm-inference-gateway',
-      domain: 'SLM Serving / Cache',
-      desc: 'High-throughput async inference gateway with sub-5ms Redis 8 vector semantic caching, local SLM serving via vLLM PagedAttention (140+ tok/s), 60% API cost cut, and 4-bit QLoRA on Unsloth.',
-      url: 'https://github.com/vi-nayKR/local-llm-inference-gateway',
-      lang: 'Python',
-      langColor: '#3572A5',
-    },
-    {
       title: 'medha-platform-api',
-      domain: 'Backend / PostGIS',
-      desc: 'High-throughput Go backend with 21 strictly isolated bounded contexts, PostGIS geospatial proximity engine (ST_DWithin <15ms), Redis pub/sub WebSocket messaging, and 500 RPS scale proof (p95 <85ms).',
+      domain: 'Backend platform',
+      desc: 'A domain-driven Go modular monolith with 21 top-level internal packages, PostgreSQL/PostGIS, Redis-backed real-time communication, S3-compatible storage, 50 versioned SQL migrations, 109 Go test functions, and roughly 200 route registrations in the public snapshot.',
       url: 'https://github.com/vi-nayKR/medha-platform-api',
       lang: 'Go',
       langColor: '#00ADD8',
     },
     {
+      title: 'fastapi-genai-agent-patterns',
+      domain: 'Reference service',
+      desc: 'A typed FastAPI and LangGraph service for agent routing, human-approval checkpoints, SSE event streaming, Redis cache interfaces, and OpenTelemetry instrumentation. Deterministic workers and embeddings keep the local test suite reproducible.',
+      url: 'https://github.com/vi-nayKR/fastapi-genai-agent-patterns',
+      lang: 'Python',
+      langColor: '#3572A5',
+    },
+    {
       title: 'medha-platform-infra',
-      domain: 'Kubernetes / GitOps',
-      desc: 'Production self-hosted Kubernetes (k3s) with Argo CD GitOps, zero-inbound-ports perimeter using outbound Cloudflare Zero Trust Tunnels (cloudflared), SealedSecrets, and SeaweedFS S3.',
+      domain: 'Operations',
+      desc: 'Deployment and operations material for a two-node, systemd-managed Docker runtime: service units, firewall policy, networking, backups, secrets, and Cloudflare tunnels. Historical Kubernetes assets remain clearly separated as prior design material.',
       url: 'https://github.com/vi-nayKR/medha-platform-infra',
-      lang: 'HCL / YAML',
-      langColor: '#844FBA',
+      lang: 'Shell / YAML',
+      langColor: '#89e051',
+    },
+    {
+      title: 'Portfolio-Ng',
+      domain: 'Frontend',
+      desc: 'This responsive portfolio: Angular standalone components and signals, TypeScript, Tailwind CSS, Vite, accessible navigation, smooth scrolling, and a one-page ATS resume served from the same source tree.',
+      url: 'https://github.com/vi-nayKR/Portfolio-Ng',
+      lang: 'TypeScript',
+      langColor: '#3178c6',
     },
   ];
 
   domains = [
-    'GenAI & Multi-Agents',
-    'Advanced Hybrid RAG',
-    'Local LLM Serving & vLLM',
-    'MLOps & Observability',
-    'Multimodal Vision AI',
-    'Distributed Go Backends',
-    'Kubernetes & GitOps',
+    'Angular & TypeScript',
+    'REST API Design',
+    'Authentication & RBAC',
+    'Go & PostgreSQL/PostGIS',
+    'Python & FastAPI',
+    'Testing & Observability',
   ];
 
   @HostListener('window:scroll')
@@ -256,27 +161,14 @@ export class GithubComponent implements OnInit {
       ([entry]) => {
         if (entry.isIntersecting) {
           this.visible.set(true);
-          this.startCountUp();
           observer.disconnect();
         }
       },
       { threshold: 0.1 }
     );
     setTimeout(() => {
-      const el = document.querySelector('#github');
-      if (el) observer.observe(el);
+      const element = document.querySelector('#github');
+      if (element) observer.observe(element);
     }, 100);
-  }
-
-  private startCountUp() {
-    const duration = 1200;
-    const start = performance.now();
-    const tick = (now: number) => {
-      const t = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - t, 3);
-      this.animatedValues.set(this.stats.map(s => Math.round(s.value * eased)));
-      if (t < 1) requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
   }
 }

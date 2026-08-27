@@ -37,17 +37,17 @@ import { SafeHtmlPipe } from '../../pipes/safe-html.pipe';
           <div [class.animate-slide-in-left]="visible()" [style.opacity]="visible() ? '1' : '0'" style="transition: opacity 0.7s">
             <p class="text-accent font-mono text-xs tracking-widest uppercase mb-4">About Me</p>
             <h2 class="text-4xl md:text-5xl font-display font-bold text-frost mb-6 leading-tight text-balance">
-              Applied GenAI &amp;
-              <span class="gradient-text">Distributed AI Systems</span>
+              Product Engineering &amp;
+              <span class="gradient-text">Reliable Backends</span>
             </h2>
             <p class="text-muted leading-relaxed mb-4">
-              3+ years architecting high-throughput distributed microservices, autonomous agentic workflows, and production Generative AI platforms across fintech (<span class="text-frost">Liminal Custody</span>) and gaming technologies (<span class="text-frost">Light &amp; Wonder</span>).
+              I have 3+ years of enterprise software experience across fintech (<span class="text-frost">Liminal Custody</span>) and regulated gaming (<span class="text-frost">Light &amp; Wonder</span>), primarily delivering Angular/TypeScript applications and end-to-end product features.
             </p>
             <p class="text-muted leading-relaxed mb-4">
-              Specialized in <span class="text-frost">Advanced Hybrid RAG</span> (pgvector HNSW + BM25 Reciprocal Rank Fusion), <span class="text-frost">LangGraph &amp; Semantic Kernel</span> multi-agent state machines, <span class="text-frost">Model Context Protocol (MCP)</span> tool execution, and local <span class="text-frost">vLLM</span> serving with Redis vector semantic caching (&lt;5ms).
+              My production work includes policy configuration, rule evaluation, organization-scoped authorization, approval flows, real-time RxJS/WebSocket interfaces, C#/.NET API integration, SQL-backed workflows, debugging, and Cypress regression coverage.
             </p>
             <p class="text-muted leading-relaxed mb-6">
-              Creator of <span class="text-frost">Medha</span> — a 21-service microservices platform load-tested at <span class="text-frost">500 RPS (p95 &lt;85ms)</span> on self-hosted Kubernetes (k3s) via Argo CD GitOps, and author of <span class="text-frost">750+ automated Cypress E2E test suites</span>.
+              Outside work, I am strengthening backend and applied-AI depth through a large <span class="text-frost">Go/PostgreSQL platform</span> and reproducible <span class="text-frost">Python/FastAPI agent-pattern</span> projects. These are presented as independent projects—not as production employment claims.
             </p>
 
           </div>
@@ -123,7 +123,7 @@ export class AboutComponent implements OnInit {
     {
       title: 'Interests',
       icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>',
-      desc: 'Angular architecture, Go backends, spatial data with PostGIS, and self-hosted Kubernetes',
+      desc: 'Angular architecture, API design, Go backends, PostGIS, testing, and applied-AI integration',
     },
   ];
 
