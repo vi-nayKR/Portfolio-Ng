@@ -60,7 +60,7 @@ import { CommonModule } from '@angular/common';
           href="#contact"
           class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-accent hover:bg-accent-glow text-frost text-sm font-medium transition-all duration-200 hover:shadow-lg hover:shadow-accent/25"
         >
-          Hire Me
+          Let&apos;s Cook
         </a>
       </div>
 
@@ -70,7 +70,7 @@ import { CommonModule } from '@angular/common';
           href="#contact"
           class="px-3.5 py-1.5 rounded-xl bg-accent hover:bg-accent-glow text-frost text-xs font-bold transition-all duration-200 shadow-md shadow-accent/10 hover:shadow-lg hover:shadow-accent/20"
         >
-          Hire Me
+          Let&apos;s Cook
         </a>
         <button
           (click)="toggleTheme()"
@@ -123,7 +123,7 @@ import { CommonModule } from '@angular/common';
             (click)="menuOpen.set(false)"
             class="w-full text-center py-3 bg-accent hover:bg-accent-glow text-frost font-bold text-sm rounded-xl mt-2 transition-all duration-200 hover:shadow-lg hover:shadow-accent/25"
           >
-            Hire Me
+            Let&apos;s Cook
           </a>
         </div>
       }
@@ -140,7 +140,7 @@ export class NavbarComponent implements OnInit {
     { label: 'About', href: '#about', id: 'about' },
     { label: 'Skills', href: '#skills', id: 'skills' },
     { label: 'Experience', href: '#experience', id: 'experience' },
-    { label: 'Resumes', href: '#resume', id: 'resume' },
+    { label: 'Resume', href: '#resume', id: 'resume' },
     { label: 'Projects', href: '#github', id: 'github' },
     { label: 'Research', href: '#conference', id: 'conference' },
     { label: 'Contact', href: '#contact', id: 'contact' },

@@ -27,12 +27,12 @@ import { DomSanitizer } from '@angular/platform-browser';
 
       <div class="relative z-10 max-w-6xl mx-auto">
         <div class="text-center mb-8 md:mb-12">
-          <p class="text-accent font-mono text-xs tracking-widest uppercase mb-3">Role-specific resumes</p>
+          <p class="text-accent font-mono text-xs tracking-widest uppercase mb-3">Professional profile</p>
           <h2 class="text-4xl md:text-5xl font-display font-bold text-frost mb-4 text-balance">
-            Choose Your Lens
+            Experience, Clearly Stated
           </h2>
           <p class="text-muted max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
-            The same engineering story, tuned for full-stack product, applied AI, or reliability and platform conversations.
+            A focused account of my experience and the project evidence most relevant to this conversation.
           </p>
         </div>
 
@@ -46,19 +46,19 @@ import { DomSanitizer } from '@angular/platform-browser';
             <div>
               <p class="text-xs font-mono uppercase tracking-widest text-accent mb-3">Professional core</p>
               <p class="text-muted leading-relaxed">
-                Nearly three years delivering Angular/TypeScript applications and end-to-end features across fintech and regulated gaming, with REST APIs, Node.js, C#/.NET, SQL, Redis, WebSockets, authorization, Cypress, and production debugging.
+                {{ selectedResume().professionalCore }}
               </p>
             </div>
 
             <div>
-              <p class="text-xs font-mono uppercase tracking-widest text-accent mb-3">Connected project direction</p>
+              <p class="text-xs font-mono uppercase tracking-widest text-accent mb-3">Relevant engineering evidence</p>
               <p class="text-muted leading-relaxed">
-                Go/PostgreSQL product systems, Python/FastAPI AI patterns, and evidence-led Linux, Kubernetes, Terraform, SLO, and incident-response labs.
+                {{ selectedResume().projectEvidence }}
               </p>
             </div>
 
             <div class="space-y-3">
-              @for (group of skillGroups; track group.label) {
+              @for (group of selectedResume().skillGroups; track group.label) {
                 <div class="p-3.5 rounded-xl bg-void/50 border border-border/40">
                   <p class="text-xs font-semibold text-frost mb-1">{{ group.label }}</p>
                   <p class="text-xs text-muted leading-relaxed">{{ group.items }}</p>
@@ -72,23 +72,6 @@ import { DomSanitizer } from '@angular/platform-browser';
           </div>
 
           <div class="apple-glass rounded-2xl overflow-hidden p-3 md:p-4 shadow-2xl">
-            <div class="grid sm:grid-cols-3 gap-2 mb-4" aria-label="Choose a resume">
-              @for (resume of resumes; track resume.label) {
-                <button
-                  type="button"
-                  (click)="selectedResume.set(resume)"
-                  class="px-3 py-2.5 rounded-xl border text-xs font-semibold transition-all duration-200 cursor-pointer"
-                  [class.bg-accent]="selectedResume().label === resume.label"
-                  [class.text-frost]="selectedResume().label === resume.label"
-                  [class.border-accent]="selectedResume().label === resume.label"
-                  [class.bg-void]="selectedResume().label !== resume.label"
-                  [class.text-muted]="selectedResume().label !== resume.label"
-                  [class.border-border]="selectedResume().label !== resume.label"
-                >
-                  {{ resume.label }}
-                </button>
-              }
-            </div>
             <iframe
               [src]="selectedResume().preview"
               [title]="selectedResume().title"
@@ -105,7 +88,7 @@ import { DomSanitizer } from '@angular/platform-browser';
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
                 </svg>
-                Open {{ selectedResume().label }}
+                Open Resume
               </a>
 
               <a
@@ -132,43 +115,49 @@ export class ResumeComponent implements OnInit {
 
   resumes = [
     {
-      label: 'Full-Stack',
+      key: 'software',
       title: 'Vinay K R full-stack software engineer resume',
       url: '/resumes/vinay-kr-full-stack.pdf',
       preview: this.sanitizer.bypassSecurityTrustResourceUrl('/resumes/vinay-kr-full-stack.pdf#view=FitH'),
       download: 'Vinay_KR_Full_Stack_Resume.pdf',
+      professionalCore: 'Nearly three years delivering Angular/TypeScript applications and end-to-end features across fintech and regulated gaming, with REST APIs, Node.js, C#/.NET, SQL, Redis, WebSockets, authorization, Cypress, and production debugging.',
+      projectEvidence: 'Go/PostgreSQL product systems and inspectable backend work extend that professional product-engineering foundation.',
+      skillGroups: [
+        { label: 'Frontend', items: 'Angular, React, TypeScript, RxJS, reactive forms, WebSockets, HTML, CSS' },
+        { label: 'Backend & data', items: 'Node.js, Go, C#/.NET, REST APIs, PostgreSQL/PostGIS, SQL Server, Redis' },
+        { label: 'Delivery', items: 'Authentication, RBAC, testing, debugging, Docker, CI/CD, observability' },
+      ],
     },
     {
-      label: 'Applied AI',
+      key: 'ai',
       title: 'Vinay K R applied AI engineer resume',
       url: '/resumes/vinay-kr-applied-ai.pdf',
       preview: this.sanitizer.bypassSecurityTrustResourceUrl('/resumes/vinay-kr-applied-ai.pdf#view=FitH'),
       download: 'Vinay_KR_Applied_AI_Resume.pdf',
+      professionalCore: 'Nearly three years of software engineering across fintech and regulated gaming, grounded in typed APIs, authorization, caching, real-time interfaces, data workflows, testing, and production debugging.',
+      projectEvidence: 'Personal FastAPI projects demonstrate agent routing, RAG, streaming, semantic caching, evaluation, and observability with prototype boundaries stated explicitly.',
+      skillGroups: [
+        { label: 'Applied AI', items: 'Python, FastAPI, LangGraph, RAG, hybrid retrieval, RRF, SSE, semantic caching' },
+        { label: 'Evaluation & telemetry', items: 'Deterministic evaluation, OpenTelemetry, trace/span modeling, quality guardrails' },
+        { label: 'Software foundation', items: 'TypeScript, Node.js, Angular, REST APIs, PostgreSQL, Redis, Docker, CI/CD' },
+      ],
     },
     {
-      label: 'SRE / Platform',
+      key: 'sre',
       title: 'Vinay K R SRE and platform engineer resume',
       url: '/resumes/vinay-kr-sre.pdf',
       preview: this.sanitizer.bypassSecurityTrustResourceUrl('/resumes/vinay-kr-sre.pdf#view=FitH'),
       download: 'Vinay_KR_SRE_Resume.pdf',
+      professionalCore: 'Nearly three years of professional software engineering, complemented by hands-on operational work around self-hosted services, health gates, backups, safe cutovers, telemetry, and incident-oriented debugging.',
+      projectEvidence: 'Bounded public labs cover Linux operations, Kubernetes failure scenarios, Terraform validation, Prometheus SLOs, alert delivery, recovery drills, and safe change.',
+      skillGroups: [
+        { label: 'Operations', items: 'Linux, systemd, Docker, Nginx, Ansible, backups, diagnostics, recovery drills' },
+        { label: 'Reliability', items: 'Prometheus, Grafana, Alertmanager, SLOs, probes, runbooks, postmortems' },
+        { label: 'Platform', items: 'Kubernetes, kind, Kustomize, Terraform, policy checks, CI/CD' },
+      ],
     },
   ];
   selectedResume = signal(this.resumes[0]);
-
-  skillGroups = [
-    {
-      label: 'Full-stack product',
-      items: 'Angular, React, TypeScript, RxJS, Node.js, Go, C#/.NET, REST APIs, PostgreSQL, Redis',
-    },
-    {
-      label: 'Applied AI systems',
-      items: 'Python, FastAPI, LangGraph, RAG, hybrid retrieval, SSE, semantic caching, evaluation, OpenTelemetry',
-    },
-    {
-      label: 'Reliability & platform',
-      items: 'Linux, systemd, Docker, Kubernetes, Terraform, Ansible, Prometheus, Grafana, SLOs, safe-change drills',
-    },
-  ];
 
   @HostListener('window:scroll')
   onScroll() {
@@ -176,6 +165,12 @@ export class ResumeComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (typeof window !== 'undefined') {
+      const requestedView = new URLSearchParams(window.location.search).get('resume');
+      const matchedResume = this.resumes.find((resume) => resume.key === requestedView);
+      if (matchedResume) this.selectedResume.set(matchedResume);
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
