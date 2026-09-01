@@ -1,75 +1,71 @@
 # Vinay K R — Software Engineer Portfolio
 
-[Live portfolio](https://portfolio.vinaykr.workers.dev/) · [LinkedIn](https://linkedin.com/in/vi-naykr) · [GitHub](https://github.com/vi-nayKR)
+Live site: [portfolio.vinaykr.workers.dev](https://portfolio.vinaykr.workers.dev/) · [GitHub](https://github.com/vi-nayKR) · [LinkedIn](https://linkedin.com/in/vi-naykr)
 
-A single-page portfolio for Vinay K R, a software engineer with 3+ years of enterprise experience in Angular, TypeScript, REST APIs, C#/.NET, Node.js, SQL, and production debugging. Independent Go and Python/FastAPI work is presented separately from professional experience.
+This is the source for Vinay K R's portfolio: a software engineer building AI-enabled full-stack systems and reliable platform foundations. It brings together three connected lanes without blending professional employment claims with independent project evidence:
 
-## What the site contains
+- **Full-Stack Product Engineering:** Angular, TypeScript, React, Node.js, Go, .NET, REST APIs, WebSockets, SQL, and Redis.
+- **Applied AI Systems:** Python/FastAPI, LangGraph, RAG, retrieval, semantic caching, streaming, evaluation, and observability patterns.
+- **Reliability & Platform:** Linux, Kubernetes, Terraform, Prometheus, Grafana, SLOs, failure exercises, and safe change.
 
-- A concise professional summary and role-focused skills matrix.
-- Conservative experience bullets for Liminal Custody and Light & Wonder.
-- A one-page ATS resume embedded from `public/resume.pdf`.
-- Selected repositories with implementation status and limitations stated plainly.
-- The published IEEE conference paper from Vinay's B.E. work.
+## What is included
 
-The site intentionally avoids synthetic benchmark claims, unverified impact percentages, and presenting deterministic prototypes as production AI systems.
+- A responsive recruiter-focused landing page with keyboard navigation and reduced-motion support.
+- Evidence-labelled project cards linking to public source repositories.
+- Conservative experience summaries for Liminal Custody and Light & Wonder.
+- Three supplied role-specific resume PDFs under `public/resumes/`.
+- IEEE research publication and direct contact links.
+- Dark, low-distraction visual system with the existing orange Vinay identity.
+
+The content intentionally separates production employment, self-hosted project work, AI reference implementations, prototypes, simulators, and bounded reliability labs. Unsupported adoption, availability, latency, accuracy, cloud ownership, and on-call claims are not presented.
 
 ## Stack
 
 | Area | Technology |
-|---|---|
+| --- | --- |
 | Application | Angular 22 standalone components and signals |
 | Language | TypeScript 6 |
-| Build | Vite 7 |
-| Styling | Tailwind CSS 4 and project-specific CSS |
-| Interaction | RxJS and Lenis smooth scrolling |
-| Hosting | Cloudflare Workers/Pages configuration |
+| Build | Vite 7 and Angular-compatible tooling |
+| Styling | Tailwind CSS 4 plus project CSS |
+| Hosting | Cloudflare Workers/Pages static assets |
 
 ## Local development
 
+Node 24 LTS is recommended.
+
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
-Quality checks:
+Quality and production checks:
 
 ```bash
 npm run lint
 npm run build
 ```
 
-The production bundle is written to `dist/`.
+The production bundle is written to `dist/` and is configured for Cloudflare static assets. Cloudflare's Git integration can build and deploy the `main` branch automatically.
 
 ## Source layout
 
 ```text
-src/app/
-├── app.component.ts
-├── components/
-│   ├── hero/
-│   ├── about/
-│   ├── skills/
-│   ├── experience/
-│   ├── resume/
-│   ├── github/
-│   ├── conference/
-│   └── contact/
-├── directives/
-└── pipes/
+src/
+├── app/app.component.ts  # page structure and evidence-led content
+├── main.ts               # Angular bootstrap
+└── styles.css            # design system and responsive layout
+public/
+├── resumes/              # role-specific PDFs
+└── profile-photo-real.webp
 ```
 
 ## Evidence policy
 
-- Employment bullets describe responsibilities and shipped work without invented scale or impact.
-- Repository counts are used only when they can be inspected in source.
-- Provider-backed AI integrations are not claimed when the checked-in implementation uses deterministic stand-ins.
-- Performance claims require a reproducible benchmark command and retained raw output.
+- Employment bullets come from the supplied resumes and are not rewritten as AI or SRE employment.
+- Independent repositories are described only at the maturity level supported by their checked-in source and evidence ledgers.
+- Deterministic workers, local fallbacks, simulated fine-tuning, validation-only Terraform, and bounded lab results are labelled explicitly.
+- Any future performance or repository-count claim must include a reproducible command and retained output.
 
-## Contact
+## License
 
-Vinay K R · Bengaluru, India
-
-- [LinkedIn](https://linkedin.com/in/vi-naykr)
-- [GitHub](https://github.com/vi-nayKR)
-- [Email](mailto:vinayravindranatha@gmail.com)
+Personal portfolio source. Repository contents and resume artifacts are not licensed for redistribution without permission.
