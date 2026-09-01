@@ -140,7 +140,7 @@ export class NavbarComponent implements OnInit {
     { label: 'About', href: '#about', id: 'about' },
     { label: 'Skills', href: '#skills', id: 'skills' },
     { label: 'Experience', href: '#experience', id: 'experience' },
-    { label: 'Resume', href: '#resume', id: 'resume' },
+    { label: 'Resumes', href: '#resume', id: 'resume' },
     { label: 'Projects', href: '#github', id: 'github' },
     { label: 'Research', href: '#conference', id: 'conference' },
     { label: 'Contact', href: '#contact', id: 'contact' },

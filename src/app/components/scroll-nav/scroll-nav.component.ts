@@ -90,7 +90,7 @@ export class ScrollNavComponent implements OnInit, OnDestroy {
     { id: 'about', label: 'About Me' },
     { id: 'skills', label: 'Skills & Technologies' },
     { id: 'experience', label: 'Work Experience' },
-    { id: 'resume', label: 'Resume' },
+    { id: 'resume', label: 'Role-specific Resumes' },
     { id: 'github', label: 'Selected Projects' },
     { id: 'conference', label: 'Research Paper' },
     { id: 'contact', label: 'Get in Touch' }

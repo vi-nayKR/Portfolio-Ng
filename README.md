@@ -15,7 +15,8 @@ This is the source for Vinay K R's portfolio: a software engineer building AI-en
 - Conservative experience summaries for Liminal Custody and Light & Wonder.
 - Three supplied role-specific resume PDFs under `public/resumes/`.
 - IEEE research publication and direct contact links.
-- Dark, low-distraction visual system with the existing orange Vinay identity.
+- The original glassmorphic dark/light theme, animated navigation, timeline, and section layout with the existing orange Vinay identity.
+- A generated ASCII-art symbolic portrait based on Vinay's supplied reference photo; the real photograph is not rendered in the interface.
 
 The content intentionally separates production employment, self-hosted project work, AI reference implementations, prototypes, simulators, and bounded reliability labs. Unsupported adoption, availability, latency, accuracy, cloud ownership, and on-call claims are not presented.
 
@@ -51,12 +52,13 @@ The production bundle is written to `dist/` and is configured for Cloudflare sta
 
 ```text
 src/
-├── app/app.component.ts  # page structure and evidence-led content
+├── app/app.component.ts  # original section structure
+├── app/components/       # themed portfolio sections and current content
 ├── main.ts               # Angular bootstrap
-└── styles.css            # design system and responsive layout
+└── styles.css            # original dark/light design system
 public/
 ├── resumes/              # role-specific PDFs
-└── profile-photo-real.webp
+└── vinay-ascii-portrait.png
 ```
 
 ## Evidence policy
