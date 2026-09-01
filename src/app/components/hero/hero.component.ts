@@ -67,7 +67,7 @@ import { TiltDirective } from '../../directives/tilt.directive';
               </span>
             </p>
             <p class="text-muted text-lg md:text-xl max-w-2xl mx-auto md:mx-0 leading-relaxed mt-4">
-              Software engineer with 3+ years building <span class="text-frost font-medium">Angular and TypeScript</span> products, REST APIs, authorization workflows, real-time interfaces, and data-backed enterprise features. I also build <span class="text-frost font-medium">Go and Python/FastAPI</span> reference projects for reliable APIs and applied-AI workflows.
+              Software engineer building <span class="text-frost font-medium">AI-enabled full-stack systems</span> and the platform foundations that keep them dependable. My work spans Angular, TypeScript, Go, Python/FastAPI, APIs, data, and <span class="text-frost font-medium">reliability engineering</span>.
             </p>
           </div>
 
@@ -137,11 +137,11 @@ import { TiltDirective } from '../../directives/tilt.directive';
               <!-- Accent border rings -->
               <div class="absolute -inset-2 rounded-full border-2 border-accent/30"></div>
               <div class="absolute -inset-4 rounded-full border border-accent/15"></div>
-              <!-- Photo -->
+              <!-- Symbolic ASCII portrait -->
               <img
                 [src]="photoUrl()"
-                alt="Vinay KR — V Monogram Emblem"
-                class="w-full h-full rounded-full object-cover border-2 border-accent/50 shadow-2xl shadow-accent/20 transition-transform duration-500 hover:scale-105"
+                alt="Symbolic ASCII-art portrait of Vinay K R"
+                class="w-full h-full rounded-full object-contain p-2 border-2 border-accent/50 shadow-2xl shadow-accent/20 transition-transform duration-500 hover:scale-105"
                 style="object-position: center;"
               />
             </div>
@@ -158,14 +158,14 @@ import { TiltDirective } from '../../directives/tilt.directive';
   `,
 })
 export class HeroComponent implements OnDestroy {
-  photoUrl = signal<string>('/profile-photo.webp');
+  photoUrl = signal<string>('/vinay-ascii-portrait.png');
   parallaxY = signal(0);
   mouseX = signal(0);
   mouseY = signal(0);
   hoveredTag = signal<string | null>(null);
 
   // Rotating role title — cycles every 2.6s for a living, animated headline.
-  roles = ['Software Engineer', 'Angular & TypeScript', 'Full-Stack Product Engineering', 'Go & Python Project Builder', 'Applied AI Project Work'];
+  roles = ['Software Engineer', 'Full-Stack Product Engineering', 'Applied AI Systems', 'Reliability & Platform Engineering'];
   roleIndex = signal(0);
   roleVisible = signal(true);
   private roleTimer?: ReturnType<typeof setInterval>;
@@ -185,14 +185,14 @@ export class HeroComponent implements OnDestroy {
     () => `translate3d(${this.mouseX() * -0.05}px, ${this.parallaxY() * 0.22}px, 0)`
   );
 
-  techs = ['Angular', 'TypeScript', 'RxJS', 'Node.js', 'C# / .NET', 'SQL', 'Go', 'Python FastAPI', 'Redis', 'Docker'];
+  techs = ['Angular', 'TypeScript', 'Go', 'Python / FastAPI', 'Node.js', 'C# / .NET', 'PostgreSQL', 'Redis', 'Kubernetes', 'Terraform'];
 
   floatingTags = [
     { text: 'Angular', top: '16%', left: '78%', speedX: -0.06, speedY: 0.03, target: 'skills' },
     { text: 'TypeScript', top: '68%', left: '8%', speedX: 0.04, speedY: -0.05, target: 'skills' },
-    { text: 'REST APIs', top: '78%', left: '80%', speedX: -0.05, speedY: 0.03, target: 'skills' },
+    { text: 'Kubernetes', top: '78%', left: '80%', speedX: -0.05, speedY: 0.03, target: 'skills' },
     { text: 'PostgreSQL', top: '42%', left: '86%', speedX: 0.03, speedY: -0.04, target: 'skills' },
-    { text: 'FastAPI', top: '82%', left: '22%', speedX: -0.03, speedY: 0.05, target: 'skills' },
+    { text: 'FastAPI · RAG', top: '82%', left: '22%', speedX: -0.03, speedY: 0.05, target: 'skills' },
   ];
 
   private ticking = false;

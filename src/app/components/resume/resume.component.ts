@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener, OnInit, signal } from '@angular/core';
+import { Component, HostListener, inject, OnInit, signal } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-resume',
@@ -26,12 +27,12 @@ import { Component, HostListener, OnInit, signal } from '@angular/core';
 
       <div class="relative z-10 max-w-6xl mx-auto">
         <div class="text-center mb-8 md:mb-12">
-          <p class="text-accent font-mono text-xs tracking-widest uppercase mb-3">One-page ATS resume</p>
+          <p class="text-accent font-mono text-xs tracking-widest uppercase mb-3">Role-specific resumes</p>
           <h2 class="text-4xl md:text-5xl font-display font-bold text-frost mb-4 text-balance">
-            Experience, Clearly Stated
+            Choose Your Lens
           </h2>
           <p class="text-muted max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
-            A concise account of my professional software work and independently verified project evidence.
+            The same engineering story, tuned for full-stack product, applied AI, or reliability and platform conversations.
           </p>
         </div>
 
@@ -45,14 +46,14 @@ import { Component, HostListener, OnInit, signal } from '@angular/core';
             <div>
               <p class="text-xs font-mono uppercase tracking-widest text-accent mb-3">Professional core</p>
               <p class="text-muted leading-relaxed">
-                3+ years delivering Angular/TypeScript applications and end-to-end features across fintech and regulated gaming, with REST APIs, Node.js, C#/.NET, SQL, Redis, WebSockets, authorization, Cypress, and production debugging.
+                Nearly three years delivering Angular/TypeScript applications and end-to-end features across fintech and regulated gaming, with REST APIs, Node.js, C#/.NET, SQL, Redis, WebSockets, authorization, Cypress, and production debugging.
               </p>
             </div>
 
             <div>
-              <p class="text-xs font-mono uppercase tracking-widest text-accent mb-3">Current project direction</p>
+              <p class="text-xs font-mono uppercase tracking-widest text-accent mb-3">Connected project direction</p>
               <p class="text-muted leading-relaxed">
-                Go/PostgreSQL backend systems and Python/FastAPI reference implementations for agent routing, human approval, caching, streaming, and observability.
+                Go/PostgreSQL product systems, Python/FastAPI AI patterns, and evidence-led Linux, Kubernetes, Terraform, SLO, and incident-response labs.
               </p>
             </div>
 
@@ -71,15 +72,32 @@ import { Component, HostListener, OnInit, signal } from '@angular/core';
           </div>
 
           <div class="apple-glass rounded-2xl overflow-hidden p-3 md:p-4 shadow-2xl">
+            <div class="grid sm:grid-cols-3 gap-2 mb-4" aria-label="Choose a resume">
+              @for (resume of resumes; track resume.label) {
+                <button
+                  type="button"
+                  (click)="selectedResume.set(resume)"
+                  class="px-3 py-2.5 rounded-xl border text-xs font-semibold transition-all duration-200 cursor-pointer"
+                  [class.bg-accent]="selectedResume().label === resume.label"
+                  [class.text-frost]="selectedResume().label === resume.label"
+                  [class.border-accent]="selectedResume().label === resume.label"
+                  [class.bg-void]="selectedResume().label !== resume.label"
+                  [class.text-muted]="selectedResume().label !== resume.label"
+                  [class.border-border]="selectedResume().label !== resume.label"
+                >
+                  {{ resume.label }}
+                </button>
+              }
+            </div>
             <iframe
-              src="/resume.pdf#view=FitH"
-              title="Vinay K R software engineer resume"
+              [src]="selectedResume().preview"
+              [title]="selectedResume().title"
               class="w-full h-[620px] md:h-[780px] rounded-xl bg-white border border-border"
             ></iframe>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-4">
               <a
-                href="/resume.pdf"
+                [href]="selectedResume().url"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="flex items-center justify-center gap-2 px-6 py-3 w-full sm:w-auto rounded-xl bg-accent hover:bg-accent-glow text-frost font-bold text-sm transition-all duration-300 hover:shadow-lg hover:shadow-accent/25"
@@ -87,12 +105,12 @@ import { Component, HostListener, OnInit, signal } from '@angular/core';
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
                 </svg>
-                Open Resume
+                Open {{ selectedResume().label }}
               </a>
 
               <a
-                href="/resume.pdf"
-                download="Vinay_KR_Software_Engineer_Resume.pdf"
+                [href]="selectedResume().url"
+                [download]="selectedResume().download"
                 class="flex items-center justify-center gap-2 px-6 py-3 w-full sm:w-auto rounded-xl border border-border hover:border-accent/40 hover:bg-surface text-frost font-bold text-sm transition-all duration-300"
               >
                 <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -110,19 +128,45 @@ import { Component, HostListener, OnInit, signal } from '@angular/core';
 export class ResumeComponent implements OnInit {
   visible = signal(false);
   parallaxOffset = signal(0);
+  private readonly sanitizer = inject(DomSanitizer);
+
+  resumes = [
+    {
+      label: 'Full-Stack',
+      title: 'Vinay K R full-stack software engineer resume',
+      url: '/resumes/vinay-kr-full-stack.pdf',
+      preview: this.sanitizer.bypassSecurityTrustResourceUrl('/resumes/vinay-kr-full-stack.pdf#view=FitH'),
+      download: 'Vinay_KR_Full_Stack_Resume.pdf',
+    },
+    {
+      label: 'Applied AI',
+      title: 'Vinay K R applied AI engineer resume',
+      url: '/resumes/vinay-kr-applied-ai.pdf',
+      preview: this.sanitizer.bypassSecurityTrustResourceUrl('/resumes/vinay-kr-applied-ai.pdf#view=FitH'),
+      download: 'Vinay_KR_Applied_AI_Resume.pdf',
+    },
+    {
+      label: 'SRE / Platform',
+      title: 'Vinay K R SRE and platform engineer resume',
+      url: '/resumes/vinay-kr-sre.pdf',
+      preview: this.sanitizer.bypassSecurityTrustResourceUrl('/resumes/vinay-kr-sre.pdf#view=FitH'),
+      download: 'Vinay_KR_SRE_Resume.pdf',
+    },
+  ];
+  selectedResume = signal(this.resumes[0]);
 
   skillGroups = [
     {
-      label: 'Frontend',
-      items: 'Angular, TypeScript, RxJS, Reactive Forms, WebSockets, HTML, CSS',
+      label: 'Full-stack product',
+      items: 'Angular, React, TypeScript, RxJS, Node.js, Go, C#/.NET, REST APIs, PostgreSQL, Redis',
     },
     {
-      label: 'Backend & data',
-      items: 'Node.js, Express.js, C#/.NET Core, REST APIs, SQL Server, MySQL, PostgreSQL/PostGIS, Redis',
+      label: 'Applied AI systems',
+      items: 'Python, FastAPI, LangGraph, RAG, hybrid retrieval, SSE, semantic caching, evaluation, OpenTelemetry',
     },
     {
-      label: 'Projects & delivery',
-      items: 'Go, Python/FastAPI, LangGraph, OpenTelemetry, Cypress, Pytest, Ruff, Docker, CI/CD',
+      label: 'Reliability & platform',
+      items: 'Linux, systemd, Docker, Kubernetes, Terraform, Ansible, Prometheus, Grafana, SLOs, safe-change drills',
     },
   ];
 
