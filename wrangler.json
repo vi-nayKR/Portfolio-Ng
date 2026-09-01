@@ -1,8 +1,9 @@
 {
-  "name": "my-portfolio-b",
-  "compatibility_date": "2026-06-12",
+  "name": "portfolio-vinaykr",
+  "compatibility_date": "2026-08-31",
   "assets": {
-    "directory": "./dist"
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
   },
   "build": {
     "command": "npm run build"
