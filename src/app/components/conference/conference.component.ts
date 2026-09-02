@@ -12,7 +12,7 @@ import { TiltDirective } from '../../directives/tilt.directive';
       <!-- Background glows -->
       <div class="absolute inset-0 pointer-events-none" [style.transform]="'translateY(' + parallaxOffset() + 'px)'">
         <div class="absolute top-0 left-1/4 w-[500px] h-[500px] rounded-full"
-          style="background: radial-gradient(circle, rgba(255,107,0,0.06) 0%, transparent 65%)"></div>
+          style="background: radial-gradient(circle, rgba(255,107,0,0.08) 0%, transparent 65%)"></div>
         <div class="absolute bottom-0 right-1/4 w-[350px] h-[350px] rounded-full"
           style="background: radial-gradient(circle, rgba(0,98,155,0.05) 0%, transparent 65%)"></div>
       </div>
@@ -23,7 +23,7 @@ import { TiltDirective } from '../../directives/tilt.directive';
         [style.transform]="'translate3d(' + (-parallaxOffset() * 0.6) + 'px, -50%, 0)'"
       >PUBLISHED</div>
 
-      <div class="relative z-10 max-w-6xl mx-auto space-y-8">
+      <div class="relative z-10 max-w-6xl mx-auto space-y-10">
         <!-- Section header -->
         <div class="text-center mb-12 md:mb-8 md:mb-12">
           <p class="text-accent font-mono text-xs tracking-widest uppercase mb-4">Peer-Reviewed Research &amp; Live Implementation</p>
@@ -33,29 +33,31 @@ import { TiltDirective } from '../../directives/tilt.directive';
           <div class="w-24 h-1 bg-gradient-to-r from-accent to-accent-glow mx-auto rounded-full"></div>
         </div>
 
-        <!-- LIVE PRODUCTION DEPLOYMENT SHOWCASE HERO CARD -->
+        <!-- LIVE PRODUCTION DEPLOYMENT SHOWCASE HERO CARD WITH YOUTUBE-STYLE THUMBNAIL MOCKUP -->
         <div
           appTilt
-          [maxTilt]="2"
-          [scale]="1.01"
-          class="w-full rounded-3xl apple-glass border border-accent/40 overflow-hidden shadow-2xl relative p-6 sm:p-8"
+          [maxTilt]="1.5"
+          [scale]="1.005"
+          class="w-full rounded-3xl apple-glass border border-accent/40 overflow-hidden shadow-2xl relative p-6 sm:p-8 md:p-10 space-y-8"
           [style.opacity]="visible() ? '1' : '0'"
           [style.transform]="visible() ? 'translateY(0)' : 'translateY(30px)'"
           style="transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)"
         >
+          <!-- Top Overview & Action Header -->
           <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
             <div class="space-y-3 max-w-3xl">
               <div class="flex flex-wrap items-center gap-2.5">
-                <span class="text-[10px] font-mono text-accent bg-accent/15 border border-accent/30 px-3 py-1 rounded-full uppercase tracking-widest font-bold">
+                <span class="text-[10px] font-mono text-accent bg-accent/15 border border-accent/30 px-3 py-1 rounded-full uppercase tracking-widest font-bold flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-accent animate-ping"></span>
                   LIVE CLOUDFLARE PRODUCTION
                 </span>
                 <span class="text-[10px] font-mono text-[#089981] bg-[#089981]/15 border border-[#089981]/30 px-3 py-1 rounded-full uppercase tracking-widest font-bold flex items-center gap-1.5">
-                  <span class="w-2 h-2 rounded-full bg-[#089981] animate-pulse"></span>
-                  OPERATIONAL
+                  <span class="w-2 h-2 rounded-full bg-[#089981]"></span>
+                  GLOBAL EDGE OPERATIONAL
                 </span>
               </div>
 
-              <h3 class="text-2xl sm:text-3xl font-display font-bold text-frost tracking-tight">
+              <h3 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-frost tracking-tight">
                 Data Visualization of Time-Tradable Assets Using ML
               </h3>
 
@@ -79,7 +81,7 @@ import { TiltDirective } from '../../directives/tilt.directive';
                 href="https://data-visualization-of-time-tradable-assets-using-ml.vinaykr.workers.dev/"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-accent hover:bg-accent-glow text-frost font-bold text-sm transition-all duration-200 shadow-lg shadow-accent/20 hover:scale-102 cursor-pointer"
+                class="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-accent hover:bg-accent-glow text-frost font-bold text-sm transition-all duration-200 shadow-lg shadow-accent/25 hover:scale-102 cursor-pointer"
               >
                 <span>Launch Live Terminal</span>
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
@@ -100,6 +102,83 @@ import { TiltDirective } from '../../directives/tilt.directive';
               </a>
             </div>
           </div>
+
+          <!-- HIGH-IMPACT YOUTUBE-STYLE THUMBNAIL BROWSER MOCKUP (CLICKABLE WITH HOVER OVERLAY) -->
+          <a
+            href="https://data-visualization-of-time-tradable-assets-using-ml.vinaykr.workers.dev/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative block w-full rounded-2xl border border-border/80 bg-void/90 overflow-hidden shadow-2xl hover:border-accent/80 hover:shadow-accent/20 transition-all duration-500 cursor-pointer"
+          >
+            <!-- Browser Header Bar -->
+            <div class="px-4 py-3 border-b border-border/50 bg-surface/90 flex items-center justify-between text-xs font-mono">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-[#f23645]/80 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-[#ff9800]/80 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-[#089981]/80 inline-block"></span>
+              </div>
+
+              <!-- Address bar badge -->
+              <div class="flex items-center gap-2 px-4 py-1 rounded-lg bg-void border border-border/40 text-[11px] text-muted truncate max-w-sm sm:max-w-md">
+                <svg class="w-3 h-3 text-[#089981]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                </svg>
+                <span class="text-frost font-mono truncate">data-visualization-of-time-tradable-assets-using-ml.vinaykr.workers.dev</span>
+              </div>
+
+              <div class="hidden sm:flex items-center gap-1.5 text-[10px] text-[#089981] font-mono font-bold">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#089981] animate-pulse"></span>
+                <span>Live Demo</span>
+              </div>
+            </div>
+
+            <!-- Thumbnail Visual Area -->
+            <div class="relative w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden bg-void">
+              <img
+                src="stock-terminal-preview.png"
+                alt="Data Visualization of Time-Tradable Assets Using ML - Live SuperChart Terminal"
+                class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-103"
+              />
+
+              <!-- Gradient Vignette -->
+              <div class="absolute inset-0 bg-gradient-to-t from-void via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity duration-300 pointer-events-none"></div>
+
+              <!-- Floating Feature Badges (YouTube-Thumbnail Style Curiosity Hooks) -->
+              <div class="absolute top-4 left-4 flex flex-wrap gap-2 pointer-events-none z-10">
+                <span class="px-3 py-1 rounded-lg bg-accent text-white font-mono font-bold text-[11px] shadow-xl flex items-center gap-1.5">
+                  <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                  </svg>
+                  TRADINGVIEW SUPERTEMPLATE
+                </span>
+                <span class="px-3 py-1 rounded-lg bg-void/90 border border-border text-frost font-mono font-bold text-[11px] backdrop-blur-md shadow-xl hidden sm:inline-flex">
+                  📈 50-DAY ML FORECASTS
+                </span>
+              </div>
+
+              <!-- Bottom Preview Info Ribbon -->
+              <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none z-10">
+                <div class="flex items-center gap-2">
+                  <span class="px-3 py-1.5 rounded-xl bg-surface/90 border border-border text-frost font-mono text-xs backdrop-blur-md font-bold shadow-lg">
+                    ⚡ 5 ML Regressors (LSTM, SVM, Decision Tree)
+                  </span>
+                </div>
+                <span class="px-3 py-1.5 rounded-xl bg-[#089981]/90 text-white font-mono text-xs font-bold shadow-lg backdrop-blur-md hidden md:inline-flex items-center gap-1">
+                  <span>98.4% Model R²</span>
+                </span>
+              </div>
+
+              <!-- Center Interactive Play / Launch Hover Overlay -->
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-void/40 backdrop-blur-[2px] z-20">
+                <div class="inline-flex items-center gap-3 px-7 py-3.5 rounded-2xl bg-accent text-white font-display font-bold text-base shadow-2xl shadow-accent/50 transform group-hover:scale-105 transition-transform duration-300">
+                  <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                  <span>Explore Live Interactive Terminal</span>
+                </div>
+              </div>
+            </div>
+          </a>
         </div>
 
         <!-- IEEE AND RESEARCHGATE PUBLICATIONS CARD -->
@@ -116,7 +195,7 @@ import { TiltDirective } from '../../directives/tilt.directive';
           <div class="px-8 py-8 border-b border-border/25 bg-void/20">
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div class="max-w-2xl">
-                <span class="text-[10px] font-mono text-accent bg-accent/10 px-3 py-1 rounded-full uppercase tracking-widest mb-3 inline-block">
+                <span class="text-[10px] font-mono text-accent bg-accent/10 px-3 py-1 rounded-full uppercase tracking-widest mb-3 inline-block font-bold">
                   Published Research Paper
                 </span>
                 <h3 class="text-lg md:text-xl font-display font-bold text-frost leading-snug">
