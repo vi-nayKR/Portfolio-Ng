@@ -109,6 +109,14 @@ export class GithubComponent implements OnInit {
 
   highlights: RepoHighlight[] = [
     {
+      title: 'Data-Visualization-Of-Time-Tradable-Assets-Using-ML',
+      domain: 'Quantitative ML · Live Production',
+      desc: 'Angular 22 + FastAPI quantitative terminal on Cloudflare Workers featuring Plotly.js charts, custom technical indicators (SMA, EMA, BB, RSI), and 50-day forward ML predictions.',
+      url: 'https://github.com/vi-nayKR/Data-Visualization-Of-Time-Tradable-Assets-Using-ML',
+      lang: 'Angular / TypeScript / PyTorch',
+      langColor: '#DD0031',
+    },
+    {
       title: 'medha-platform-api',
       domain: 'Full-stack · self-hosted',
       desc: 'Domain-driven Go API with PostgreSQL/PostGIS, Redis-backed WebSockets, object storage, authentication, and operational safeguards.',

@@ -12,9 +12,9 @@ import { TiltDirective } from '../../directives/tilt.directive';
       <!-- Background glows -->
       <div class="absolute inset-0 pointer-events-none" [style.transform]="'translateY(' + parallaxOffset() + 'px)'">
         <div class="absolute top-0 left-1/4 w-[500px] h-[500px] rounded-full"
-          style="background: radial-gradient(circle, rgba(0,98,155,0.05) 0%, transparent 65%)"></div>
+          style="background: radial-gradient(circle, rgba(255,107,0,0.06) 0%, transparent 65%)"></div>
         <div class="absolute bottom-0 right-1/4 w-[350px] h-[350px] rounded-full"
-          style="background: radial-gradient(circle, rgba(64,186,33,0.04) 0%, transparent 65%)"></div>
+          style="background: radial-gradient(circle, rgba(0,98,155,0.05) 0%, transparent 65%)"></div>
       </div>
 
       <!-- Parallax bg word -->
@@ -23,17 +23,86 @@ import { TiltDirective } from '../../directives/tilt.directive';
         [style.transform]="'translate3d(' + (-parallaxOffset() * 0.6) + 'px, -50%, 0)'"
       >PUBLISHED</div>
 
-      <div class="relative z-10 max-w-6xl mx-auto">
+      <div class="relative z-10 max-w-6xl mx-auto space-y-8">
         <!-- Section header -->
         <div class="text-center mb-12 md:mb-8 md:mb-12">
-          <p class="text-accent font-mono text-xs tracking-widest uppercase mb-4">Peer-Reviewed Research</p>
+          <p class="text-accent font-mono text-xs tracking-widest uppercase mb-4">Peer-Reviewed Research &amp; Live Implementation</p>
           <h2 class="text-4xl md:text-5xl font-display font-bold text-frost text-balance mb-6">
-            Conference &amp; Paper
+            Conference &amp; Live Deployment
           </h2>
           <div class="w-24 h-1 bg-gradient-to-r from-accent to-accent-glow mx-auto rounded-full"></div>
         </div>
 
-        <!-- Main card -->
+        <!-- LIVE PRODUCTION DEPLOYMENT SHOWCASE HERO CARD -->
+        <div
+          appTilt
+          [maxTilt]="2"
+          [scale]="1.01"
+          class="w-full rounded-3xl apple-glass border border-accent/40 overflow-hidden shadow-2xl relative p-6 sm:p-8"
+          [style.opacity]="visible() ? '1' : '0'"
+          [style.transform]="visible() ? 'translateY(0)' : 'translateY(30px)'"
+          style="transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)"
+        >
+          <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+            <div class="space-y-3 max-w-3xl">
+              <div class="flex flex-wrap items-center gap-2.5">
+                <span class="text-[10px] font-mono text-accent bg-accent/15 border border-accent/30 px-3 py-1 rounded-full uppercase tracking-widest font-bold">
+                  LIVE CLOUDFLARE PRODUCTION
+                </span>
+                <span class="text-[10px] font-mono text-[#089981] bg-[#089981]/15 border border-[#089981]/30 px-3 py-1 rounded-full uppercase tracking-widest font-bold flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-[#089981] animate-pulse"></span>
+                  OPERATIONAL
+                </span>
+              </div>
+
+              <h3 class="text-2xl sm:text-3xl font-display font-bold text-frost tracking-tight">
+                Data Visualization of Time-Tradable Assets Using ML
+              </h3>
+
+              <p class="text-sm text-muted leading-relaxed">
+                Full-stack modernization of our IEEE-published research into a production-grade quantitative terminal. Powered by <strong>Angular 22</strong>, <strong>FastAPI</strong>, <strong>PyTorch LSTM neural networks</strong>, and <strong>Cloudflare Workers</strong> with real-time candlestick charts, drawing toolbars, Bollinger Bands, RSI, and automated multi-algorithm leaderboard benchmarking.
+              </p>
+
+              <div class="flex flex-wrap gap-2 pt-2">
+                <span class="px-2.5 py-1 rounded-lg text-xs bg-void border border-border text-muted font-mono">Angular 22</span>
+                <span class="px-2.5 py-1 rounded-lg text-xs bg-void border border-border text-muted font-mono">Cloudflare Workers</span>
+                <span class="px-2.5 py-1 rounded-lg text-xs bg-void border border-border text-muted font-mono">FastAPI</span>
+                <span class="px-2.5 py-1 rounded-lg text-xs bg-void border border-border text-muted font-mono">PyTorch LSTM</span>
+                <span class="px-2.5 py-1 rounded-lg text-xs bg-void border border-border text-muted font-mono">Plotly.js</span>
+                <span class="px-2.5 py-1 rounded-lg text-xs bg-void border border-border text-muted font-mono">Tailwind CSS</span>
+              </div>
+            </div>
+
+            <!-- CTAs -->
+            <div class="flex flex-col sm:flex-row lg:flex-col gap-3 w-full lg:w-auto shrink-0">
+              <a
+                href="https://data-visualization-of-time-tradable-assets-using-ml.vinaykr.workers.dev/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-accent hover:bg-accent-glow text-frost font-bold text-sm transition-all duration-200 shadow-lg shadow-accent/20 hover:scale-102 cursor-pointer"
+              >
+                <span>Launch Live Terminal</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+
+              <a
+                href="https://github.com/vi-nayKR/Data-Visualization-Of-Time-Tradable-Assets-Using-ML"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-border hover:border-accent/50 text-frost font-medium text-xs hover:bg-surface transition-all duration-200"
+              >
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                </svg>
+                <span>View Source Code</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- IEEE AND RESEARCHGATE PUBLICATIONS CARD -->
         <div
           appTilt
           [maxTilt]="1.5"
