@@ -116,12 +116,12 @@ export class ResumeComponent implements OnInit {
   resumes = [
     {
       key: 'software',
-      title: 'Vinay K R full-stack software engineer resume',
+      title: 'Vinay K R software engineer resume',
       url: '/resumes/vinay-kr-full-stack.pdf',
       preview: this.sanitizer.bypassSecurityTrustResourceUrl('/resumes/vinay-kr-full-stack.pdf#view=FitH'),
-      download: 'Vinay_KR_Full_Stack_Resume.pdf',
+      download: 'Vinay_KR_Software_Engineer_Resume.pdf',
       professionalCore: 'Nearly three years delivering Angular/TypeScript applications and end-to-end features across fintech and regulated gaming, with REST APIs, Node.js, C#/.NET, SQL, Redis, WebSockets, authorization, Cypress, and production debugging.',
-      projectEvidence: 'Go/PostgreSQL product systems and inspectable backend work extend that professional product-engineering foundation.',
+      projectEvidence: 'The unified resume also surfaces inspectable Go/PostgreSQL systems, FastAPI/LangGraph/RAG projects, and bounded Linux/Kubernetes reliability labs.',
       skillGroups: [
         { label: 'Frontend', items: 'Angular, React, TypeScript, RxJS, reactive forms, WebSockets, HTML, CSS' },
         { label: 'Backend & data', items: 'Node.js, Go, C#/.NET, REST APIs, PostgreSQL/PostGIS, SQL Server, Redis' },
