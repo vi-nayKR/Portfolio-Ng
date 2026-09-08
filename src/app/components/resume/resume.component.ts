@@ -120,11 +120,11 @@ export class ResumeComponent {
       preview: this.sanitizer.bypassSecurityTrustResourceUrl('/resumes/vinay-kr-applied-ai.pdf#view=FitH'),
       download: 'Vinay_KR_Applied_AI_Resume.pdf',
       professionalCore: 'Nearly three years of software engineering across fintech and regulated gaming, grounded in typed APIs, authorization, caching, real-time interfaces, data workflows, testing, and production debugging.',
-      projectEvidence: 'Personal FastAPI projects demonstrate agent routing, RAG, streaming, semantic caching, evaluation, and observability with prototype boundaries stated explicitly.',
+      projectEvidence: 'Flagship FastAPI project features typed LangGraph multi-agent routing, real model provider mode with structured outputs, hybrid retrieval (BM25 + dense semantic hashing with RRF), and a 30-case reproducible evaluation benchmark.',
       skillGroups: [
-        { label: 'Applied AI', items: 'Python, FastAPI, LangGraph, RAG, hybrid retrieval, RRF, SSE, semantic caching' },
-        { label: 'Evaluation & telemetry', items: 'Deterministic evaluation, OpenTelemetry, trace/span modeling, quality guardrails' },
-        { label: 'Software foundation', items: 'TypeScript, Node.js, Angular, REST APIs, PostgreSQL, Redis, Docker, CI/CD' },
+        { label: 'Applied AI & Agents', items: 'Python, FastAPI, LangGraph, multi-agent routing, structured outputs, hybrid RAG, BM25, RRF, SSE, vector caching' },
+        { label: 'Evaluation & Telemetry', items: 'Reproducible benchmarks, Recall@k, MRR, abstention calibration, OpenTelemetry, guardrails' },
+        { label: 'Backend & Data', items: 'Go, PostgreSQL, PostGIS, Redis Pub/Sub, Node.js, TypeScript, Docker, CI/CD' },
       ],
     }
   ];

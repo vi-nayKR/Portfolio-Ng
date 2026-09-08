@@ -32,7 +32,7 @@ import { SafeHtmlPipe } from '../../pipes/safe-html.pipe';
             Let&apos;s Work Through It
           </h2>
           <p class="text-muted mt-4 max-w-xl mx-auto leading-relaxed">
-            Have a product, an API, or a reliability problem to work through? I&apos;m open to software engineering opportunities and conversations about useful systems.
+            Have an Applied AI system, an LLM workflow, or a backend architecture challenge to solve? I&apos;m open to Applied AI and backend engineering opportunities, collaborative research, and conversations about production systems.
           </p>
         </div>
 

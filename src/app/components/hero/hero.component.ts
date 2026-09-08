@@ -70,7 +70,7 @@ import { TiltDirective } from '../../directives/tilt.directive';
               I build backend and Applied AI systems that are testable, observable, and useful.
             </p>
             <p class="text-muted text-base md:text-lg max-w-2xl mx-auto md:mx-0 leading-relaxed mt-4">
-              Software engineer in Bengaluru with nearly three years of professional experience across digital-asset custody and regulated gaming. I am moving from product and backend engineering into Applied AI systems.
+              Software engineer in Bengaluru with nearly three years of professional backend experience across digital-asset custody and regulated gaming, specializing in Python/FastAPI, LangGraph agent workflows, hybrid retrieval, and observable systems.
             </p>
           </div>
 
@@ -156,7 +156,7 @@ export class HeroComponent implements OnDestroy {
     () => `translate3d(${this.mouseX() * -0.05}px, ${this.parallaxY() * 0.22}px, 0)`
   );
 
-  techs = ['Python', 'FastAPI', 'LangGraph', 'Go', 'PostgreSQL', 'Redis', 'OpenTelemetry', 'Docker'];
+  techs = ['Python', 'FastAPI', 'LangGraph', 'Hybrid RAG', 'Go', 'PostgreSQL', 'Redis', 'OpenTelemetry'];
 
   floatingTags = [
     { text: 'LangGraph', top: '16%', left: '78%', speedX: -0.06, speedY: 0.03, target: 'skills' },
