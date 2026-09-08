@@ -37,8 +37,8 @@ import { SafeHtmlPipe } from '../../pipes/safe-html.pipe';
           <div [class.animate-slide-in-left]="visible()" [style.opacity]="visible() ? '1' : '0'" style="transition: opacity 0.7s">
             <p class="text-accent font-mono text-xs tracking-widest uppercase mb-4">About Me</p>
             <h2 class="text-4xl md:text-5xl font-display font-bold text-frost mb-6 leading-tight text-balance">
-              From Product Interfaces
-              <span class="gradient-text">to Reliable Systems.</span>
+              From Product Engineering
+              <span class="gradient-text">to Applied AI Systems.</span>
             </h2>
             <p class="text-muted leading-relaxed mb-4">
               I have nearly three years of professional software experience across fintech (<span class="text-frost">Liminal Custody</span>) and regulated gaming (<span class="text-frost">Light &amp; Wonder</span>), delivering Angular/TypeScript applications, APIs, authorization workflows, real-time interfaces, and data-backed product features.
@@ -47,7 +47,7 @@ import { SafeHtmlPipe } from '../../pipes/safe-html.pipe';
               My <span class="text-frost">applied AI projects</span> explore typed FastAPI services, checkpointed agent routing, retrieval, streaming, caching, and evaluation. Source code and reproducible tests make the behavior easy to inspect.
             </p>
             <p class="text-muted leading-relaxed mb-6">
-              I care about what happens after a feature works: how it behaves under failure, how someone diagnoses it, and how a change can be rolled back. I explore those questions through <span class="text-frost">Linux and Kubernetes labs</span>, SLOs, alerting, and recovery drills.
+              I bring the engineering foundations an Applied AI role needs: API design, data models, caching, authorization, real-time behavior, tests, observability, and operational debugging.
             </p>
 
           </div>
@@ -123,7 +123,7 @@ export class AboutComponent implements OnInit {
     {
       title: 'Interests',
       icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>',
-      desc: 'Full-stack product engineering, applied AI systems, and reliability/platform engineering',
+      desc: 'Applied AI systems, backend architecture, retrieval workflows, and product engineering',
     },
   ];
 

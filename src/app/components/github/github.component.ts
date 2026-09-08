@@ -33,7 +33,7 @@ interface RepoHighlight {
             Selected Engineering Work
           </h2>
           <p class="text-muted text-sm md:text-base mt-4 max-w-3xl mx-auto leading-relaxed">
-            Product backends, applied AI reference projects, and reliability labs. Follow the source, architecture notes, tests, and recovery guides behind each project.
+            Applied AI workflow code, a production-style backend, and observability evidence. Each card links directly to source and supporting artifacts.
           </p>
         </div>
 
@@ -45,7 +45,7 @@ interface RepoHighlight {
         >
           <p class="text-xs font-mono uppercase tracking-widest text-accent mb-2">About these projects</p>
           <p class="text-sm text-muted leading-relaxed">
-            These are independent projects. The AI repositories are archived references and prototypes; reliability work is exercised in bounded labs. My professional contributions at Liminal Custody and Light &amp; Wonder are covered in the experience section.
+            These are independent projects. The FastAPI workflow uses deterministic workers by default, so it demonstrates control flow rather than live-model quality. Medha and the observability lab show the backend and operational foundations. Professional work is covered separately in the experience section.
           </p>
         </div>
 
@@ -115,32 +115,9 @@ export class GithubComponent implements OnInit {
 
   highlights: RepoHighlight[] = [
     {
-      title: 'medha-platform-api',
-      domain: 'Product systems · backend',
-      desc: 'Domain-driven Go backend for event scheduling, location-based discovery, and real-time messaging. Connects PostGIS queries, Redis-backed WebSockets, authentication, and operational health checks.',
-      url: 'https://github.com/vi-nayKR/medha-platform-api',
-      lang: 'Go',
-      langColor: '#00ADD8',
-      evidence: [
-        { label: 'Architecture', url: 'https://github.com/vi-nayKR/medha-platform-api/blob/main/architecture.md' },
-        { label: 'System design', url: 'https://github.com/vi-nayKR/medha-platform-api/blob/main/system_design.md' },
-      ],
-    },
-    {
-      title: 'Portfolio-Ng',
-      domain: 'Product systems · frontend',
-      desc: 'The Angular and TypeScript source for this portfolio: standalone components, signal-based interfaces, responsive layouts, accessible navigation, and a context-aware resume view.',
-      url: 'https://github.com/vi-nayKR/Portfolio-Ng',
-      lang: 'Angular / TypeScript',
-      langColor: '#DD0031',
-      evidence: [
-        { label: 'Components', url: 'https://github.com/vi-nayKR/Portfolio-Ng/tree/main/src/app/components' },
-      ],
-    },
-    {
       title: 'fastapi-genai-agent-patterns',
-      domain: 'Applied AI · archived reference',
-      desc: 'Typed LangGraph routing, checkpointed human approval, SSE streaming, Redis caching, and OpenTelemetry traces. Deterministic default workers make the control flow testable without a model key.',
+      domain: 'Applied AI · reference implementation',
+      desc: 'Typed LangGraph routing, checkpointed human approval, SSE streaming, Redis caching, and OpenTelemetry traces. Deterministic workers make the API and control flow testable without a model key.',
       url: 'https://github.com/vi-nayKR/fastapi-genai-agent-patterns',
       lang: 'Python',
       langColor: '#3572A5',
@@ -150,17 +127,21 @@ export class GithubComponent implements OnInit {
       ],
     },
     {
-      title: 'enterprise-agentic-rag-platform',
-      domain: 'Applied AI · archived prototype',
-      desc: 'Hybrid vector and lexical retrieval, RRF ranking, relevance grading, deterministic query rewriting, citation-formatted answers, and local tool-shaped flows.',
-      url: 'https://github.com/vi-nayKR/enterprise-agentic-rag-platform',
-      lang: 'Python',
-      langColor: '#3572A5',
+      title: 'medha-platform-api',
+      domain: 'Backend foundation · Go',
+      desc: 'Domain-driven Go backend for event scheduling, location-based discovery, and real-time messaging. It combines PostGIS queries, Redis-backed WebSockets, authentication, and health checks.',
+      url: 'https://github.com/vi-nayKR/medha-platform-api',
+      lang: 'Go',
+      langColor: '#00ADD8',
+      evidence: [
+        { label: 'Architecture', url: 'https://github.com/vi-nayKR/medha-platform-api/blob/main/architecture.md' },
+        { label: 'System design', url: 'https://github.com/vi-nayKR/medha-platform-api/blob/main/system_design.md' },
+      ],
     },
     {
       title: 'homelab-sre-observability',
-      domain: 'Reliability · CI-verified lab',
-      desc: 'Go instrumentation, Prometheus SLOs, Grafana dashboards, Alertmanager delivery, black-box probes, rule tests, runbooks, and a completed postmortem.',
+      domain: 'Observability · bounded lab',
+      desc: 'Go instrumentation, Prometheus SLOs, Grafana dashboards, Alertmanager delivery, probes, rule tests, and runbooks. This supports operational thinking for AI services.',
       url: 'https://github.com/vi-nayKR/homelab-sre-observability',
       lang: 'Go / PromQL',
       langColor: '#00ADD8',
@@ -169,57 +150,17 @@ export class GithubComponent implements OnInit {
         { label: 'Runbooks', url: 'https://github.com/vi-nayKR/homelab-sre-observability/tree/main/runbooks' },
       ],
     },
-    {
-      title: 'kubernetes-reliability-gamedays',
-      domain: 'Reliability · bounded lab',
-      desc: 'Seven reproducible Kubernetes failure, diagnosis, and rollback scenarios covering probes, images, configuration, DNS, OOM, rollout, drain, and policy controls.',
-      url: 'https://github.com/vi-nayKR/kubernetes-reliability-gamedays',
-      lang: 'Kubernetes / Shell',
-      langColor: '#326CE5',
-      evidence: [
-        { label: 'Exercises', url: 'https://github.com/vi-nayKR/kubernetes-reliability-gamedays/tree/main/gamedays' },
-        { label: 'Postmortem', url: 'https://github.com/vi-nayKR/kubernetes-reliability-gamedays/blob/main/postmortems/2026-08-24-worker-drain-endpoint-race.md' },
-      ],
-    },
-    {
-      title: 'terraform-aws-reliability-baseline',
-      domain: 'Reliability · validation-only',
-      desc: 'Cost-bounded two-AZ Terraform design with budgets, optional ECS/ALB, mocked plans, policy checks, and documented security exceptions; no AWS deployment claim.',
-      url: 'https://github.com/vi-nayKR/terraform-aws-reliability-baseline',
-      lang: 'Terraform',
-      langColor: '#7B42BC',
-      evidence: [
-        { label: 'Architecture', url: 'https://github.com/vi-nayKR/terraform-aws-reliability-baseline/blob/main/docs/ARCHITECTURE.md' },
-        { label: 'Cost boundary', url: 'https://github.com/vi-nayKR/terraform-aws-reliability-baseline/blob/main/docs/COST_BOUNDARY.md' },
-      ],
-    },
-    {
-      title: 'linux-operations-toolkit',
-      domain: 'Reliability · operations lab',
-      desc: 'Ansible baselines, systemd services, guarded diagnostics, checksum-verified backups, and six bounded cross-distribution recovery drills.',
-      url: 'https://github.com/vi-nayKR/linux-operations-toolkit',
-      lang: 'Ansible / Shell',
-      langColor: '#89e051',
-    },
-    {
-      title: 'local-llm-inference-gateway',
-      domain: 'Applied AI · archived prototype',
-      desc: 'Provider-neutral FastAPI gateway shapes, SSE delivery, local fallback, semantic-cache utilities, safety checks, and fine-tuning simulations.',
-      url: 'https://github.com/vi-nayKR/local-llm-inference-gateway',
-      lang: 'Python',
-      langColor: '#3572A5',
-    },
   ];
 
   domains = [
-    'Angular & TypeScript',
-    'REST API Design',
-    'Authentication & RBAC',
-    'Go & PostgreSQL/PostGIS',
     'Python & FastAPI',
-    'RAG & Agent Workflows',
-    'Linux & Kubernetes',
-    'Terraform & SLOs',
+    'Agent workflows',
+    'LLM evaluation',
+    'OpenTelemetry',
+    'Go & PostgreSQL/PostGIS',
+    'Redis & WebSockets',
+    'Authentication & RBAC',
+    'Docker & CI',
   ];
 
   @HostListener('window:scroll')

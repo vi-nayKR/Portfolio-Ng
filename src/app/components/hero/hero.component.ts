@@ -67,10 +67,10 @@ import { TiltDirective } from '../../directives/tilt.directive';
               </span>
             </p>
             <p class="text-frost font-medium text-xl md:text-2xl max-w-2xl mx-auto md:mx-0 leading-relaxed mt-4">
-              I build the interface, the API, and the systems that keep them useful.
+              I build backend and Applied AI systems that are testable, observable, and useful.
             </p>
             <p class="text-muted text-base md:text-lg max-w-2xl mx-auto md:mx-0 leading-relaxed mt-4">
-              Software engineer in Bengaluru with nearly three years of professional experience across fintech and regulated gaming. My work connects full-stack products, applied AI, and reliability engineering.
+              Software engineer in Bengaluru with nearly three years of professional experience across digital-asset custody and regulated gaming. I am moving from product and backend engineering into Applied AI systems.
             </p>
           </div>
 
@@ -136,7 +136,7 @@ export class HeroComponent implements OnDestroy {
   hoveredTag = signal<string | null>(null);
 
   // Rotating role title — cycles every 2.6s for a living, animated headline.
-  roles = ['Software Engineer', 'Full-Stack Product Engineering', 'Applied AI Systems', 'Reliability & Platform Engineering'];
+  roles = ['Software Engineer | Applied AI Systems'];
   roleIndex = signal(0);
   roleVisible = signal(true);
   private roleTimer?: ReturnType<typeof setInterval>;
@@ -156,12 +156,12 @@ export class HeroComponent implements OnDestroy {
     () => `translate3d(${this.mouseX() * -0.05}px, ${this.parallaxY() * 0.22}px, 0)`
   );
 
-  techs = ['Angular', 'TypeScript', 'Go', 'Python / FastAPI', 'Node.js', 'C# / .NET', 'PostgreSQL', 'Redis', 'Kubernetes', 'Terraform'];
+  techs = ['Python', 'FastAPI', 'LangGraph', 'Go', 'PostgreSQL', 'Redis', 'OpenTelemetry', 'Docker'];
 
   floatingTags = [
-    { text: 'Angular', top: '16%', left: '78%', speedX: -0.06, speedY: 0.03, target: 'skills' },
-    { text: 'TypeScript', top: '68%', left: '8%', speedX: 0.04, speedY: -0.05, target: 'skills' },
-    { text: 'Kubernetes', top: '78%', left: '80%', speedX: -0.05, speedY: 0.03, target: 'skills' },
+    { text: 'LangGraph', top: '16%', left: '78%', speedX: -0.06, speedY: 0.03, target: 'skills' },
+    { text: 'OpenTelemetry', top: '68%', left: '8%', speedX: 0.04, speedY: -0.05, target: 'skills' },
+    { text: 'Redis', top: '78%', left: '80%', speedX: -0.05, speedY: 0.03, target: 'skills' },
     { text: 'PostgreSQL', top: '42%', left: '86%', speedX: 0.03, speedY: -0.04, target: 'skills' },
     { text: 'FastAPI · RAG', top: '82%', left: '22%', speedX: -0.03, speedY: 0.05, target: 'skills' },
   ];
@@ -169,10 +169,10 @@ export class HeroComponent implements OnDestroy {
   private ticking = false;
 
   constructor() {
-    // Start the rotating role ticker (skipped for reduced-motion users).
+    // Start the rotating role ticker only when there is more than one role.
     const reduceMotion = typeof window !== 'undefined'
       && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (!reduceMotion) {
+    if (!reduceMotion && this.roles.length > 1) {
       this.roleTimer = setInterval(() => {
         this.roleVisible.set(false); // fade out
         setTimeout(() => {

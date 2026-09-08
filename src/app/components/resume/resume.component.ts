@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener, inject, OnInit, signal } from '@angular/core';
+import { Component, HostListener, inject, signal } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -108,28 +108,13 @@ import { DomSanitizer } from '@angular/platform-browser';
     </section>
   `,
 })
-export class ResumeComponent implements OnInit {
+export class ResumeComponent {
   visible = signal(false);
   parallaxOffset = signal(0);
   private readonly sanitizer = inject(DomSanitizer);
 
   resumes = [
     {
-      key: 'software',
-      title: 'Vinay K R software engineer resume',
-      url: '/resumes/vinay-kr-full-stack.pdf',
-      preview: this.sanitizer.bypassSecurityTrustResourceUrl('/resumes/vinay-kr-full-stack.pdf#view=FitH'),
-      download: 'Vinay_KR_Software_Engineer_Resume.pdf',
-      professionalCore: 'Nearly three years delivering Angular/TypeScript applications and end-to-end features across fintech and regulated gaming, with REST APIs, Node.js, C#/.NET, SQL, Redis, WebSockets, authorization, Cypress, and production debugging.',
-      projectEvidence: 'The unified resume also surfaces inspectable Go/PostgreSQL systems, FastAPI/LangGraph/RAG projects, and bounded Linux/Kubernetes reliability labs.',
-      skillGroups: [
-        { label: 'Frontend', items: 'Angular, React, TypeScript, RxJS, reactive forms, WebSockets, HTML, CSS' },
-        { label: 'Backend & data', items: 'Node.js, Go, C#/.NET, REST APIs, PostgreSQL/PostGIS, SQL Server, Redis' },
-        { label: 'Delivery', items: 'Authentication, RBAC, testing, debugging, Docker, CI/CD, observability' },
-      ],
-    },
-    {
-      key: 'ai',
       title: 'Vinay K R applied AI engineer resume',
       url: '/resumes/vinay-kr-applied-ai.pdf',
       preview: this.sanitizer.bypassSecurityTrustResourceUrl('/resumes/vinay-kr-applied-ai.pdf#view=FitH'),
@@ -141,21 +126,7 @@ export class ResumeComponent implements OnInit {
         { label: 'Evaluation & telemetry', items: 'Deterministic evaluation, OpenTelemetry, trace/span modeling, quality guardrails' },
         { label: 'Software foundation', items: 'TypeScript, Node.js, Angular, REST APIs, PostgreSQL, Redis, Docker, CI/CD' },
       ],
-    },
-    {
-      key: 'sre',
-      title: 'Vinay K R SRE and platform engineer resume',
-      url: '/resumes/vinay-kr-sre.pdf',
-      preview: this.sanitizer.bypassSecurityTrustResourceUrl('/resumes/vinay-kr-sre.pdf#view=FitH'),
-      download: 'Vinay_KR_SRE_Resume.pdf',
-      professionalCore: 'Nearly three years of professional software engineering, complemented by hands-on operational work around self-hosted services, health gates, backups, safe cutovers, telemetry, and incident-oriented debugging.',
-      projectEvidence: 'Bounded public labs cover Linux operations, Kubernetes failure scenarios, Terraform validation, Prometheus SLOs, alert delivery, recovery drills, and safe change.',
-      skillGroups: [
-        { label: 'Operations', items: 'Linux, systemd, Docker, Nginx, Ansible, backups, diagnostics, recovery drills' },
-        { label: 'Reliability', items: 'Prometheus, Grafana, Alertmanager, SLOs, probes, runbooks, postmortems' },
-        { label: 'Platform', items: 'Kubernetes, kind, Kustomize, Terraform, policy checks, CI/CD' },
-      ],
-    },
+    }
   ];
   selectedResume = signal(this.resumes[0]);
 
@@ -164,13 +135,7 @@ export class ResumeComponent implements OnInit {
     this.parallaxOffset.set(window.scrollY * 0.02);
   }
 
-  ngOnInit() {
-    if (typeof window !== 'undefined') {
-      const requestedView = new URLSearchParams(window.location.search).get('resume');
-      const matchedResume = this.resumes.find((resume) => resume.key === requestedView);
-      if (matchedResume) this.selectedResume.set(matchedResume);
-    }
-
+  constructor() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {

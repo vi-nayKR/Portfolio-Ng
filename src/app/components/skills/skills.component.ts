@@ -82,39 +82,39 @@ export class SkillsComponent implements OnInit {
 
   categories = [
     {
-      name: 'Frontend Engineering',
+      name: 'Applied AI Systems',
       icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z"/></svg>',
       skills: [
-        { name: 'Angular' },
-        { name: 'TypeScript' },
-        { name: 'RxJS' },
-        { name: 'Reactive Forms' },
-        { name: 'WebSockets' },
-        { name: 'HTML & CSS' },
+        { name: 'Python' },
+        { name: 'FastAPI' },
+        { name: 'LangGraph' },
+        { name: 'Agent Routing' },
+        { name: 'Human Approval' },
+        { name: 'SSE Streaming' },
       ],
     },
     {
-      name: 'Backend & APIs',
+      name: 'Retrieval, Evaluation & Telemetry',
       icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>',
       skills: [
-        { name: 'Node.js & Express' },
-        { name: 'C# / .NET Core' },
-        { name: 'REST APIs' },
-        { name: 'Authentication & RBAC' },
-        { name: 'Go / chi (Projects)' },
-        { name: 'Python / FastAPI (Projects)' },
+        { name: 'RAG Patterns' },
+        { name: 'Hybrid Retrieval' },
+        { name: 'RRF Reranking' },
+        { name: 'Deterministic Evals' },
+        { name: 'OpenTelemetry' },
+        { name: 'Semantic Caching' },
       ],
     },
     {
-      name: 'Data & Caching',
+      name: 'Backend & Data Foundation',
       icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>',
       skills: [
-        { name: 'SQL Server' },
-        { name: 'MySQL' },
+        { name: 'Go / chi (Projects)' },
+        { name: 'Node.js & Express' },
+        { name: 'C# / .NET Core' },
         { name: 'PostgreSQL' },
         { name: 'PostGIS (Projects)' },
         { name: 'Redis' },
-        { name: 'TypeORM' },
       ],
     },
     {
@@ -130,32 +130,32 @@ export class SkillsComponent implements OnInit {
       ],
     },
     {
-      name: 'Applied AI Projects',
+      name: 'Product Engineering Foundation',
       icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>',
       skills: [
-        { name: 'LangGraph' },
-        { name: 'Agent Routing' },
-        { name: 'Human Approval' },
-        { name: 'SSE Streaming' },
-        { name: 'Deterministic Evals' },
-        { name: 'OpenTelemetry' },
+        { name: 'Angular' },
+        { name: 'TypeScript' },
+        { name: 'RxJS' },
+        { name: 'WebSockets' },
+        { name: 'Authentication & RBAC' },
+        { name: 'REST APIs' },
       ],
     },
     {
-      name: 'Reliability & Platform',
+      name: 'Service Reliability',
       icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>',
       skills: [
         { name: 'Linux & systemd' },
-        { name: 'Kubernetes / kind' },
-        { name: 'Terraform' },
         { name: 'Prometheus & Grafana' },
         { name: 'SLOs & Alerting' },
-        { name: 'Ansible' },
+        { name: 'OpenTelemetry' },
+        { name: 'Docker' },
+        { name: 'CI/CD' },
       ],
     },
   ];
 
-  extraTags = ['OpenAPI', 'JWT', 'PostGIS ST_DWithin', 'S3-compatible storage', 'Cloudflare Tunnels', 'Alertmanager', 'Kustomize', 'Checkov', 'Tailwind CSS'];
+  extraTags = ['OpenAPI', 'JWT', 'PostGIS ST_DWithin', 'TypeORM', 'SQL Server', 'Cypress', 'Prometheus', 'Grafana', 'Tailwind CSS'];
 
   @HostListener('window:scroll')
   onScroll() {
