@@ -45,7 +45,7 @@ interface RepoHighlight {
         >
           <p class="text-xs font-mono uppercase tracking-widest text-accent mb-2">About these projects</p>
           <p class="text-sm text-muted leading-relaxed">
-            These are independent projects. The FastAPI workflow uses deterministic workers by default, so it demonstrates control flow rather than live-model quality. Medha and the observability lab show the backend and operational foundations. Professional work is covered separately in the experience section.
+            These are independent projects. The FastAPI workflow supports real provider mode alongside deterministic test workers, with hybrid retrieval, structured outputs, and evaluation benchmarks. Medha and the observability lab show the backend and operational foundations. Professional work is covered separately in the experience section.
           </p>
         </div>
 
@@ -116,12 +116,13 @@ export class GithubComponent implements OnInit {
   highlights: RepoHighlight[] = [
     {
       title: 'fastapi-genai-agent-patterns',
-      domain: 'Applied AI · reference implementation',
-      desc: 'Typed LangGraph routing, checkpointed human approval, SSE streaming, Redis caching, and OpenTelemetry traces. Deterministic workers make the API and control flow testable without a model key.',
+      domain: 'Applied AI · flagship implementation',
+      desc: 'Typed LangGraph routing, real model provider mode, structured outputs, hybrid retrieval (BM25 + dense semantic hash with RRF), reproducible evaluation benchmarks, SSE streaming, and OpenTelemetry tracing.',
       url: 'https://github.com/vi-nayKR/fastapi-genai-agent-patterns',
       lang: 'Python',
       langColor: '#3572A5',
       evidence: [
+        { label: 'Evaluations', url: 'https://github.com/vi-nayKR/fastapi-genai-agent-patterns/blob/main/evals/reports/benchmark_v1_report.md' },
         { label: 'Tests', url: 'https://github.com/vi-nayKR/fastapi-genai-agent-patterns/tree/main/tests' },
         { label: 'Design notes', url: 'https://github.com/vi-nayKR/fastapi-genai-agent-patterns/tree/main/docs' },
       ],

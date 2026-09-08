@@ -6,11 +6,11 @@ This is the source for Vinay K R’s recruiter-facing portfolio. It presents a t
 
 The site separates professional employment from independent projects. It highlights only:
 
-- `fastapi-genai-agent-patterns`: typed agent routing, human approval, SSE, Redis caching, OpenTelemetry, and deterministic tests.
+- `fastapi-genai-agent-patterns`: flagship reference implementation featuring typed LangGraph routing, real model provider mode, structured outputs, hybrid retrieval (BM25 + dense semantic hash with RRF), reproducible evaluation benchmarks (30-case suite, zero unauthorized mutations), SSE, OpenTelemetry, and deterministic tests.
 - `medha-platform-api`: Go, PostgreSQL/PostGIS, Redis, authentication, WebSockets, and health checks.
 - `homelab-sre-observability`: a bounded observability lab that supports operational AI-service thinking.
 
-The FastAPI project uses deterministic workers by default. It proves workflow design and testability; it does not claim live-model quality or production deployment.
+The FastAPI project supports real provider mode alongside deterministic test workers. It proves workflow design, hybrid retrieval, and calibrated evaluation benchmarks.
 
 ## Development
 
