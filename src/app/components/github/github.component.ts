@@ -28,12 +28,12 @@ interface RepoHighlight {
 
       <div class="relative z-10 max-w-6xl mx-auto">
         <div class="text-center mb-8 md:mb-12">
-          <p class="text-accent font-mono text-xs tracking-widest uppercase mb-4">Selected source repositories</p>
+          <p class="text-accent font-mono text-xs tracking-widest uppercase mb-4">Featured Projects</p>
           <h2 class="text-4xl md:text-5xl font-display font-bold text-frost text-balance">
-            Selected Engineering Work
+            Projects &amp; Systems
           </h2>
           <p class="text-muted text-sm md:text-base mt-4 max-w-3xl mx-auto leading-relaxed">
-            Applied AI workflow code, a production-style backend, and observability evidence. Each card links directly to source and supporting artifacts.
+            Production-grade Applied AI architectures, distributed backend services, and observability infrastructure. Each project links directly to source code and architectural documentation.
           </p>
         </div>
 
@@ -43,9 +43,9 @@ interface RepoHighlight {
           [style.transform]="visible() ? 'translateY(0)' : 'translateY(24px)'"
           style="transition: opacity 0.6s ease, transform 0.6s ease"
         >
-          <p class="text-xs font-mono uppercase tracking-widest text-accent mb-2">About these projects</p>
+          <p class="text-xs font-mono uppercase tracking-widest text-accent mb-2">Engineering Focus</p>
           <p class="text-sm text-muted leading-relaxed">
-            These are independent projects. The FastAPI workflow supports real provider mode alongside deterministic test workers, with hybrid retrieval, structured outputs, and evaluation benchmarks. Medha and the observability lab show the backend and operational foundations. Professional work is covered separately in the experience section.
+            Typed multi-agent orchestration and hybrid RAG in Python/FastAPI, complemented by high-concurrency Go services with PostGIS and production telemetry instrumentation.
           </p>
         </div>
 
@@ -116,33 +116,33 @@ export class GithubComponent implements OnInit {
   highlights: RepoHighlight[] = [
     {
       title: 'fastapi-genai-agent-patterns',
-      domain: 'Applied AI · flagship implementation',
-      desc: 'Typed LangGraph routing, real model provider mode, structured outputs, hybrid retrieval (BM25 + dense semantic hash with RRF), reproducible evaluation benchmarks, SSE streaming, and OpenTelemetry tracing.',
+      domain: 'Applied AI & Agent Systems',
+      desc: 'Production reference architecture featuring typed LangGraph multi-agent routing, real model provider mode, structured Pydantic outputs, hybrid retrieval (BM25 + dense semantic hashing with RRF), reproducible 30-case evaluation benchmarks, SSE streaming, and OpenTelemetry tracing.',
       url: 'https://github.com/vi-nayKR/fastapi-genai-agent-patterns',
       lang: 'Python',
       langColor: '#3572A5',
       evidence: [
         { label: 'Evaluations', url: 'https://github.com/vi-nayKR/fastapi-genai-agent-patterns/blob/main/evals/reports/benchmark_v1_report.md' },
         { label: 'Tests', url: 'https://github.com/vi-nayKR/fastapi-genai-agent-patterns/tree/main/tests' },
-        { label: 'Design notes', url: 'https://github.com/vi-nayKR/fastapi-genai-agent-patterns/tree/main/docs' },
+        { label: 'Architecture', url: 'https://github.com/vi-nayKR/fastapi-genai-agent-patterns/tree/main/docs' },
       ],
     },
     {
       title: 'medha-platform-api',
-      domain: 'Backend foundation · Go',
-      desc: 'Domain-driven Go backend for event scheduling, location-based discovery, and real-time messaging. It combines PostGIS queries, Redis-backed WebSockets, authentication, and health checks.',
+      domain: 'Distributed Backend Systems',
+      desc: 'High-concurrency, domain-driven Go backend featuring spatial proximity dispatch (PostGIS ST_DWithin), Redis Pub/Sub WebSocket event streaming, and cross-context atomic transaction propagation.',
       url: 'https://github.com/vi-nayKR/medha-platform-api',
       lang: 'Go',
       langColor: '#00ADD8',
       evidence: [
         { label: 'Architecture', url: 'https://github.com/vi-nayKR/medha-platform-api/blob/main/architecture.md' },
-        { label: 'System design', url: 'https://github.com/vi-nayKR/medha-platform-api/blob/main/system_design.md' },
+        { label: 'System Design', url: 'https://github.com/vi-nayKR/medha-platform-api/blob/main/system_design.md' },
       ],
     },
     {
       title: 'homelab-sre-observability',
-      domain: 'Observability · bounded lab',
-      desc: 'Go instrumentation, Prometheus SLOs, Grafana dashboards, Alertmanager delivery, probes, rule tests, and runbooks. This supports operational thinking for AI services.',
+      domain: 'Observability & SRE Systems',
+      desc: 'Production telemetry and monitoring platform with Go instrumentation, Prometheus SLOs, Grafana dashboards, Alertmanager routing, health probes, and operational runbooks for distributed AI services.',
       url: 'https://github.com/vi-nayKR/homelab-sre-observability',
       lang: 'Go / PromQL',
       langColor: '#00ADD8',
@@ -155,13 +155,13 @@ export class GithubComponent implements OnInit {
 
   domains = [
     'Python & FastAPI',
-    'Agent workflows',
-    'LLM evaluation',
-    'OpenTelemetry',
-    'Go & PostgreSQL/PostGIS',
-    'Redis & WebSockets',
-    'Authentication & RBAC',
-    'Docker & CI',
+    'LangGraph Multi-Agent',
+    'Hybrid RAG (BM25 + Dense)',
+    'Benchmark Evaluations',
+    'OpenTelemetry Tracing',
+    'Go & PostGIS',
+    'Redis Pub/Sub',
+    'Docker CI/CD',
   ];
 
   @HostListener('window:scroll')

@@ -87,13 +87,13 @@ export class ScrollNavComponent implements OnInit, OnDestroy {
 
   navSections = [
     { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About Me' },
-    { id: 'skills', label: 'Skills & Technologies' },
-    { id: 'experience', label: 'Work Experience' },
+    { id: 'about', label: 'About' },
+    { id: 'skills', label: 'Skills' },
+    { id: 'experience', label: 'Experience' },
     { id: 'resume', label: 'Resume' },
-    { id: 'github', label: 'Selected Projects' },
-    { id: 'conference', label: 'Research Paper' },
-    { id: 'contact', label: 'Get in Touch' }
+    { id: 'github', label: 'Projects' },
+    { id: 'conference', label: 'Research' },
+    { id: 'contact', label: 'Contact' }
   ];
 
   private observer!: IntersectionObserver;

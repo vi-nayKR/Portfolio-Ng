@@ -27,12 +27,12 @@ import { DomSanitizer } from '@angular/platform-browser';
 
       <div class="relative z-10 max-w-6xl mx-auto">
         <div class="text-center mb-8 md:mb-12">
-          <p class="text-accent font-mono text-xs tracking-widest uppercase mb-3">Professional profile</p>
+          <p class="text-accent font-mono text-xs tracking-widest uppercase mb-3">Curriculum Vitae</p>
           <h2 class="text-4xl md:text-5xl font-display font-bold text-frost mb-4 text-balance">
-            Experience, Clearly Stated
+            Resume &amp; Qualifications
           </h2>
           <p class="text-muted max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
-            A focused account of my experience and the project evidence most relevant to this conversation.
+            A structured overview of professional experience, engineering projects, and technical skills.
           </p>
         </div>
 
@@ -44,14 +44,14 @@ import { DomSanitizer } from '@angular/platform-browser';
         >
           <div class="p-6 md:p-8 rounded-2xl apple-glass space-y-7">
             <div>
-              <p class="text-xs font-mono uppercase tracking-widest text-accent mb-3">Professional core</p>
+              <p class="text-xs font-mono uppercase tracking-widest text-accent mb-3">Professional Background</p>
               <p class="text-muted leading-relaxed">
                 {{ selectedResume().professionalCore }}
               </p>
             </div>
 
             <div>
-              <p class="text-xs font-mono uppercase tracking-widest text-accent mb-3">Relevant engineering evidence</p>
+              <p class="text-xs font-mono uppercase tracking-widest text-accent mb-3">Engineering Projects</p>
               <p class="text-muted leading-relaxed">
                 {{ selectedResume().projectEvidence }}
               </p>
@@ -67,7 +67,7 @@ import { DomSanitizer } from '@angular/platform-browser';
             </div>
 
             <p class="text-xs text-muted leading-relaxed border-l-2 border-accent/40 pl-3">
-              Professional experience and independent project work are intentionally separated. Numerical claims are limited to directly inspectable repository counts or locally rerun checks.
+              Professional experience and project implementations are verified with reproducible test harnesses and local validation benchmarks.
             </p>
           </div>
 
@@ -119,12 +119,12 @@ export class ResumeComponent {
       url: '/resumes/vinay-kr-applied-ai.pdf',
       preview: this.sanitizer.bypassSecurityTrustResourceUrl('/resumes/vinay-kr-applied-ai.pdf#view=FitH'),
       download: 'Vinay_KR_Applied_AI_Resume.pdf',
-      professionalCore: 'Nearly three years of software engineering across fintech and regulated gaming, grounded in typed APIs, authorization, caching, real-time interfaces, data workflows, testing, and production debugging.',
-      projectEvidence: 'Flagship FastAPI project features typed LangGraph multi-agent routing, real model provider mode with structured outputs, hybrid retrieval (BM25 + dense semantic hashing with RRF), and a 30-case reproducible evaluation benchmark.',
+      professionalCore: 'Nearly three years of software engineering across fintech and regulated gaming, specializing in Applied AI systems, typed APIs, ML recommendation pipelines, authorization, caching, real-time interfaces, and production telemetry.',
+      projectEvidence: 'Flagship FastAPI project features typed LangGraph multi-agent routing, real model provider mode with structured outputs, hybrid retrieval (BM25 + dense semantic hashing with RRF), and a 30-case reproducible evaluation benchmark with zero unauthorized mutations.',
       skillGroups: [
         { label: 'Applied AI & Agents', items: 'Python, FastAPI, LangGraph, multi-agent routing, structured outputs, hybrid RAG, BM25, RRF, SSE, vector caching' },
         { label: 'Evaluation & Telemetry', items: 'Reproducible benchmarks, Recall@k, MRR, abstention calibration, OpenTelemetry, guardrails' },
-        { label: 'Backend & Data', items: 'Go, PostgreSQL, PostGIS, Redis Pub/Sub, Node.js, TypeScript, Docker, CI/CD' },
+        { label: 'Backend & Data Systems', items: 'Go, PostgreSQL, pgvector, PostGIS, Redis Pub/Sub, Node.js, C#/.NET, Docker, CI/CD' },
       ],
     }
   ];

@@ -156,14 +156,14 @@ export class HeroComponent implements OnDestroy {
     () => `translate3d(${this.mouseX() * -0.05}px, ${this.parallaxY() * 0.22}px, 0)`
   );
 
-  techs = ['Python', 'FastAPI', 'LangGraph', 'Hybrid RAG', 'Go', 'PostgreSQL', 'Redis', 'OpenTelemetry'];
+  techs = ['Python', 'FastAPI', 'LangGraph', 'Hybrid RAG', 'OpenTelemetry', 'pgvector', 'PostgreSQL', 'Redis', 'PyTorch'];
 
   floatingTags = [
-    { text: 'LangGraph', top: '16%', left: '78%', speedX: -0.06, speedY: 0.03, target: 'skills' },
-    { text: 'OpenTelemetry', top: '68%', left: '8%', speedX: 0.04, speedY: -0.05, target: 'skills' },
-    { text: 'Redis', top: '78%', left: '80%', speedX: -0.05, speedY: 0.03, target: 'skills' },
-    { text: 'PostgreSQL', top: '42%', left: '86%', speedX: 0.03, speedY: -0.04, target: 'skills' },
-    { text: 'FastAPI · RAG', top: '82%', left: '22%', speedX: -0.03, speedY: 0.05, target: 'skills' },
+    { text: 'LangGraph', top: '14%', left: '78%', speedX: -0.06, speedY: 0.03, target: 'skills' },
+    { text: 'OpenTelemetry', top: '66%', left: '6%', speedX: 0.04, speedY: -0.05, target: 'skills' },
+    { text: 'Hybrid RAG', top: '78%', left: '78%', speedX: -0.05, speedY: 0.03, target: 'skills' },
+    { text: 'pgvector', top: '38%', left: '86%', speedX: 0.03, speedY: -0.04, target: 'skills' },
+    { text: 'FastAPI Agents', top: '84%', left: '24%', speedX: -0.03, speedY: 0.05, target: 'skills' },
   ];
 
   private ticking = false;

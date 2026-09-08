@@ -37,17 +37,17 @@ import { SafeHtmlPipe } from '../../pipes/safe-html.pipe';
           <div [class.animate-slide-in-left]="visible()" [style.opacity]="visible() ? '1' : '0'" style="transition: opacity 0.7s">
             <p class="text-accent font-mono text-xs tracking-widest uppercase mb-4">About Me</p>
             <h2 class="text-4xl md:text-5xl font-display font-bold text-frost mb-6 leading-tight text-balance">
-              From Product Engineering
+              From Backend Engineering
               <span class="gradient-text">to Applied AI Systems.</span>
             </h2>
             <p class="text-muted leading-relaxed mb-4">
-              I have nearly three years of professional software experience across fintech (<span class="text-frost">Liminal Custody</span>) and regulated gaming (<span class="text-frost">Light &amp; Wonder</span>), delivering production backend services, authorization workflows, real-time streaming interfaces, and telemetry.
+              I have nearly three years of professional software engineering experience across fintech (<span class="text-frost">Liminal Custody</span>) and regulated gaming (<span class="text-frost">Light &amp; Wonder</span>), building production backend infrastructure, ML recommendation pipelines, and automated compliance engines.
             </p>
             <p class="text-muted leading-relaxed mb-4">
               My <span class="text-frost">Applied AI work</span> centers on typed LangGraph multi-agent orchestration, structured Pydantic outputs, hybrid retrieval (Okapi BM25 + dense semantic hashing with RRF), and reproducible 30-case evaluation benchmarks with zero unauthorized mutations.
             </p>
             <p class="text-muted leading-relaxed mb-6">
-              I combine enterprise software foundations—transaction atomicity, PostGIS geospatial queries, Redis Pub/Sub WebSockets—with rigorous LLM evaluation and OpenTelemetry observability.
+              I combine enterprise systems rigor—transaction atomicity, vector stores, Redis Pub/Sub, and PostGIS geospatial queries—with rigorous LLM evaluation, prompt injection defenses, and OpenTelemetry observability.
             </p>
 
           </div>
@@ -118,18 +118,18 @@ export class AboutComponent implements OnInit {
     {
       title: 'Publication',
       icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>',
-      desc: 'IEEE-published research on machine learning for time-tradable asset analytics (DOI: 10.1109/NCNSP56992.2023.10275962)',
+      desc: 'IEEE-published research on machine learning & financial time-series forecasting (DOI: 10.1109/NMITCON58196.2023.10275962)',
       link: 'https://ieeexplore.ieee.org/document/10275962'
     },
     {
       title: 'Location',
       icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>',
-      desc: 'Bengaluru, India — Open to remote & hybrid engineering opportunities',
+      desc: 'Bengaluru, India — Open to remote & hybrid Applied AI opportunities',
     },
     {
       title: 'Focus & Interests',
       icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>',
-      desc: 'Applied AI systems, agent workflows, hybrid retrieval, evaluation benchmarks, and distributed backends',
+      desc: 'Applied AI systems, LangGraph agent workflows, hybrid retrieval, evaluation benchmarks, and distributed backends',
     },
   ];
 

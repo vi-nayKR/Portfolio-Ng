@@ -82,80 +82,80 @@ export class SkillsComponent implements OnInit {
 
   categories = [
     {
-      name: 'Applied AI Systems',
+      name: 'LLM & Agent Architectures',
       icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z"/></svg>',
       skills: [
-        { name: 'Python' },
-        { name: 'FastAPI' },
+        { name: 'Python & FastAPI' },
         { name: 'LangGraph' },
         { name: 'Multi-Agent Routing' },
         { name: 'Structured Outputs' },
+        { name: 'Tool Calling & Actions' },
         { name: 'SSE Streaming' },
       ],
     },
     {
-      name: 'Retrieval, Evaluation & Telemetry',
+      name: 'Retrieval & Vector Search',
       icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>',
       skills: [
         { name: 'Hybrid RAG' },
-        { name: 'BM25 & Dense Search' },
+        { name: 'Okapi BM25' },
+        { name: 'Dense Semantic Search' },
         { name: 'RRF Reranking' },
-        { name: 'Benchmark Evals' },
-        { name: 'OpenTelemetry' },
-        { name: 'Semantic Caching' },
+        { name: 'Vector Caching' },
+        { name: 'Context Compression' },
       ],
     },
     {
-      name: 'Backend & Data Foundation',
+      name: 'AI Evaluation & Guardrails',
+      icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>',
+      skills: [
+        { name: 'Benchmark Evals' },
+        { name: 'Recall@k & MRR' },
+        { name: 'Abstention Calibration' },
+        { name: 'Hallucination Defense' },
+        { name: 'Prompt Injection Guard' },
+        { name: 'Pydantic Guardrails' },
+      ],
+    },
+    {
+      name: 'AI Backend & Data Systems',
       icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>',
       skills: [
         { name: 'Go / chi' },
-        { name: 'PostgreSQL' },
+        { name: 'PostgreSQL & pgvector' },
         { name: 'PostGIS Proximity' },
         { name: 'Redis Pub/Sub' },
-        { name: 'Node.js & Express' },
-        { name: 'C# / .NET Core' },
+        { name: 'Asynchronous Workers' },
+        { name: 'Distributed Caching' },
       ],
     },
     {
-      name: 'Quality & Delivery',
-      icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/></svg>',
-      skills: [
-        { name: 'Pytest' },
-        { name: 'Strict Mypy' },
-        { name: 'Ruff' },
-        { name: 'Docker' },
-        { name: 'GitHub Actions CI' },
-        { name: 'Cypress' },
-      ],
-    },
-    {
-      name: 'Product Engineering Foundation',
-      icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>',
-      skills: [
-        { name: 'Angular' },
-        { name: 'TypeScript' },
-        { name: 'RxJS' },
-        { name: 'WebSockets' },
-        { name: 'Authentication & RBAC' },
-        { name: 'REST APIs' },
-      ],
-    },
-    {
-      name: 'Service Reliability',
+      name: 'Observability & AI Telemetry',
       icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>',
       skills: [
-        { name: 'Linux & systemd' },
-        { name: 'Prometheus & Grafana' },
-        { name: 'SLOs & Alerting' },
         { name: 'OpenTelemetry' },
-        { name: 'Docker' },
-        { name: 'CI/CD' },
+        { name: 'Trace & Span Modeling' },
+        { name: 'Token & Cost Tracking' },
+        { name: 'Latency Profiling' },
+        { name: 'Prometheus & Grafana' },
+        { name: 'Alertmanager SLOs' },
+      ],
+    },
+    {
+      name: 'Machine Learning & Deep Learning',
+      icon: '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.75 6.75C4.75 5.64543 5.64543 4.75 6.75 4.75H17.25C18.3546 4.75 19.25 5.64543 19.25 6.75V17.25C19.25 18.3546 18.3546 19.25 17.25 19.25H6.75C5.64543 19.25 4.75 18.3546 4.75 17.25V6.75Z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.75 12H15.25M12 8.75V15.25"/></svg>',
+      skills: [
+        { name: 'PyTorch & LSTM' },
+        { name: 'Collaborative Filtering' },
+        { name: 'Computer Vision (YOLO)' },
+        { name: 'Recommender Systems' },
+        { name: 'Matrix Factorization' },
+        { name: 'Model Serving' },
       ],
     },
   ];
 
-  extraTags = ['OpenAPI', 'JWT', 'PostGIS ST_DWithin', 'TypeORM', 'SQL Server', 'Cypress', 'Prometheus', 'Grafana', 'Tailwind CSS'];
+  extraTags = ['Docker', 'GitHub Actions CI', 'Strict Mypy', 'Pytest', 'JWT & RBAC', 'Node.js', 'C# / .NET Core', 'SQL Server', 'Cypress', 'Tailwind CSS'];
 
   @HostListener('window:scroll')
   onScroll() {
