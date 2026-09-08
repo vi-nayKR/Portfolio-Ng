@@ -37,17 +37,17 @@ import { SafeHtmlPipe } from '../../pipes/safe-html.pipe';
           <div [class.animate-slide-in-left]="visible()" [style.opacity]="visible() ? '1' : '0'" style="transition: opacity 0.7s">
             <p class="text-accent font-mono text-xs tracking-widest uppercase mb-4">About Me</p>
             <h2 class="text-4xl md:text-5xl font-display font-bold text-frost mb-6 leading-tight text-balance">
-              One Engineer.
-              <span class="gradient-text">Three Connected Strengths.</span>
+              From Product Interfaces
+              <span class="gradient-text">to Reliable Systems.</span>
             </h2>
             <p class="text-muted leading-relaxed mb-4">
               I have nearly three years of professional software experience across fintech (<span class="text-frost">Liminal Custody</span>) and regulated gaming (<span class="text-frost">Light &amp; Wonder</span>), delivering Angular/TypeScript applications, APIs, authorization workflows, real-time interfaces, and data-backed product features.
             </p>
             <p class="text-muted leading-relaxed mb-4">
-              My full-stack foundation connects naturally to <span class="text-frost">applied AI systems</span>: typed FastAPI services, agent routing, RAG, streaming, caching, evaluation, and observability patterns built as inspectable personal projects.
+              My <span class="text-frost">applied AI projects</span> explore typed FastAPI services, checkpointed agent routing, retrieval, streaming, caching, and evaluation. Source code and reproducible tests make the behavior easy to inspect.
             </p>
             <p class="text-muted leading-relaxed mb-6">
-              I also build <span class="text-frost">reliability and platform evidence</span> through Linux operations, Kubernetes game days, Terraform validation, SLOs, alerting, backup recovery, and safe-change drills. Personal labs and prototypes remain clearly separated from employer production claims.
+              I care about what happens after a feature works: how it behaves under failure, how someone diagnoses it, and how a change can be rolled back. I explore those questions through <span class="text-frost">Linux and Kubernetes labs</span>, SLOs, alerting, and recovery drills.
             </p>
 
           </div>

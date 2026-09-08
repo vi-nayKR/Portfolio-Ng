@@ -29,10 +29,10 @@ import { SafeHtmlPipe } from '../../pipes/safe-html.pipe';
         <div class="text-center mb-8 md:mb-12">
           <p class="text-accent font-mono text-xs tracking-widest uppercase mb-4">Get In Touch</p>
           <h2 class="text-4xl md:text-5xl font-display font-bold text-frost text-balance">
-            Let&apos;s Build Something
+            Let&apos;s Work Through It
           </h2>
           <p class="text-muted mt-4 max-w-xl mx-auto leading-relaxed">
-            Open to new opportunities. Whether it&apos;s a full-time role, freelance project, or just a chat about tech &mdash; I&apos;d love to hear from you.
+            Have a product, an API, or a reliability problem to work through? I&apos;m open to software engineering opportunities and conversations about useful systems.
           </p>
         </div>
 

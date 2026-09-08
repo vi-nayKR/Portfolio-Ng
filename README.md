@@ -2,7 +2,7 @@
 
 Live site: [portfolio.vinaykr.workers.dev](https://portfolio.vinaykr.workers.dev/) · [GitHub](https://github.com/vi-nayKR) · [LinkedIn](https://linkedin.com/in/vi-naykr)
 
-This is the source for Vinay K R's portfolio: a software engineer building AI-enabled full-stack systems and reliable platform foundations. It brings together three connected lanes without blending professional employment claims with independent project evidence:
+This is the source for Vinay K R's portfolio: a software engineer in Bengaluru with nearly three years of professional experience across fintech and regulated gaming. The profile connects product interfaces, APIs, applied AI, and reliability engineering, with the same positioning as the [GitHub profile](https://github.com/vi-nayKR): “I build the interface, the API, and the systems that keep them useful.”
 
 - **Full-Stack Product Engineering:** Angular, TypeScript, React, Node.js, Go, .NET, REST APIs, WebSockets, SQL, and Redis.
 - **Applied AI Systems:** Python/FastAPI, LangGraph, RAG, retrieval, semantic caching, streaming, evaluation, and observability patterns.
@@ -11,12 +11,12 @@ This is the source for Vinay K R's portfolio: a software engineer building AI-en
 ## What is included
 
 - A responsive recruiter-focused landing page with keyboard navigation and reduced-motion support.
-- Evidence-labelled project cards linking to public source repositories.
+- Project cards linking to public repositories, architecture notes, tests, runbooks, and a postmortem; archived AI projects are labelled explicitly.
 - Conservative experience summaries for Liminal Custody and Light & Wonder.
 - One context-aware resume presentation. The public default is the software-engineering resume; tailored AI or SRE views can be shared directly without exposing a visible selector.
 - IEEE research publication and direct contact links.
 - The original glassmorphic dark/light theme, animated navigation, timeline, and section layout with the existing orange Vinay identity.
-- A generated ASCII-art symbolic portrait based on Vinay's supplied reference photo; the real photograph is not rendered in the interface.
+- A black-and-white ASCII character portrait in a neutral terminal frame, shared with the GitHub profile. The full silhouette remains visible on mobile and desktop.
 
 The content intentionally separates production employment, self-hosted project work, AI reference implementations, prototypes, simulators, and bounded reliability labs. Unsupported adoption, availability, latency, accuracy, cloud ownership, and on-call claims are not presented.
 

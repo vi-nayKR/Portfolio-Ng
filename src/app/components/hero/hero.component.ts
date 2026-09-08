@@ -54,7 +54,7 @@ import { TiltDirective } from '../../directives/tilt.directive';
           
           <div class="animate-fade-in-up" style="animation-delay:0.1s; opacity:0;">
             <h1 class="text-4xl md:text-6xl font-display font-bold leading-none mb-6 text-frost">
-              👋 Hi, I'm <span class="gradient-text">Vinay</span>!
+              Hi, I'm <span class="gradient-text">Vinay K R</span>.
             </h1>
             <p class="text-accent font-mono text-xs md:text-sm tracking-widest mb-4 uppercase h-5 overflow-hidden">
               <span
@@ -66,8 +66,11 @@ import { TiltDirective } from '../../directives/tilt.directive';
                 {{ currentRole() }}
               </span>
             </p>
-            <p class="text-muted text-lg md:text-xl max-w-2xl mx-auto md:mx-0 leading-relaxed mt-4">
-              Software engineer building <span class="text-frost font-medium">AI-enabled full-stack systems</span> and the platform foundations that keep them dependable. My work spans Angular, TypeScript, Go, Python/FastAPI, APIs, data, and <span class="text-frost font-medium">reliability engineering</span>.
+            <p class="text-frost font-medium text-xl md:text-2xl max-w-2xl mx-auto md:mx-0 leading-relaxed mt-4">
+              I build the interface, the API, and the systems that keep them useful.
+            </p>
+            <p class="text-muted text-base md:text-lg max-w-2xl mx-auto md:mx-0 leading-relaxed mt-4">
+              Software engineer in Bengaluru with nearly three years of professional experience across fintech and regulated gaming. My work connects full-stack products, applied AI, and reliability engineering.
             </p>
           </div>
 
@@ -88,64 +91,36 @@ import { TiltDirective } from '../../directives/tilt.directive';
               (mouseleave)="onMagneticLeave($event)"
               class="magnetic px-8 py-3.5 rounded-xl bg-accent hover:bg-accent-glow text-frost font-semibold text-sm transition-colors duration-200 hover:shadow-xl hover:shadow-accent/25 text-center will-change-transform"
             >
-              View Projects
+              Explore My Work
             </a>
             <a
-              href="https://github.com/vi-nayKR"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#resume"
               class="px-8 py-3.5 rounded-xl border border-border hover:border-accent/50 text-frost font-semibold text-sm transition-all duration-200 hover:bg-surface hover:-translate-y-0.5 flex items-center justify-center gap-2"
             >
               <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                <path d="M6 2h8l4 4v16H6V2zm8 2v4h4l-4-4zM9 11v2h6v-2H9zm0 4v2h6v-2H9z"/>
               </svg>
-              GitHub
+              View Resume
             </a>
           </div>
         </div>
 
-        <!-- Right Column: Profile Photo (45%) -->
-        <div class="w-full md:w-[45%] flex items-center justify-center relative min-h-[280px] md:min-h-[500px]">
-          <!-- Ambient glow behind photo -->
-          <div
-            class="absolute w-64 h-64 rounded-full pointer-events-none"
-            style="background: radial-gradient(circle, rgba(255,107,0,0.18) 0%, transparent 65%); filter: blur(28px);"
-            [style.transform]="'translate3d(' + (mouseX() * 0.03) + 'px, ' + (mouseY() * 0.03) + 'px, 0)'"
-          ></div>
-
-          <!-- Rotating dashed outer rings -->
-          <div
-            class="absolute w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full border border-accent/20 pointer-events-none"
-            style="border-style: dashed; transition: transform 0.6s ease-out;"
-            [style.transform]="'rotate(' + (mouseX() * 0.04) + 'deg)'"
-          ></div>
-          <div
-            class="absolute w-52 h-52 sm:w-60 sm:h-60 md:w-72 md:h-72 rounded-full border border-accent/10 pointer-events-none"
-            style="border-style: dashed; transition: transform 0.8s ease-out;"
-            [style.transform]="'rotate(' + (-mouseX() * 0.06) + 'deg)'"
-          ></div>
-
-          <!-- Profile photo -->
-          <div class="relative z-10 animate-float" style="animation-delay: 0s;">
-            <div
-              class="relative w-44 h-44 sm:w-52 sm:h-52 md:w-60 md:h-60 rounded-full"
-              style="transition: transform 0.3s ease-out;"
-              [style.transform]="'translate3d(' + (mouseX() * 0.015) + 'px, ' + (mouseY() * 0.015) + 'px, 0)'"
-            >
-              <!-- Glow ring -->
-              <div class="absolute inset-0 rounded-full animate-pulse-glow" style="background: radial-gradient(circle, rgba(255,107,0,0.12) 0%, transparent 60%);"></div>
-              <!-- Accent border rings -->
-              <div class="absolute -inset-2 rounded-full border-2 border-accent/30"></div>
-              <div class="absolute -inset-4 rounded-full border border-accent/15"></div>
-              <!-- Symbolic ASCII portrait -->
-              <img
-                [src]="photoUrl()"
-                alt="Symbolic ASCII-art portrait of Vinay K R"
-                class="w-full h-full rounded-full object-contain p-2 border-2 border-accent/50 shadow-2xl shadow-accent/20 transition-transform duration-500 hover:scale-105"
-                style="object-position: center;"
-              />
-            </div>
-          </div>
+        <!-- Monochrome portrait: full silhouette and a neutral terminal frame. -->
+        <div class="w-full md:w-[45%] flex items-center justify-center relative">
+          <figure class="w-full max-w-[420px] overflow-hidden rounded-2xl border border-white/20 bg-black shadow-2xl">
+            <figcaption class="flex items-center justify-between gap-4 border-b border-white/15 px-5 py-3 font-mono text-[10px] sm:text-xs text-white/70">
+              <span>vinay@github</span>
+              <span>ASCII / BLACK &amp; WHITE</span>
+            </figcaption>
+            <img
+              [src]="photoUrl()"
+              alt="Vinay K R rendered in black-and-white ASCII characters"
+              width="1342"
+              height="1172"
+              fetchpriority="high"
+              class="block w-full h-auto object-contain grayscale"
+            />
+          </figure>
         </div>
       </div>
       

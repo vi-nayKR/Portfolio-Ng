@@ -9,6 +9,7 @@ interface RepoHighlight {
   url: string;
   lang: string;
   langColor: string;
+  evidence?: { label: string; url: string }[];
 }
 
 @Component({
@@ -29,10 +30,10 @@ interface RepoHighlight {
         <div class="text-center mb-8 md:mb-12">
           <p class="text-accent font-mono text-xs tracking-widest uppercase mb-4">Selected source repositories</p>
           <h2 class="text-4xl md:text-5xl font-display font-bold text-frost text-balance">
-            Built to Be Inspected
+            Selected Engineering Work
           </h2>
           <p class="text-muted text-sm md:text-base mt-4 max-w-3xl mx-auto leading-relaxed">
-            The strongest repositories are listed first. Each description separates implemented behavior from planned integrations and avoids synthetic performance claims.
+            Product backends, applied AI reference projects, and reliability labs. Follow the source, architecture notes, tests, and recovery guides behind each project.
           </p>
         </div>
 
@@ -42,21 +43,18 @@ interface RepoHighlight {
           [style.transform]="visible() ? 'translateY(0)' : 'translateY(24px)'"
           style="transition: opacity 0.6s ease, transform 0.6s ease"
         >
-          <p class="text-xs font-mono uppercase tracking-widest text-accent mb-2">Evidence policy</p>
+          <p class="text-xs font-mono uppercase tracking-widest text-accent mb-2">About these projects</p>
           <p class="text-sm text-muted leading-relaxed">
-            Professional work is described from shipped responsibilities. Repository counts are static evidence. AI repositories that use deterministic stand-ins are labeled as reference implementations or prototypes, not production deployments.
+            These are independent projects. The AI repositories are archived references and prototypes; reliability work is exercised in bounded labs. My professional contributions at Liminal Custody and Light &amp; Wonder are covered in the experience section.
           </p>
         </div>
 
         <div class="grid md:grid-cols-2 gap-6 mb-10">
           @for (repo of highlights; track repo.title; let i = $index) {
-            <a
+            <article
               appTilt
               [maxTilt]="8"
               [scale]="1.02"
-              [href]="repo.url"
-              target="_blank"
-              rel="noopener noreferrer"
               class="group p-6 rounded-2xl apple-glass card-hover flex flex-col"
               [style.opacity]="visible() ? '1' : '0'"
               [style.transform]="visible() ? 'translateY(0)' : 'translateY(30px)'"
@@ -69,14 +67,22 @@ interface RepoHighlight {
                 </svg>
               </div>
 
-              <h3 class="font-display font-semibold text-frost mb-2 group-hover:text-accent transition-colors duration-200">{{ repo.title }}</h3>
+              <h3 class="font-display font-semibold text-frost mb-2 break-words">
+                <a [href]="repo.url" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors duration-200">{{ repo.title }}</a>
+              </h3>
               <p class="text-sm text-muted leading-relaxed flex-1 mb-4">{{ repo.desc }}</p>
 
               <div class="flex items-center gap-2 text-xs font-mono text-muted">
                 <span class="w-2.5 h-2.5 rounded-full shrink-0" [style.background]="repo.langColor"></span>
                 {{ repo.lang }}
               </div>
-            </a>
+              <nav class="flex flex-wrap gap-x-4 gap-y-2 mt-5 pt-4 border-t border-border text-xs font-medium" [attr.aria-label]="repo.title + ' resources'">
+                <a [href]="repo.url" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Source</a>
+                @for (link of repo.evidence; track link.url) {
+                  <a [href]="link.url" target="_blank" rel="noopener noreferrer" class="text-muted hover:text-frost hover:underline">{{ link.label }}</a>
+                }
+              </nav>
+            </article>
           }
         </div>
 
@@ -109,32 +115,43 @@ export class GithubComponent implements OnInit {
 
   highlights: RepoHighlight[] = [
     {
-      title: 'Data-Visualization-Of-Time-Tradable-Assets-Using-ML',
-      domain: 'Quantitative ML · Live Production',
-      desc: 'Angular 22 + FastAPI quantitative terminal on Cloudflare Workers featuring Plotly.js charts, custom technical indicators (SMA, EMA, BB, RSI), and 50-day forward ML predictions.',
-      url: 'https://github.com/vi-nayKR/Data-Visualization-Of-Time-Tradable-Assets-Using-ML',
-      lang: 'Angular / TypeScript / PyTorch',
-      langColor: '#DD0031',
-    },
-    {
       title: 'medha-platform-api',
-      domain: 'Full-stack · self-hosted',
-      desc: 'Domain-driven Go API with PostgreSQL/PostGIS, Redis-backed WebSockets, object storage, authentication, and operational safeguards.',
+      domain: 'Product systems · backend',
+      desc: 'Domain-driven Go backend for event scheduling, location-based discovery, and real-time messaging. Connects PostGIS queries, Redis-backed WebSockets, authentication, and operational health checks.',
       url: 'https://github.com/vi-nayKR/medha-platform-api',
       lang: 'Go',
       langColor: '#00ADD8',
+      evidence: [
+        { label: 'Architecture', url: 'https://github.com/vi-nayKR/medha-platform-api/blob/main/architecture.md' },
+        { label: 'System design', url: 'https://github.com/vi-nayKR/medha-platform-api/blob/main/system_design.md' },
+      ],
+    },
+    {
+      title: 'Portfolio-Ng',
+      domain: 'Product systems · frontend',
+      desc: 'The Angular and TypeScript source for this portfolio: standalone components, signal-based interfaces, responsive layouts, accessible navigation, and a context-aware resume view.',
+      url: 'https://github.com/vi-nayKR/Portfolio-Ng',
+      lang: 'Angular / TypeScript',
+      langColor: '#DD0031',
+      evidence: [
+        { label: 'Components', url: 'https://github.com/vi-nayKR/Portfolio-Ng/tree/main/src/app/components' },
+      ],
     },
     {
       title: 'fastapi-genai-agent-patterns',
-      domain: 'Applied AI · reference',
-      desc: 'Typed LangGraph supervisor with specialist routing, human-approval checkpoints, SSE events, caching interfaces, tracing, and reproducible local tests.',
+      domain: 'Applied AI · archived reference',
+      desc: 'Typed LangGraph routing, checkpointed human approval, SSE streaming, Redis caching, and OpenTelemetry traces. Deterministic default workers make the control flow testable without a model key.',
       url: 'https://github.com/vi-nayKR/fastapi-genai-agent-patterns',
       lang: 'Python',
       langColor: '#3572A5',
+      evidence: [
+        { label: 'Tests', url: 'https://github.com/vi-nayKR/fastapi-genai-agent-patterns/tree/main/tests' },
+        { label: 'Design notes', url: 'https://github.com/vi-nayKR/fastapi-genai-agent-patterns/tree/main/docs' },
+      ],
     },
     {
       title: 'enterprise-agentic-rag-platform',
-      domain: 'Applied AI · prototype',
+      domain: 'Applied AI · archived prototype',
       desc: 'Hybrid vector and lexical retrieval, RRF ranking, relevance grading, deterministic query rewriting, citation-formatted answers, and local tool-shaped flows.',
       url: 'https://github.com/vi-nayKR/enterprise-agentic-rag-platform',
       lang: 'Python',
@@ -147,6 +164,10 @@ export class GithubComponent implements OnInit {
       url: 'https://github.com/vi-nayKR/homelab-sre-observability',
       lang: 'Go / PromQL',
       langColor: '#00ADD8',
+      evidence: [
+        { label: 'Architecture', url: 'https://github.com/vi-nayKR/homelab-sre-observability/blob/main/docs/ARCHITECTURE.md' },
+        { label: 'Runbooks', url: 'https://github.com/vi-nayKR/homelab-sre-observability/tree/main/runbooks' },
+      ],
     },
     {
       title: 'kubernetes-reliability-gamedays',
@@ -155,6 +176,10 @@ export class GithubComponent implements OnInit {
       url: 'https://github.com/vi-nayKR/kubernetes-reliability-gamedays',
       lang: 'Kubernetes / Shell',
       langColor: '#326CE5',
+      evidence: [
+        { label: 'Exercises', url: 'https://github.com/vi-nayKR/kubernetes-reliability-gamedays/tree/main/gamedays' },
+        { label: 'Postmortem', url: 'https://github.com/vi-nayKR/kubernetes-reliability-gamedays/blob/main/postmortems/2026-08-24-worker-drain-endpoint-race.md' },
+      ],
     },
     {
       title: 'terraform-aws-reliability-baseline',
@@ -163,6 +188,10 @@ export class GithubComponent implements OnInit {
       url: 'https://github.com/vi-nayKR/terraform-aws-reliability-baseline',
       lang: 'Terraform',
       langColor: '#7B42BC',
+      evidence: [
+        { label: 'Architecture', url: 'https://github.com/vi-nayKR/terraform-aws-reliability-baseline/blob/main/docs/ARCHITECTURE.md' },
+        { label: 'Cost boundary', url: 'https://github.com/vi-nayKR/terraform-aws-reliability-baseline/blob/main/docs/COST_BOUNDARY.md' },
+      ],
     },
     {
       title: 'linux-operations-toolkit',
@@ -174,7 +203,7 @@ export class GithubComponent implements OnInit {
     },
     {
       title: 'local-llm-inference-gateway',
-      domain: 'Applied AI · prototype',
+      domain: 'Applied AI · archived prototype',
       desc: 'Provider-neutral FastAPI gateway shapes, SSE delivery, local fallback, semantic-cache utilities, safety checks, and fine-tuning simulations.',
       url: 'https://github.com/vi-nayKR/local-llm-inference-gateway',
       lang: 'Python',
