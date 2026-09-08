@@ -105,20 +105,16 @@ import { TiltDirective } from '../../directives/tilt.directive';
           </div>
         </div>
 
-        <!-- Monochrome portrait: full silhouette and a neutral terminal frame. -->
+        <!-- Colored ASCII portrait with the full silhouette visible. -->
         <div class="w-full md:w-[45%] flex items-center justify-center relative">
           <figure class="w-full max-w-[420px] overflow-hidden rounded-2xl border border-white/20 bg-black shadow-2xl">
-            <figcaption class="flex items-center justify-between gap-4 border-b border-white/15 px-5 py-3 font-mono text-[10px] sm:text-xs text-white/70">
-              <span>vinay@github</span>
-              <span>ASCII / BLACK &amp; WHITE</span>
-            </figcaption>
             <img
               [src]="photoUrl()"
-              alt="Vinay K R rendered in black-and-white ASCII characters"
-              width="1342"
-              height="1172"
+              alt="Vinay K R rendered in ASCII characters with orange accents"
+              width="800"
+              height="699"
               fetchpriority="high"
-              class="block w-full h-auto object-contain grayscale"
+              class="block w-full h-auto object-contain"
             />
           </figure>
         </div>

@@ -16,7 +16,7 @@ This is the source for Vinay K R's portfolio: a software engineer in Bengaluru w
 - One context-aware resume presentation. The public default is the software-engineering resume; tailored AI or SRE views can be shared directly without exposing a visible selector.
 - IEEE research publication and direct contact links.
 - The original glassmorphic dark/light theme, animated navigation, timeline, and section layout with the existing orange Vinay identity.
-- A black-and-white ASCII character portrait in a neutral terminal frame, shared with the GitHub profile. The full silhouette remains visible on mobile and desktop.
+- A colored ASCII character portrait with orange accents and no caption bar. The full silhouette remains visible on mobile and desktop; the GitHub profile uses its own monochrome version.
 
 The content intentionally separates production employment, self-hosted project work, AI reference implementations, prototypes, simulators, and bounded reliability labs. Unsupported adoption, availability, latency, accuracy, cloud ownership, and on-call claims are not presented.
 
