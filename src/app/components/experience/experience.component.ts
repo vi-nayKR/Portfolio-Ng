@@ -43,7 +43,7 @@ import { TiltDirective } from '../../directives/tilt.directive';
           ></div>
 
           <div class="space-y-8 md:space-y-10">
-            @for (exp of experiences; track exp.company + '-' + exp.role; let i = $index) {
+            @for (exp of experiences; track exp.company + '-' + exp.period; let i = $index) {
               <div
                 class="relative flex flex-col md:flex-row gap-8"
                 [class.md:flex-row-reverse]="i % 2 === 1"
@@ -63,7 +63,6 @@ import { TiltDirective } from '../../directives/tilt.directive';
                   <div class="flex flex-col w-full h-full" [class.items-end]="i % 2 === 0" [class.items-start]="i % 2 === 1">
                     <div class="text-right" [class.text-left]="i % 2 === 1">
                       <span class="text-sm font-mono text-accent">{{ exp.period }}</span>
-                      <p class="text-xs text-muted mt-1">{{ exp.location }}</p>
                     </div>
 
                     @if (exp.image) {
@@ -98,8 +97,7 @@ import { TiltDirective } from '../../directives/tilt.directive';
 
                     <div class="flex items-start justify-between mb-3">
                       <div>
-                        <h3 class="font-display font-semibold text-frost text-lg">{{ exp.role }}</h3>
-                        <p class="text-accent text-sm font-medium">{{ exp.company }}</p>
+                        <h3 class="font-display font-semibold text-frost text-lg">{{ exp.company }}</h3>
                         @if (exp.note) {
                           <p class="text-muted text-xs mt-0.5 italic">{{ exp.note }}</p>
                         }
@@ -151,11 +149,10 @@ export class ExperienceComponent implements OnInit {
 
   experiences = [
     {
-      role: 'Software Engineer — Applied AI & Systems',
-      company: 'Liminal Custody (First Answer India Services Pvt Ltd)',
+      company: 'Liminal Custody',
+      note: 'First Answer India Services Pvt Ltd',
       period: 'Nov 2025 – Mar 2026',
-      location: 'Bengaluru, India',
-      type: 'Full-time',
+      type: 'Production',
       highlights: [
         'Architected automated policy verification and compliance audit workflows using Python/FastAPI, LangGraph agent routing, and Redis semantic caching, reducing manual custody approvals by 85%.',
         'Engineered real-time anomaly detection and risk evaluation pipelines with atomic rollback safeguards (WithTx pattern), protecting institutional digital asset operations against anomalous states.',
@@ -167,11 +164,10 @@ export class ExperienceComponent implements OnInit {
       maxWidth: 'max-w-[320px]',
     },
     {
-      role: 'AI & Backend Systems Engineer',
-      company: 'Light & Wonder (LNW India Solutions Pvt Ltd)',
+      company: 'Light & Wonder',
+      note: 'LNW India Solutions Pvt Ltd',
       period: 'Aug 2023 – Jul 2025',
-      location: 'Bengaluru, India',
-      type: 'Full-time',
+      type: 'Production',
       highlights: [
         'Engineered machine learning recommendation pipelines and player personalization models using collaborative filtering, contextual feature embeddings, and historical engagement telemetry.',
         'Designed high-throughput, low-latency (<40ms) real-time inference streaming pipelines over WebSockets and C#/.NET Core APIs, feeding dynamic personalized recommendations to concurrent gaming terminals.',
@@ -183,11 +179,10 @@ export class ExperienceComponent implements OnInit {
       maxWidth: 'max-w-[320px]',
     },
     {
-      role: 'Machine Learning Engineering Intern',
-      company: 'Light & Wonder (LNW India Solutions Pvt Ltd)',
+      company: 'Light & Wonder',
+      note: 'LNW India Solutions Pvt Ltd',
       period: 'Mar 2023 – Jul 2023',
-      location: 'Bengaluru, India',
-      type: 'Internship',
+      type: 'Recommendation Engine',
       highlights: [
         'Developed an ML-driven game recommendation application utilizing collaborative filtering, matrix factorization, and explicit user preference feedback loops.',
         'Benchmarked heuristic baselines against neural and regression scoring models, boosting recommendation relevancy and player engagement by 28%.',

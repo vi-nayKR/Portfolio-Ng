@@ -301,8 +301,8 @@ import { TiltDirective } from '../../directives/tilt.directive';
 
           <!-- Bottom metadata bar -->
           <div class="px-8 py-4 border-t border-border/20 bg-void/20 flex flex-wrap gap-6 text-[10px] font-mono text-muted">
-            <span>🏛 Siddaganga Institute of Technology, Tumkur</span>
-            <span>👨‍🏫 Guide: Dr. Pramod T C</span>
+            <span>📄 IEEE NCNSP Conference</span>
+            <span>DOI: 10.1109/NCNSP56992.2023.10275962</span>
           </div>
         </div>
       </div>

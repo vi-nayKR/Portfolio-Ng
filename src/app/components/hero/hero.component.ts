@@ -1,4 +1,4 @@
-import { Component, HostListener, signal, computed, ChangeDetectionStrategy, OnDestroy } from '@angular/core';
+import { Component, HostListener, signal, computed, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TiltDirective } from '../../directives/tilt.directive';
 
@@ -56,21 +56,11 @@ import { TiltDirective } from '../../directives/tilt.directive';
             <h1 class="text-4xl md:text-6xl font-display font-bold leading-none mb-6 text-frost">
               Hi, I'm <span class="gradient-text">Vinay K R</span>.
             </h1>
-            <p class="text-accent font-mono text-xs md:text-sm tracking-widest mb-4 uppercase h-5 overflow-hidden">
-              <span
-                class="inline-block"
-                [style.opacity]="roleVisible() ? '1' : '0'"
-                [style.transform]="roleVisible() ? 'translateY(0)' : 'translateY(-100%)'"
-                style="transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);"
-              >
-                {{ currentRole() }}
-              </span>
-            </p>
             <p class="text-frost font-medium text-xl md:text-2xl max-w-2xl mx-auto md:mx-0 leading-relaxed mt-4">
               I build backend and Applied AI systems that are testable, observable, and useful.
             </p>
             <p class="text-muted text-base md:text-lg max-w-2xl mx-auto md:mx-0 leading-relaxed mt-4">
-              Software engineer in Bengaluru with nearly three years of professional backend experience across digital-asset custody and regulated gaming, specializing in Python/FastAPI, LangGraph agent workflows, hybrid retrieval, and observable systems.
+              Nearly three years of professional backend experience across digital-asset custody and regulated gaming, specializing in Python/FastAPI, LangGraph agent workflows, hybrid retrieval, and observable systems.
             </p>
           </div>
 
@@ -128,23 +118,12 @@ import { TiltDirective } from '../../directives/tilt.directive';
     </section>
   `,
 })
-export class HeroComponent implements OnDestroy {
+export class HeroComponent {
   photoUrl = signal<string>('/vinay-ascii-portrait.png');
   parallaxY = signal(0);
   mouseX = signal(0);
   mouseY = signal(0);
   hoveredTag = signal<string | null>(null);
-
-  // Rotating role title — cycles every 2.6s for a living, animated headline.
-  roles = ['Software Engineer | Applied AI Systems'];
-  roleIndex = signal(0);
-  roleVisible = signal(true);
-  private roleTimer?: ReturnType<typeof setInterval>;
-
-  // Derived state — cached, and only recomputed when its dependencies change.
-  // Previously these transform strings were concatenated inline in the template,
-  // which rebuilt every string on every change-detection cycle.
-  readonly currentRole = computed(() => this.roles[this.roleIndex()]);
 
   readonly bgTextTransform = computed(
     () => `translate3d(calc(-50% + ${this.mouseX() * -0.04}px), calc(-50% + ${this.parallaxY() * -0.22}px), 0)`
@@ -167,21 +146,6 @@ export class HeroComponent implements OnDestroy {
   ];
 
   private ticking = false;
-
-  constructor() {
-    // Start the rotating role ticker only when there is more than one role.
-    const reduceMotion = typeof window !== 'undefined'
-      && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (!reduceMotion && this.roles.length > 1) {
-      this.roleTimer = setInterval(() => {
-        this.roleVisible.set(false); // fade out
-        setTimeout(() => {
-          this.roleIndex.update((i) => (i + 1) % this.roles.length);
-          this.roleVisible.set(true); // fade in with new role
-        }, 350);
-      }, 2600);
-    }
-  }
 
   @HostListener('window:scroll')
   onScroll() {
@@ -213,10 +177,6 @@ export class HeroComponent implements OnDestroy {
   onMagneticLeave(event: MouseEvent) {
     const el = event.currentTarget as HTMLElement;
     if (el) el.style.transform = 'translate(0px, 0px)';
-  }
-
-  ngOnDestroy() {
-    if (this.roleTimer) clearInterval(this.roleTimer);
   }
 
   scrollToSection(targetId: string) {

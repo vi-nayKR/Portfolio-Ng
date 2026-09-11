@@ -319,10 +319,6 @@ main > app-experience > section,
 main > app-resume > section,
 main > app-github > section,
 main > app-conference > section,
-main > app-major-project > section,
-main > app-certifications > section,
-main > app-gaming > section,
-main > app-setup > section,
 main > app-contact > section {
   padding-top: 2.25rem !important;
   padding-bottom: 2.25rem !important;
@@ -337,10 +333,6 @@ main > app-contact > section {
   main > app-resume > section,
   main > app-github > section,
   main > app-conference > section,
-  main > app-major-project > section,
-  main > app-certifications > section,
-  main > app-gaming > section,
-  main > app-setup > section,
   main > app-contact > section {
     padding-top: 3.5rem !important;
     padding-bottom: 3.5rem !important;

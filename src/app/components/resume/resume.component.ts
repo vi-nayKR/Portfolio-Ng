@@ -29,7 +29,7 @@ import { DomSanitizer } from '@angular/platform-browser';
         <div class="text-center mb-8 md:mb-12">
           <p class="text-accent font-mono text-xs tracking-widest uppercase mb-3">Curriculum Vitae</p>
           <h2 class="text-4xl md:text-5xl font-display font-bold text-frost mb-4 text-balance">
-            Resume &amp; Qualifications
+            Interactive Resume
           </h2>
           <p class="text-muted max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
             A structured overview of professional experience, engineering projects, and technical skills.
@@ -115,11 +115,11 @@ export class ResumeComponent {
 
   resumes = [
     {
-      title: 'Vinay K R applied AI engineer resume',
+      title: 'Vinay K R Technical Resume',
       url: '/resumes/vinay-kr-applied-ai.pdf',
       preview: this.sanitizer.bypassSecurityTrustResourceUrl('/resumes/vinay-kr-applied-ai.pdf#view=FitH'),
       download: 'Vinay_KR_Applied_AI_Resume.pdf',
-      professionalCore: 'Nearly three years of software engineering across fintech and regulated gaming, specializing in Applied AI systems, typed APIs, ML recommendation pipelines, authorization, caching, real-time interfaces, and production telemetry.',
+      professionalCore: 'Nearly three years of engineering experience across fintech and regulated gaming, specializing in Applied AI systems, typed APIs, ML recommendation pipelines, authorization, caching, real-time interfaces, and production telemetry.',
       projectEvidence: 'Flagship FastAPI project features typed LangGraph multi-agent routing, real model provider mode with structured outputs, hybrid retrieval (BM25 + dense semantic hashing with RRF), and a 30-case reproducible evaluation benchmark with zero unauthorized mutations.',
       skillGroups: [
         { label: 'Applied AI & Agents', items: 'Python, FastAPI, LangGraph, multi-agent routing, structured outputs, hybrid RAG, BM25, RRF, SSE, vector caching' },
